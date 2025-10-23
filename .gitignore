@@ -1,6 +1,8 @@
-.JETEmitters/
-.Java/
-.metadata/
-temp/
-sqlPatterns/
+/ETL Project/.JETEmitters/
+/ETL Project/.Java/
+/ETL Project/.metadata/
+/ETL Project/ETL_PROJECT/temp/
+/ETL Project/ETL_PROJECT/sqlPatterns/
+/ETL Project/ETL_PROJECT/.settings/
+/ETL Project/ETL_PROJECT/resources/config/config.properties
 *.csv
