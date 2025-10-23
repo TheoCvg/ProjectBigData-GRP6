@@ -1,38 +1,11 @@
-# =========================
-# Ignorer les fichiers/dossiers Talend
-# =========================
-
-# Dossiers temporaires et caches
-ETL Project/ETL_PROJECT/temp/
-ETL Project/ETL_PROJECT/poms/jobs/process/*/target/
-ETL Project/ETL_PROJECT/target/
-ETL Project/ETL_PROJECT/bin/
-ETL Project/ETL_PROJECT/build/
-ETL Project/ETL_PROJECT/logs/
-
-# Dossier .metadata (config locale Eclipse/Talend)
-ETL Project/.metadata/
-
-# Fichiers générés automatiquement
-ETL Project/ETL_PROJECT/.settings/
-ETL Project/ETL_PROJECT/.Java/
-ETL Project/ETL_PROJECT/.classpath
-ETL Project/ETL_PROJECT/.project
-
-# Dossiers de sauvegardes ou caches IDE
-**/.idea/
-**/.vscode/
-**/.DS_Store
-**/Thumbs.db
-
-# Archives ou exports
-*.zip
-*.tar.gz
-*.jar
-
-# =========================
-# Ignorer fichiers temporaires système
-# =========================
-*.log
-*.tmp
-*.bak
+*/jobInfo.properties
+.JETEmitters/
+.Java/
+.metadata/
+code/routines/system/.*
+temp/
+sqlPatterns/
+.settings
+poms/
+#talend.project
+#.project
