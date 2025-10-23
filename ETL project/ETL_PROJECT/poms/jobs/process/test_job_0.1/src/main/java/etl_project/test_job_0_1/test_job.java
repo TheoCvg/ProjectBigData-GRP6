@@ -118,8 +118,19 @@ public class test_job implements TalendJob {
 
 		public void synchronizeContext() {
 
+			if (INPUT_PATH != null) {
+
+				this.setProperty("INPUT_PATH", INPUT_PATH.toString());
+
+			}
+
 		}
 
+		public String INPUT_PATH;
+
+		public String getINPUT_PATH() {
+			return this.INPUT_PATH;
+		}
 	}
 
 	protected ContextProperties context = new ContextProperties(); // will be instanciated by MS.
@@ -260,17 +271,44 @@ public class test_job implements TalendJob {
 		}
 	}
 
-	public void tLogRow_1_error(Exception exception, String errorComponent,
+	public void Implicit_Context_Regex_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		Implicit_Context_Context_error(exception, errorComponent, globalMap);
+
+	}
+
+	public void Implicit_Context_Context_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		end_Hash.put(errorComponent, System.currentTimeMillis());
 
 		status = "failure";
 
-		tLogRow_1_onSubJobError(exception, errorComponent, globalMap);
+		Implicit_Context_Regex_onSubJobError(exception, errorComponent, globalMap);
 	}
 
-	public void tLogRow_1_onSubJobError(Exception exception, String errorComponent,
+	public void tFileInputDelimited_1_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tLogRow_2_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void Implicit_Context_Regex_onSubJobError(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
@@ -278,8 +316,873 @@ public class test_job implements TalendJob {
 
 	}
 
-	public void tLogRow_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tLogRow_1_SUBPROCESS_STATE", 0);
+	public void tFileInputDelimited_1_onSubJobError(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
+				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public static class row_Implicit_Context_RegexStruct
+			implements routines.system.IPersistableRow<row_Implicit_Context_RegexStruct> {
+		final static byte[] commonByteArrayLock_ETL_PROJECT_test_job = new byte[0];
+		static byte[] commonByteArray_ETL_PROJECT_test_job = new byte[0];
+
+		public String key;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public String value;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_ETL_PROJECT_test_job.length) {
+					if (length < 1024 && commonByteArray_ETL_PROJECT_test_job.length == 0) {
+						commonByteArray_ETL_PROJECT_test_job = new byte[1024];
+					} else {
+						commonByteArray_ETL_PROJECT_test_job = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_ETL_PROJECT_test_job, 0, length);
+				strReturn = new String(commonByteArray_ETL_PROJECT_test_job, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_ETL_PROJECT_test_job) {
+
+				try {
+
+					int length = 0;
+
+					this.key = readString(dis);
+
+					this.value = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// String
+
+				writeString(this.key, dos);
+
+				// String
+
+				writeString(this.value, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("key=" + key);
+			sb.append(",value=" + value);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row_Implicit_Context_RegexStruct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public void Implicit_Context_RegexProcess(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("Implicit_Context_Regex_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
+		String currentVirtualComponent = null;
+
+		String iterateId = "";
+
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { // start the resume
+				globalResumeTicket = true;
+
+				row_Implicit_Context_RegexStruct row_Implicit_Context_Regex = new row_Implicit_Context_RegexStruct();
+
+				/**
+				 * [Implicit_Context_Context begin ] start
+				 */
+
+				ok_Hash.put("Implicit_Context_Context", false);
+				start_Hash.put("Implicit_Context_Context", System.currentTimeMillis());
+
+				currentVirtualComponent = "Implicit_Context_Context";
+
+				currentComponent = "Implicit_Context_Context";
+
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "Main");
+				}
+
+				int tos_count_Implicit_Context_Context = 0;
+
+				java.util.List<String> assignList_Implicit_Context_Context = new java.util.ArrayList<String>();
+				java.util.List<String> newPropertyList_Implicit_Context_Context = new java.util.ArrayList<String>();
+				java.util.List<String> noAssignList_Implicit_Context_Context = new java.util.ArrayList<String>();
+				int nb_line_Implicit_Context_Context = 0;
+
+				/**
+				 * [Implicit_Context_Context begin ] stop
+				 */
+
+				/**
+				 * [Implicit_Context_Regex begin ] start
+				 */
+
+				ok_Hash.put("Implicit_Context_Regex", false);
+				start_Hash.put("Implicit_Context_Regex", System.currentTimeMillis());
+
+				currentVirtualComponent = "Implicit_Context_Regex";
+
+				currentComponent = "Implicit_Context_Regex";
+
+				int tos_count_Implicit_Context_Regex = 0;
+
+				int nb_line_Implicit_Context_Regex = 0;
+
+				int footer_Implicit_Context_Regex = 0;
+				boolean removeEmptyRowImplicit_Context_Regex = true;
+				Object source_Implicit_Context_Regex = /** Start field Implicit_Context_Regex:FILENAME */
+						"D:/Big data/ProjectBigData-GRP6/ETL project/ETL_PROJECT/resources/config/config.properties"/**
+																													 * End
+																													 * field
+																													 * Implicit_Context_Regex:FILENAME
+																													 */
+				;
+
+				org.talend.fileprocess.TOSDelimitedReader inImplicit_Context_Regex = null;
+				if (source_Implicit_Context_Regex instanceof String
+						|| source_Implicit_Context_Regex instanceof java.io.InputStream) {
+					inImplicit_Context_Regex = new org.talend.fileprocess.TOSDelimitedReader(/**
+																								 * Start field
+																								 * Implicit_Context_Regex:FILENAME
+																								 */
+							"D:/Big data/ProjectBigData-GRP6/ETL project/ETL_PROJECT/resources/config/config.properties"/**
+																														 * End
+																														 * field
+																														 * Implicit_Context_Regex:FILENAME
+																														 */
+							, "ISO-8859-15", "", "\n", removeEmptyRowImplicit_Context_Regex);
+				} else {
+					throw new java.lang.Exception(
+							"The source data should be specified as File Path or InputStream or java.io.Reader!");
+				}
+				String strImplicit_Context_Regex;
+				int totalLineImplicit_Context_Regex = 0, currentLineImplicit_Context_Regex = 0,
+						beginLineImplicit_Context_Regex = 0, lastLineImplicit_Context_Regex = -1,
+						validRowCountImplicit_Context_Regex = 0;
+				int limitImplicit_Context_Regex = -1;
+
+				int headerImplicit_Context_Regex = 0;
+				if (headerImplicit_Context_Regex > 0) {
+					beginLineImplicit_Context_Regex = headerImplicit_Context_Regex + 1;
+				}
+
+				if (footer_Implicit_Context_Regex > 0) {
+					while (inImplicit_Context_Regex.readRecord()) {
+						strImplicit_Context_Regex = inImplicit_Context_Regex.getRowRecord();
+						totalLineImplicit_Context_Regex++;
+					}
+					int lastLineTempImplicit_Context_Regex = totalLineImplicit_Context_Regex
+							- footer_Implicit_Context_Regex < 0 ? 0
+									: totalLineImplicit_Context_Regex - footer_Implicit_Context_Regex;
+					if (lastLineImplicit_Context_Regex > 0) {
+						lastLineImplicit_Context_Regex = lastLineImplicit_Context_Regex < lastLineTempImplicit_Context_Regex
+								? lastLineImplicit_Context_Regex
+								: lastLineTempImplicit_Context_Regex;
+					} else {
+						lastLineImplicit_Context_Regex = lastLineTempImplicit_Context_Regex;
+					}
+					inImplicit_Context_Regex.close();
+					inImplicit_Context_Regex = new org.talend.fileprocess.TOSDelimitedReader(/**
+																								 * Start field
+																								 * Implicit_Context_Regex:FILENAME
+																								 */
+							"D:/Big data/ProjectBigData-GRP6/ETL project/ETL_PROJECT/resources/config/config.properties"/**
+																														 * End
+																														 * field
+																														 * Implicit_Context_Regex:FILENAME
+																														 */
+							, "ISO-8859-15", "", "\n", removeEmptyRowImplicit_Context_Regex);
+				}
+				java.util.StringTokenizer strTokenImplicit_Context_Regex;
+				java.util.regex.Pattern patternImplicit_Context_Regex = java.util.regex.Pattern
+						.compile("^([^" + "=" + "]*)" + "=" + "(.*)$");
+				java.util.regex.Matcher matcherImplicit_Context_Regex = null;
+
+				while (inImplicit_Context_Regex.readRecord()) {
+					strImplicit_Context_Regex = inImplicit_Context_Regex.getRowRecord();
+
+					currentLineImplicit_Context_Regex++;
+					if (currentLineImplicit_Context_Regex < beginLineImplicit_Context_Regex) {
+						continue;
+					}
+					if (lastLineImplicit_Context_Regex > -1
+							&& currentLineImplicit_Context_Regex > lastLineImplicit_Context_Regex) {
+						break;
+					}
+					if (removeEmptyRowImplicit_Context_Regex && ("").equals(strImplicit_Context_Regex)) {
+						continue;
+					}
+					if (limitImplicit_Context_Regex != -1
+							&& validRowCountImplicit_Context_Regex >= limitImplicit_Context_Regex) {
+						break;
+					}
+
+					matcherImplicit_Context_Regex = patternImplicit_Context_Regex.matcher(strImplicit_Context_Regex);
+					int groupCountImplicit_Context_Regex = 0;
+					boolean isMatchImplicit_Context_Regex = matcherImplicit_Context_Regex.find();
+					if (isMatchImplicit_Context_Regex) {
+						groupCountImplicit_Context_Regex = matcherImplicit_Context_Regex.groupCount();
+					}
+					row_Implicit_Context_Regex = null;
+
+					boolean lineIsEmptyImplicit_Context_Regex = strImplicit_Context_Regex.length() == 0;
+
+					String[] valueImplicit_Context_Regex = new String[2];
+					String frontCharImplicit_Context_Regex, behindCharImplicit_Context_Regex;
+					for (int i = 0; i < 2; i++) {
+						valueImplicit_Context_Regex[i] = "";
+						if (lineIsEmptyImplicit_Context_Regex) {
+							continue;
+						}
+						if (i < groupCountImplicit_Context_Regex) {
+							valueImplicit_Context_Regex[i] = matcherImplicit_Context_Regex.group(i + 1);
+						}
+					}
+					validRowCountImplicit_Context_Regex++;
+
+					boolean whetherReject_Implicit_Context_Regex = false;
+					row_Implicit_Context_Regex = new row_Implicit_Context_RegexStruct();
+					try {
+						if (!isMatchImplicit_Context_Regex) {// line data not matched with given regex parameter
+							throw new java.lang.Exception("Line doesn't match: " + strImplicit_Context_Regex);
+						}
+
+						if (valueImplicit_Context_Regex[0] != null && valueImplicit_Context_Regex[0].length() > 0) {
+							row_Implicit_Context_Regex.key = valueImplicit_Context_Regex[0];
+						} else {
+							row_Implicit_Context_Regex.key = "";
+						}
+
+						if (valueImplicit_Context_Regex[1] != null && valueImplicit_Context_Regex[1].length() > 0) {
+							row_Implicit_Context_Regex.value = valueImplicit_Context_Regex[1];
+						} else {
+							row_Implicit_Context_Regex.value = "";
+						}
+
+					} catch (java.lang.Exception e) {
+						whetherReject_Implicit_Context_Regex = true;
+						if (isMatchImplicit_Context_Regex) {
+							System.err.println(e.getMessage());
+						}
+						row_Implicit_Context_Regex = null;
+					}
+
+					nb_line_Implicit_Context_Regex++;
+
+					/**
+					 * [Implicit_Context_Regex begin ] stop
+					 */
+
+					/**
+					 * [Implicit_Context_Regex main ] start
+					 */
+
+					currentVirtualComponent = "Implicit_Context_Regex";
+
+					currentComponent = "Implicit_Context_Regex";
+
+					tos_count_Implicit_Context_Regex++;
+
+					/**
+					 * [Implicit_Context_Regex main ] stop
+					 */
+
+					/**
+					 * [Implicit_Context_Regex process_data_begin ] start
+					 */
+
+					currentVirtualComponent = "Implicit_Context_Regex";
+
+					currentComponent = "Implicit_Context_Regex";
+
+					/**
+					 * [Implicit_Context_Regex process_data_begin ] stop
+					 */
+// Start of branch "row_Implicit_Context_Regex"
+					if (row_Implicit_Context_Regex != null) {
+
+						/**
+						 * [Implicit_Context_Context main ] start
+						 */
+
+						currentVirtualComponent = "Implicit_Context_Context";
+
+						currentComponent = "Implicit_Context_Context";
+
+						if (execStat) {
+							runStat.updateStatOnConnection(iterateId, 1, 1, "Main");
+						}
+
+						//////////////////////////
+						String tmp_key_Implicit_Context_Context = null;
+						String key_Implicit_Context_Context = null;
+						if (row_Implicit_Context_Regex.key != null) {
+							tmp_key_Implicit_Context_Context = row_Implicit_Context_Regex.key.trim();
+							if ((tmp_key_Implicit_Context_Context.startsWith("#")
+									|| tmp_key_Implicit_Context_Context.startsWith("!"))) {
+								tmp_key_Implicit_Context_Context = null;
+							} else {
+								row_Implicit_Context_Regex.key = tmp_key_Implicit_Context_Context;
+							}
+						}
+						if (row_Implicit_Context_Regex.key != null) {
+							key_Implicit_Context_Context = row_Implicit_Context_Regex.key;
+						}
+						String value_Implicit_Context_Context = null;
+						if (row_Implicit_Context_Regex.value != null) {
+							value_Implicit_Context_Context = row_Implicit_Context_Regex.value;
+						}
+
+						String currentValue_Implicit_Context_Context = value_Implicit_Context_Context;
+
+						if (tmp_key_Implicit_Context_Context != null) {
+							try {
+								if (key_Implicit_Context_Context != null
+										&& "INPUT_PATH".equals(key_Implicit_Context_Context)) {
+									context.INPUT_PATH = value_Implicit_Context_Context;
+								}
+
+								if (context.getProperty(key_Implicit_Context_Context) != null) {
+									assignList_Implicit_Context_Context.add(key_Implicit_Context_Context);
+								} else {
+									newPropertyList_Implicit_Context_Context.add(key_Implicit_Context_Context);
+								}
+								if (value_Implicit_Context_Context == null) {
+									context.setProperty(key_Implicit_Context_Context, "");
+								} else {
+									context.setProperty(key_Implicit_Context_Context, value_Implicit_Context_Context);
+								}
+							} catch (java.lang.Exception e) {
+								System.err.println("Setting a value for the key \"" + key_Implicit_Context_Context
+										+ "\" has failed. Error message: " + e.getMessage());
+							}
+							nb_line_Implicit_Context_Context++;
+						}
+						//////////////////////////
+
+						tos_count_Implicit_Context_Context++;
+
+						/**
+						 * [Implicit_Context_Context main ] stop
+						 */
+
+						/**
+						 * [Implicit_Context_Context process_data_begin ] start
+						 */
+
+						currentVirtualComponent = "Implicit_Context_Context";
+
+						currentComponent = "Implicit_Context_Context";
+
+						/**
+						 * [Implicit_Context_Context process_data_begin ] stop
+						 */
+
+						/**
+						 * [Implicit_Context_Context process_data_end ] start
+						 */
+
+						currentVirtualComponent = "Implicit_Context_Context";
+
+						currentComponent = "Implicit_Context_Context";
+
+						/**
+						 * [Implicit_Context_Context process_data_end ] stop
+						 */
+
+					} // End of branch "row_Implicit_Context_Regex"
+
+					/**
+					 * [Implicit_Context_Regex process_data_end ] start
+					 */
+
+					currentVirtualComponent = "Implicit_Context_Regex";
+
+					currentComponent = "Implicit_Context_Regex";
+
+					/**
+					 * [Implicit_Context_Regex process_data_end ] stop
+					 */
+
+					/**
+					 * [Implicit_Context_Regex end ] start
+					 */
+
+					currentVirtualComponent = "Implicit_Context_Regex";
+
+					currentComponent = "Implicit_Context_Regex";
+
+				}
+				if (!(source_Implicit_Context_Regex instanceof java.io.InputStream)) {
+					inImplicit_Context_Regex.close();
+				}
+				inImplicit_Context_Regex = null;
+				globalMap.put("Implicit_Context_Regex_NB_LINE", nb_line_Implicit_Context_Regex);
+
+				ok_Hash.put("Implicit_Context_Regex", true);
+				end_Hash.put("Implicit_Context_Regex", System.currentTimeMillis());
+
+				/**
+				 * [Implicit_Context_Regex end ] stop
+				 */
+
+				/**
+				 * [Implicit_Context_Context end ] start
+				 */
+
+				currentVirtualComponent = "Implicit_Context_Context";
+
+				currentComponent = "Implicit_Context_Context";
+
+				java.util.Enumeration<?> enu_Implicit_Context_Context = context.propertyNames();
+				while (enu_Implicit_Context_Context.hasMoreElements()) {
+					String key_Implicit_Context_Context = (String) enu_Implicit_Context_Context.nextElement();
+					if (!assignList_Implicit_Context_Context.contains(key_Implicit_Context_Context)
+							&& !newPropertyList_Implicit_Context_Context.contains(key_Implicit_Context_Context)) {
+						noAssignList_Implicit_Context_Context.add(key_Implicit_Context_Context);
+					}
+				}
+				for (Object obj_Implicit_Context_Context : newPropertyList_Implicit_Context_Context) {
+
+					System.out.println("Warning: Parameter \"" + obj_Implicit_Context_Context
+							+ "\" is a new parameter of Implicit_Context_Context");
+				}
+				for (Object obj_Implicit_Context_Context : noAssignList_Implicit_Context_Context) {
+
+					System.out.println("Warning: Parameter \"" + obj_Implicit_Context_Context
+							+ "\" has not been set by Implicit_Context_Context");
+
+				}
+
+				String newPropertyStr_Implicit_Context_Context = newPropertyList_Implicit_Context_Context.toString();
+				String newProperty_Implicit_Context_Context = newPropertyStr_Implicit_Context_Context.substring(1,
+						newPropertyStr_Implicit_Context_Context.length() - 1);
+
+				String noAssignStr_Implicit_Context_Context = noAssignList_Implicit_Context_Context.toString();
+				String noAssign_Implicit_Context_Context = noAssignStr_Implicit_Context_Context.substring(1,
+						noAssignStr_Implicit_Context_Context.length() - 1);
+
+				globalMap.put("Implicit_Context_Context_KEY_NOT_INCONTEXT", newProperty_Implicit_Context_Context);
+				globalMap.put("Implicit_Context_Context_KEY_NOT_LOADED", noAssign_Implicit_Context_Context);
+
+				globalMap.put("Implicit_Context_Context_NB_LINE", nb_line_Implicit_Context_Context);
+
+				List<String> parametersToEncrypt_Implicit_Context_Context = new java.util.ArrayList<String>();
+
+				resumeUtil.addLog("NODE", "NODE:Implicit_Context_Context", "", Thread.currentThread().getId() + "", "",
+						"", "", "",
+						resumeUtil.convertToJsonText(context, parametersToEncrypt_Implicit_Context_Context));
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "Main");
+				}
+
+				ok_Hash.put("Implicit_Context_Context", true);
+				end_Hash.put("Implicit_Context_Context", System.currentTimeMillis());
+
+				/**
+				 * [Implicit_Context_Context end ] stop
+				 */
+
+			} // end the resume
+
+		} catch (java.lang.Exception e) {
+
+			TalendException te = new TalendException(e, currentComponent, globalMap);
+
+			te.setVirtualComponentName(currentVirtualComponent);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			runStat.stopThreadStat();
+
+			throw error;
+		} finally {
+
+			try {
+
+				/**
+				 * [Implicit_Context_Regex finally ] start
+				 */
+
+				currentVirtualComponent = "Implicit_Context_Regex";
+
+				currentComponent = "Implicit_Context_Regex";
+
+				/**
+				 * [Implicit_Context_Regex finally ] stop
+				 */
+
+				/**
+				 * [Implicit_Context_Context finally ] start
+				 */
+
+				currentVirtualComponent = "Implicit_Context_Context";
+
+				currentComponent = "Implicit_Context_Context";
+
+				/**
+				 * [Implicit_Context_Context finally ] stop
+				 */
+
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
+			}
+			resourceMap = null;
+		}
+
+		globalMap.put("Implicit_Context_Regex_SUBPROCESS_STATE", 1);
+	}
+
+	public static class row1Struct implements routines.system.IPersistableRow<row1Struct> {
+		final static byte[] commonByteArrayLock_ETL_PROJECT_test_job = new byte[0];
+		static byte[] commonByteArray_ETL_PROJECT_test_job = new byte[0];
+
+		public String nom;
+
+		public String getNom() {
+			return this.nom;
+		}
+
+		public String prenom;
+
+		public String getPrenom() {
+			return this.prenom;
+		}
+
+		public Integer sexe;
+
+		public Integer getSexe() {
+			return this.sexe;
+		}
+
+		public String date_naissance;
+
+		public String getDate_naissance() {
+			return this.date_naissance;
+		}
+
+		public String code_lieu_naissance;
+
+		public String getCode_lieu_naissance() {
+			return this.code_lieu_naissance;
+		}
+
+		public String lieu_naissance;
+
+		public String getLieu_naissance() {
+			return this.lieu_naissance;
+		}
+
+		public String pays_naissance;
+
+		public String getPays_naissance() {
+			return this.pays_naissance;
+		}
+
+		public String date_deces;
+
+		public String getDate_deces() {
+			return this.date_deces;
+		}
+
+		public String code_lieu_deces;
+
+		public String getCode_lieu_deces() {
+			return this.code_lieu_deces;
+		}
+
+		public String numero_acte_deces;
+
+		public String getNumero_acte_deces() {
+			return this.numero_acte_deces;
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_ETL_PROJECT_test_job.length) {
+					if (length < 1024 && commonByteArray_ETL_PROJECT_test_job.length == 0) {
+						commonByteArray_ETL_PROJECT_test_job = new byte[1024];
+					} else {
+						commonByteArray_ETL_PROJECT_test_job = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_ETL_PROJECT_test_job, 0, length);
+				strReturn = new String(commonByteArray_ETL_PROJECT_test_job, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_ETL_PROJECT_test_job) {
+
+				try {
+
+					int length = 0;
+
+					this.nom = readString(dis);
+
+					this.prenom = readString(dis);
+
+					this.sexe = readInteger(dis);
+
+					this.date_naissance = readString(dis);
+
+					this.code_lieu_naissance = readString(dis);
+
+					this.lieu_naissance = readString(dis);
+
+					this.pays_naissance = readString(dis);
+
+					this.date_deces = readString(dis);
+
+					this.code_lieu_deces = readString(dis);
+
+					this.numero_acte_deces = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// String
+
+				writeString(this.nom, dos);
+
+				// String
+
+				writeString(this.prenom, dos);
+
+				// Integer
+
+				writeInteger(this.sexe, dos);
+
+				// String
+
+				writeString(this.date_naissance, dos);
+
+				// String
+
+				writeString(this.code_lieu_naissance, dos);
+
+				// String
+
+				writeString(this.lieu_naissance, dos);
+
+				// String
+
+				writeString(this.pays_naissance, dos);
+
+				// String
+
+				writeString(this.date_deces, dos);
+
+				// String
+
+				writeString(this.code_lieu_deces, dos);
+
+				// String
+
+				writeString(this.numero_acte_deces, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("nom=" + nom);
+			sb.append(",prenom=" + prenom);
+			sb.append(",sexe=" + String.valueOf(sexe));
+			sb.append(",date_naissance=" + date_naissance);
+			sb.append(",code_lieu_naissance=" + code_lieu_naissance);
+			sb.append(",lieu_naissance=" + lieu_naissance);
+			sb.append(",pays_naissance=" + pays_naissance);
+			sb.append(",date_deces=" + date_deces);
+			sb.append(",code_lieu_deces=" + code_lieu_deces);
+			sb.append(",numero_acte_deces=" + numero_acte_deces);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row1Struct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public void tFileInputDelimited_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tFileInputDelimited_1_SUBPROCESS_STATE", 0);
 
 		final boolean execStat = this.execStat;
 
@@ -298,80 +1201,634 @@ public class test_job implements TalendJob {
 			if (resumeIt || globalResumeTicket) { // start the resume
 				globalResumeTicket = true;
 
+				row1Struct row1 = new row1Struct();
+
 				/**
-				 * [tLogRow_1 begin ] start
+				 * [tLogRow_2 begin ] start
 				 */
 
-				ok_Hash.put("tLogRow_1", false);
-				start_Hash.put("tLogRow_1", System.currentTimeMillis());
+				ok_Hash.put("tLogRow_2", false);
+				start_Hash.put("tLogRow_2", System.currentTimeMillis());
 
-				currentComponent = "tLogRow_1";
+				currentComponent = "tLogRow_2";
 
-				int tos_count_tLogRow_1 = 0;
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row1");
+				}
+
+				int tos_count_tLogRow_2 = 0;
 
 				///////////////////////
 
-				final String OUTPUT_FIELD_SEPARATOR_tLogRow_1 = "|";
-				java.io.PrintStream consoleOut_tLogRow_1 = null;
+				final String OUTPUT_FIELD_SEPARATOR_tLogRow_2 = "|";
+				java.io.PrintStream consoleOut_tLogRow_2 = null;
 
-				StringBuilder strBuffer_tLogRow_1 = null;
-				int nb_line_tLogRow_1 = 0;
+				StringBuilder strBuffer_tLogRow_2 = null;
+				int nb_line_tLogRow_2 = 0;
 ///////////////////////    			
 
 				/**
-				 * [tLogRow_1 begin ] stop
+				 * [tLogRow_2 begin ] stop
 				 */
 
 				/**
-				 * [tLogRow_1 main ] start
+				 * [tFileInputDelimited_1 begin ] start
 				 */
 
-				currentComponent = "tLogRow_1";
+				ok_Hash.put("tFileInputDelimited_1", false);
+				start_Hash.put("tFileInputDelimited_1", System.currentTimeMillis());
 
-				tos_count_tLogRow_1++;
+				currentComponent = "tFileInputDelimited_1";
 
-				/**
-				 * [tLogRow_1 main ] stop
-				 */
+				int tos_count_tFileInputDelimited_1 = 0;
 
-				/**
-				 * [tLogRow_1 process_data_begin ] start
-				 */
+				final routines.system.RowState rowstate_tFileInputDelimited_1 = new routines.system.RowState();
 
-				currentComponent = "tLogRow_1";
+				int nb_line_tFileInputDelimited_1 = 0;
+				int footer_tFileInputDelimited_1 = 0;
+				int totalLinetFileInputDelimited_1 = 0;
+				int limittFileInputDelimited_1 = -1;
+				int lastLinetFileInputDelimited_1 = -1;
 
-				/**
-				 * [tLogRow_1 process_data_begin ] stop
-				 */
+				char fieldSeparator_tFileInputDelimited_1[] = null;
 
-				/**
-				 * [tLogRow_1 process_data_end ] start
-				 */
+				// support passing value (property: Field Separator) by 'context.fs' or
+				// 'globalMap.get("fs")'.
+				if (((String) ",").length() > 0) {
+					fieldSeparator_tFileInputDelimited_1 = ((String) ",").toCharArray();
+				} else {
+					throw new IllegalArgumentException("Field Separator must be assigned a char.");
+				}
 
-				currentComponent = "tLogRow_1";
+				char rowSeparator_tFileInputDelimited_1[] = null;
 
-				/**
-				 * [tLogRow_1 process_data_end ] stop
-				 */
+				// support passing value (property: Row Separator) by 'context.rs' or
+				// 'globalMap.get("rs")'.
+				if (((String) "\n").length() > 0) {
+					rowSeparator_tFileInputDelimited_1 = ((String) "\n").toCharArray();
+				} else {
+					throw new IllegalArgumentException("Row Separator must be assigned a char.");
+				}
 
-				/**
-				 * [tLogRow_1 end ] start
-				 */
+				Object filename_tFileInputDelimited_1 = /** Start field tFileInputDelimited_1:FILENAME */
+						context.INPUT_PATH + "deces.csv"/** End field tFileInputDelimited_1:FILENAME */
+				;
+				com.talend.csv.CSVReader csvReadertFileInputDelimited_1 = null;
 
-				currentComponent = "tLogRow_1";
+				try {
 
+					String[] rowtFileInputDelimited_1 = null;
+					int currentLinetFileInputDelimited_1 = 0;
+					int outputLinetFileInputDelimited_1 = 0;
+					try {// TD110 begin
+						if (filename_tFileInputDelimited_1 instanceof java.io.InputStream) {
+
+							int footer_value_tFileInputDelimited_1 = 0;
+							if (footer_value_tFileInputDelimited_1 > 0) {
+								throw new java.lang.Exception(
+										"When the input source is a stream,footer shouldn't be bigger than 0.");
+							}
+
+							csvReadertFileInputDelimited_1 = new com.talend.csv.CSVReader(
+									(java.io.InputStream) filename_tFileInputDelimited_1,
+									fieldSeparator_tFileInputDelimited_1[0], "ISO-8859-15");
+						} else {
+							csvReadertFileInputDelimited_1 = new com.talend.csv.CSVReader(
+									new java.io.BufferedReader(new java.io.InputStreamReader(
+											new java.io.FileInputStream(String.valueOf(filename_tFileInputDelimited_1)),
+											"ISO-8859-15")),
+									fieldSeparator_tFileInputDelimited_1[0]);
+						}
+
+						csvReadertFileInputDelimited_1.setTrimWhitespace(false);
+						if ((rowSeparator_tFileInputDelimited_1[0] != '\n')
+								&& (rowSeparator_tFileInputDelimited_1[0] != '\r'))
+							csvReadertFileInputDelimited_1.setLineEnd("" + rowSeparator_tFileInputDelimited_1[0]);
+
+						csvReadertFileInputDelimited_1.setQuoteChar(' ');
+
+						// ?????doesn't work for other escapeChar
+						// the default escape mode is double escape
+						csvReadertFileInputDelimited_1.setEscapeChar(csvReadertFileInputDelimited_1.getQuoteChar());
+
+						if (footer_tFileInputDelimited_1 > 0) {
+							for (totalLinetFileInputDelimited_1 = 0; totalLinetFileInputDelimited_1 < 1; totalLinetFileInputDelimited_1++) {
+								csvReadertFileInputDelimited_1.readNext();
+							}
+							csvReadertFileInputDelimited_1.setSkipEmptyRecords(true);
+							while (csvReadertFileInputDelimited_1.readNext()) {
+
+								rowtFileInputDelimited_1 = csvReadertFileInputDelimited_1.getValues();
+								if (!(rowtFileInputDelimited_1.length == 1
+										&& ("\015").equals(rowtFileInputDelimited_1[0]))) {// empty line when row
+																							// separator is '\n'
+
+									totalLinetFileInputDelimited_1++;
+
+								}
+
+							}
+							int lastLineTemptFileInputDelimited_1 = totalLinetFileInputDelimited_1
+									- footer_tFileInputDelimited_1 < 0 ? 0
+											: totalLinetFileInputDelimited_1 - footer_tFileInputDelimited_1;
+							if (lastLinetFileInputDelimited_1 > 0) {
+								lastLinetFileInputDelimited_1 = lastLinetFileInputDelimited_1 < lastLineTemptFileInputDelimited_1
+										? lastLinetFileInputDelimited_1
+										: lastLineTemptFileInputDelimited_1;
+							} else {
+								lastLinetFileInputDelimited_1 = lastLineTemptFileInputDelimited_1;
+							}
+
+							csvReadertFileInputDelimited_1.close();
+							if (filename_tFileInputDelimited_1 instanceof java.io.InputStream) {
+								csvReadertFileInputDelimited_1 = new com.talend.csv.CSVReader(
+										(java.io.InputStream) filename_tFileInputDelimited_1,
+										fieldSeparator_tFileInputDelimited_1[0], "ISO-8859-15");
+							} else {
+								csvReadertFileInputDelimited_1 = new com.talend.csv.CSVReader(
+										new java.io.BufferedReader(new java.io.InputStreamReader(
+												new java.io.FileInputStream(
+														String.valueOf(filename_tFileInputDelimited_1)),
+												"ISO-8859-15")),
+										fieldSeparator_tFileInputDelimited_1[0]);
+							}
+							csvReadertFileInputDelimited_1.setTrimWhitespace(false);
+							if ((rowSeparator_tFileInputDelimited_1[0] != '\n')
+									&& (rowSeparator_tFileInputDelimited_1[0] != '\r'))
+								csvReadertFileInputDelimited_1.setLineEnd("" + rowSeparator_tFileInputDelimited_1[0]);
+
+							csvReadertFileInputDelimited_1.setQuoteChar(' ');
+
+							// ?????doesn't work for other escapeChar
+							// the default escape mode is double escape
+							csvReadertFileInputDelimited_1.setEscapeChar(csvReadertFileInputDelimited_1.getQuoteChar());
+
+						}
+
+						if (limittFileInputDelimited_1 != 0) {
+							for (currentLinetFileInputDelimited_1 = 0; currentLinetFileInputDelimited_1 < 1; currentLinetFileInputDelimited_1++) {
+								csvReadertFileInputDelimited_1.readNext();
+							}
+						}
+						csvReadertFileInputDelimited_1.setSkipEmptyRecords(true);
+
+					} catch (java.lang.Exception e) {
+
+						System.err.println(e.getMessage());
+
+					} // TD110 end
+
+					while (limittFileInputDelimited_1 != 0 && csvReadertFileInputDelimited_1 != null
+							&& csvReadertFileInputDelimited_1.readNext()) {
+						rowstate_tFileInputDelimited_1.reset();
+
+						rowtFileInputDelimited_1 = csvReadertFileInputDelimited_1.getValues();
+
+						if (rowtFileInputDelimited_1.length == 1 && ("\015").equals(rowtFileInputDelimited_1[0])) {// empty
+																													// line
+																													// when
+																													// row
+																													// separator
+																													// is
+																													// '\n'
+							continue;
+						}
+
+						currentLinetFileInputDelimited_1++;
+
+						if (lastLinetFileInputDelimited_1 > -1
+								&& currentLinetFileInputDelimited_1 > lastLinetFileInputDelimited_1) {
+							break;
+						}
+						outputLinetFileInputDelimited_1++;
+						if (limittFileInputDelimited_1 > 0
+								&& outputLinetFileInputDelimited_1 > limittFileInputDelimited_1) {
+							break;
+						}
+
+						row1 = null;
+
+						boolean whetherReject_tFileInputDelimited_1 = false;
+						row1 = new row1Struct();
+						try {
+
+							char fieldSeparator_tFileInputDelimited_1_ListType[] = null;
+							// support passing value (property: Field Separator) by 'context.fs' or
+							// 'globalMap.get("fs")'.
+							if (((String) ",").length() > 0) {
+								fieldSeparator_tFileInputDelimited_1_ListType = ((String) ",").toCharArray();
+							} else {
+								throw new IllegalArgumentException("Field Separator must be assigned a char.");
+							}
+							if (rowtFileInputDelimited_1.length == 1 && ("\015").equals(rowtFileInputDelimited_1[0])) {// empty
+																														// line
+																														// when
+																														// row
+																														// separator
+																														// is
+																														// '\n'
+
+								row1.nom = null;
+
+								row1.prenom = null;
+
+								row1.sexe = null;
+
+								row1.date_naissance = null;
+
+								row1.code_lieu_naissance = null;
+
+								row1.lieu_naissance = null;
+
+								row1.pays_naissance = null;
+
+								row1.date_deces = null;
+
+								row1.code_lieu_deces = null;
+
+								row1.numero_acte_deces = null;
+
+							} else {
+
+								int columnIndexWithD_tFileInputDelimited_1 = 0; // Column Index
+
+								columnIndexWithD_tFileInputDelimited_1 = 0;
+
+								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
+
+									row1.nom = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
+
+								} else {
+
+									row1.nom = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited_1 = 1;
+
+								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
+
+									row1.prenom = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
+
+								} else {
+
+									row1.prenom = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited_1 = 2;
+
+								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
+
+									if (rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1].length() > 0) {
+										try {
+
+											row1.sexe = ParserUtils.parseTo_Integer(
+													rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1]);
+
+										} catch (java.lang.Exception ex_tFileInputDelimited_1) {
+											rowstate_tFileInputDelimited_1.setException(new RuntimeException(String
+													.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
+															"sexe", "row1",
+															rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1],
+															ex_tFileInputDelimited_1),
+													ex_tFileInputDelimited_1));
+										}
+									} else {
+
+										row1.sexe = null;
+
+									}
+
+								} else {
+
+									row1.sexe = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited_1 = 3;
+
+								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
+
+									row1.date_naissance = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
+
+								} else {
+
+									row1.date_naissance = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited_1 = 4;
+
+								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
+
+									row1.code_lieu_naissance = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
+
+								} else {
+
+									row1.code_lieu_naissance = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited_1 = 5;
+
+								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
+
+									row1.lieu_naissance = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
+
+								} else {
+
+									row1.lieu_naissance = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited_1 = 6;
+
+								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
+
+									row1.pays_naissance = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
+
+								} else {
+
+									row1.pays_naissance = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited_1 = 7;
+
+								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
+
+									row1.date_deces = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
+
+								} else {
+
+									row1.date_deces = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited_1 = 8;
+
+								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
+
+									row1.code_lieu_deces = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
+
+								} else {
+
+									row1.code_lieu_deces = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited_1 = 9;
+
+								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
+
+									row1.numero_acte_deces = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
+
+								} else {
+
+									row1.numero_acte_deces = null;
+
+								}
+
+							}
+
+							if (rowstate_tFileInputDelimited_1.getException() != null) {
+								throw rowstate_tFileInputDelimited_1.getException();
+							}
+
+						} catch (java.lang.Exception e) {
+							whetherReject_tFileInputDelimited_1 = true;
+
+							System.err.println(e.getMessage());
+							row1 = null;
+
+						}
+
+						/**
+						 * [tFileInputDelimited_1 begin ] stop
+						 */
+
+						/**
+						 * [tFileInputDelimited_1 main ] start
+						 */
+
+						currentComponent = "tFileInputDelimited_1";
+
+						tos_count_tFileInputDelimited_1++;
+
+						/**
+						 * [tFileInputDelimited_1 main ] stop
+						 */
+
+						/**
+						 * [tFileInputDelimited_1 process_data_begin ] start
+						 */
+
+						currentComponent = "tFileInputDelimited_1";
+
+						/**
+						 * [tFileInputDelimited_1 process_data_begin ] stop
+						 */
+// Start of branch "row1"
+						if (row1 != null) {
+
+							/**
+							 * [tLogRow_2 main ] start
+							 */
+
+							currentComponent = "tLogRow_2";
+
+							if (execStat) {
+								runStat.updateStatOnConnection(iterateId, 1, 1, "row1");
+							}
+
+///////////////////////		
+
+							strBuffer_tLogRow_2 = new StringBuilder();
+
+							if (row1.nom != null) { //
+
+								strBuffer_tLogRow_2.append(String.valueOf(row1.nom));
+
+							} //
+
+							strBuffer_tLogRow_2.append("|");
+
+							if (row1.prenom != null) { //
+
+								strBuffer_tLogRow_2.append(String.valueOf(row1.prenom));
+
+							} //
+
+							strBuffer_tLogRow_2.append("|");
+
+							if (row1.sexe != null) { //
+
+								strBuffer_tLogRow_2.append(String.valueOf(row1.sexe));
+
+							} //
+
+							strBuffer_tLogRow_2.append("|");
+
+							if (row1.date_naissance != null) { //
+
+								strBuffer_tLogRow_2.append(String.valueOf(row1.date_naissance));
+
+							} //
+
+							strBuffer_tLogRow_2.append("|");
+
+							if (row1.code_lieu_naissance != null) { //
+
+								strBuffer_tLogRow_2.append(String.valueOf(row1.code_lieu_naissance));
+
+							} //
+
+							strBuffer_tLogRow_2.append("|");
+
+							if (row1.lieu_naissance != null) { //
+
+								strBuffer_tLogRow_2.append(String.valueOf(row1.lieu_naissance));
+
+							} //
+
+							strBuffer_tLogRow_2.append("|");
+
+							if (row1.pays_naissance != null) { //
+
+								strBuffer_tLogRow_2.append(String.valueOf(row1.pays_naissance));
+
+							} //
+
+							strBuffer_tLogRow_2.append("|");
+
+							if (row1.date_deces != null) { //
+
+								strBuffer_tLogRow_2.append(String.valueOf(row1.date_deces));
+
+							} //
+
+							strBuffer_tLogRow_2.append("|");
+
+							if (row1.code_lieu_deces != null) { //
+
+								strBuffer_tLogRow_2.append(String.valueOf(row1.code_lieu_deces));
+
+							} //
+
+							strBuffer_tLogRow_2.append("|");
+
+							if (row1.numero_acte_deces != null) { //
+
+								strBuffer_tLogRow_2.append(String.valueOf(row1.numero_acte_deces));
+
+							} //
+
+							if (globalMap.get("tLogRow_CONSOLE") != null) {
+								consoleOut_tLogRow_2 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
+							} else {
+								consoleOut_tLogRow_2 = new java.io.PrintStream(
+										new java.io.BufferedOutputStream(System.out));
+								globalMap.put("tLogRow_CONSOLE", consoleOut_tLogRow_2);
+							}
+							consoleOut_tLogRow_2.println(strBuffer_tLogRow_2.toString());
+							consoleOut_tLogRow_2.flush();
+							nb_line_tLogRow_2++;
 //////
-//////
-				globalMap.put("tLogRow_1_NB_LINE", nb_line_tLogRow_1);
+
+//////                    
 
 ///////////////////////    			
 
-				ok_Hash.put("tLogRow_1", true);
-				end_Hash.put("tLogRow_1", System.currentTimeMillis());
+							tos_count_tLogRow_2++;
+
+							/**
+							 * [tLogRow_2 main ] stop
+							 */
+
+							/**
+							 * [tLogRow_2 process_data_begin ] start
+							 */
+
+							currentComponent = "tLogRow_2";
+
+							/**
+							 * [tLogRow_2 process_data_begin ] stop
+							 */
+
+							/**
+							 * [tLogRow_2 process_data_end ] start
+							 */
+
+							currentComponent = "tLogRow_2";
+
+							/**
+							 * [tLogRow_2 process_data_end ] stop
+							 */
+
+						} // End of branch "row1"
+
+						/**
+						 * [tFileInputDelimited_1 process_data_end ] start
+						 */
+
+						currentComponent = "tFileInputDelimited_1";
+
+						/**
+						 * [tFileInputDelimited_1 process_data_end ] stop
+						 */
+
+						/**
+						 * [tFileInputDelimited_1 end ] start
+						 */
+
+						currentComponent = "tFileInputDelimited_1";
+
+						nb_line_tFileInputDelimited_1++;
+					}
+
+				} finally {
+					if (!(filename_tFileInputDelimited_1 instanceof java.io.InputStream)) {
+						if (csvReadertFileInputDelimited_1 != null) {
+							csvReadertFileInputDelimited_1.close();
+						}
+					}
+					if (csvReadertFileInputDelimited_1 != null) {
+						globalMap.put("tFileInputDelimited_1_NB_LINE", nb_line_tFileInputDelimited_1);
+					}
+
+				}
+
+				ok_Hash.put("tFileInputDelimited_1", true);
+				end_Hash.put("tFileInputDelimited_1", System.currentTimeMillis());
 
 				/**
-				 * [tLogRow_1 end ] stop
+				 * [tFileInputDelimited_1 end ] stop
 				 */
+
+				/**
+				 * [tLogRow_2 end ] start
+				 */
+
+				currentComponent = "tLogRow_2";
+
+//////
+//////
+				globalMap.put("tLogRow_2_NB_LINE", nb_line_tLogRow_2);
+
+///////////////////////    			
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row1");
+				}
+
+				ok_Hash.put("tLogRow_2", true);
+				end_Hash.put("tLogRow_2", System.currentTimeMillis());
+
+				/**
+				 * [tLogRow_2 end ] stop
+				 */
+
 			} // end the resume
 
 		} catch (java.lang.Exception e) {
@@ -389,14 +1846,25 @@ public class test_job implements TalendJob {
 			try {
 
 				/**
-				 * [tLogRow_1 finally ] start
+				 * [tFileInputDelimited_1 finally ] start
 				 */
 
-				currentComponent = "tLogRow_1";
+				currentComponent = "tFileInputDelimited_1";
 
 				/**
-				 * [tLogRow_1 finally ] stop
+				 * [tFileInputDelimited_1 finally ] stop
 				 */
+
+				/**
+				 * [tLogRow_2 finally ] start
+				 */
+
+				currentComponent = "tLogRow_2";
+
+				/**
+				 * [tLogRow_2 finally ] stop
+				 */
+
 			} catch (java.lang.Exception e) {
 				// ignore
 			} catch (java.lang.Error error) {
@@ -405,7 +1873,7 @@ public class test_job implements TalendJob {
 			resourceMap = null;
 		}
 
-		globalMap.put("tLogRow_1_SUBPROCESS_STATE", 1);
+		globalMap.put("tFileInputDelimited_1_SUBPROCESS_STATE", 1);
 	}
 
 	public String resuming_logs_dir_path = null;
@@ -549,6 +2017,8 @@ public class test_job implements TalendJob {
 			}
 			class ContextProcessing {
 				private void processContext_0() {
+					context.setContextType("INPUT_PATH", "id_String");
+					context.INPUT_PATH = (String) context.getProperty("INPUT_PATH");
 				}
 
 				public void processAllContext() {
@@ -564,6 +2034,9 @@ public class test_job implements TalendJob {
 
 		// get context value from parent directly
 		if (parentContextMap != null && !parentContextMap.isEmpty()) {
+			if (parentContextMap.containsKey("INPUT_PATH")) {
+				context.INPUT_PATH = (String) parentContextMap.get("INPUT_PATH");
+			}
 		}
 
 		// Resume: init the resumeUtil
@@ -596,9 +2069,35 @@ public class test_job implements TalendJob {
 
 		startTime = System.currentTimeMillis();
 
+		try {
+			errorCode = null;
+			Implicit_Context_RegexProcess(globalMap);
+			if (!"failure".equals(status)) {
+				status = "end";
+			}
+		} catch (TalendException e_Implicit_Context_Regex) {
+			globalMap.put("Implicit_Context_Regex_SUBPROCESS_STATE", -1);
+
+			e_Implicit_Context_Regex.printStackTrace();
+
+		}
+
 		this.globalResumeTicket = true;// to run tPreJob
 
 		this.globalResumeTicket = false;// to run others jobs
+
+		try {
+			errorCode = null;
+			tFileInputDelimited_1Process(globalMap);
+			if (!"failure".equals(status)) {
+				status = "end";
+			}
+		} catch (TalendException e_tFileInputDelimited_1) {
+			globalMap.put("tFileInputDelimited_1_SUBPROCESS_STATE", -1);
+
+			e_tFileInputDelimited_1.printStackTrace();
+
+		}
 
 		this.globalResumeTicket = true;// to run tPostJob
 
@@ -750,6 +2249,6 @@ public class test_job implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 24641 characters generated by Talend Open Studio for Big Data on the 23
- * octobre 2025 14:05:21 CEST
+ * 73337 characters generated by Talend Open Studio for Big Data on the 23
+ * octobre 2025 15:54:24 CEST
  ************************************************************************************************/

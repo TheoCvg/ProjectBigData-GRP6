@@ -263,7 +263,7 @@
         "show" : true,
         "field" : "CHECK",
         "name" : "IMPLICIT_TCONTEXTLOAD",
-        "value" : "false",
+        "value" : "true",
         "contextMode" : false
       }, {
         "show" : true,
@@ -275,7 +275,7 @@
         "show" : true,
         "field" : "RADIO",
         "name" : "FROM_FILE_FLAG_IMPLICIT_CONTEXT",
-        "value" : "false",
+        "value" : "true",
         "contextMode" : false
       }, {
         "show" : true,
@@ -287,13 +287,13 @@
         "show" : true,
         "field" : "FILE",
         "name" : "IMPLICIT_TCONTEXTLOAD_FILE",
-        "value" : "\"\"",
+        "value" : "\"D:/Big data/ProjectBigData-GRP6/ETL project/ETL_PROJECT/resources/config/config.properties\"",
         "contextMode" : false
       }, {
         "show" : true,
         "field" : "TEXT",
         "name" : "FIELDSEPARATOR",
-        "value" : "\"\"",
+        "value" : "\"=\"",
         "contextMode" : false
       }, {
         "show" : true,
@@ -388,7 +388,7 @@
         "show" : true,
         "field" : "PASSWORD",
         "name" : "PASS_IMPLICIT_CONTEXT",
-        "value" : "enc:system.encryption.key.v1:yIprdrlxGShiJppGfDk9JtOpg8+lBzOiFRadbi+8",
+        "value" : "enc:system.encryption.key.v1:j6hv5o9KaxHNAELHJZbpotC44ejbFu3JkZSHBr7D",
         "contextMode" : false
       }, {
         "show" : true,
@@ -412,13 +412,13 @@
         "show" : true,
         "field" : "CLOSED_LIST",
         "name" : "LOAD_NEW_VARIABLE",
-        "value" : "",
+        "value" : "Warning",
         "contextMode" : false
       }, {
         "show" : true,
         "field" : "CLOSED_LIST",
         "name" : "NOT_LOAD_OLD_VARIABLE",
-        "value" : "",
+        "value" : "Warning",
         "contextMode" : false
       }, {
         "show" : true,
