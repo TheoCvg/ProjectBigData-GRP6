@@ -11,6 +11,8 @@
   <modules>
     <module>code/routines</module>
     <module>jobs/process/test_job_0.1</module>
+    <module>jobs/process/deces_0.1</module>
+    <module>jobs/process/satisfaction_0.1</module>
   </modules>
   <properties>
     <talend.project.name>ETL_PROJECT</talend.project.name>
