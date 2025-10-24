@@ -3,11 +3,17 @@
   <context confirmationNeeded="false" name="Default">
     <contextParameter comment="" name="postgres_DB_input_Port" prompt="postgres_DB_input_Port?" promptNeeded="false" repositoryContextId="_iWMxMLCvEfCTVbmB-UJ4Jw" type="id_String" value="5432"/>
     <contextParameter comment="" name="postgres_DB_input_Schema" prompt="postgres_DB_input_Schema?" promptNeeded="false" repositoryContextId="_iWMxMLCvEfCTVbmB-UJ4Jw" type="id_String" value="public"/>
-    <contextParameter comment="" name="postgres_DB_input_Password" prompt="postgres_DB_input_Password?" promptNeeded="false" repositoryContextId="_iWMxMLCvEfCTVbmB-UJ4Jw" type="id_Password" value="enc:system.encryption.key.v1:MW+UuyujvwgKh3p3g74Sn2PQ++zpL6R9jZSrIQ8E6DE="/>
+    <contextParameter comment="" name="postgres_DB_input_Password" prompt="postgres_DB_input_Password?" promptNeeded="false" repositoryContextId="_iWMxMLCvEfCTVbmB-UJ4Jw" type="id_Password" value="enc:system.encryption.key.v1:Y+nC5kciqJKTtk6MUnSwkDTHKfF61BLdx6r2W70FTQY="/>
     <contextParameter comment="" name="postgres_DB_input_Database" prompt="postgres_DB_input_Database?" promptNeeded="false" repositoryContextId="_iWMxMLCvEfCTVbmB-UJ4Jw" type="id_String" value="postgres"/>
     <contextParameter comment="" name="postgres_DB_input_Login" prompt="postgres_DB_input_Login?" promptNeeded="false" repositoryContextId="_iWMxMLCvEfCTVbmB-UJ4Jw" type="id_String" value="postgres"/>
     <contextParameter comment="" name="postgres_DB_input_Server" prompt="postgres_DB_input_Server?" promptNeeded="false" repositoryContextId="_iWMxMLCvEfCTVbmB-UJ4Jw" type="id_String" value=""/>
     <contextParameter comment="" name="postgres_DB_input_AdditionalParams" prompt="postgres_DB_input_AdditionalParams?" promptNeeded="false" repositoryContextId="_iWMxMLCvEfCTVbmB-UJ4Jw" type="id_String" value=""/>
+    <contextParameter comment="" name="hadoop_cluster_NameNodeUri" prompt="hadoop_cluster_NameNodeUri?" promptNeeded="false" repositoryContextId="_AIyhILC5EfCTVbmB-UJ4Jw" type="id_String" value="hdfs://quickstart.cloudera:8020"/>
+    <contextParameter comment="" name="hadoop_cluster_User" prompt="hadoop_cluster_User?" promptNeeded="false" repositoryContextId="_AIyhILC5EfCTVbmB-UJ4Jw" type="id_String" value="cloudera"/>
+    <contextParameter comment="" name="hadoop_cluster_hadoopConfSpecificJar" prompt="hadoop_cluster_hadoopConfSpecificJar?" promptNeeded="false" repositoryContextId="_AIyhILC5EfCTVbmB-UJ4Jw" type="id_String" value=""/>
+    <contextParameter comment="" name="hadoop_cluster_ResourceManagerScheduler" prompt="hadoop_cluster_ResourceManagerScheduler?" promptNeeded="false" repositoryContextId="_AIyhILC5EfCTVbmB-UJ4Jw" type="id_String" value="quickstart.cloudera:8030"/>
+    <contextParameter comment="" name="hadoop_cluster_ResourceManager" prompt="hadoop_cluster_ResourceManager?" promptNeeded="false" repositoryContextId="_AIyhILC5EfCTVbmB-UJ4Jw" type="id_String" value="quickstart.cloudera:8032"/>
+    <contextParameter comment="" name="hadoop_cluster_JobHistory" prompt="hadoop_cluster_JobHistory?" promptNeeded="false" repositoryContextId="_AIyhILC5EfCTVbmB-UJ4Jw" type="id_String" value="quickstart.cloudera:10020"/>
   </context>
   <parameters>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="0" show="false"/>
@@ -50,7 +56,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:MnsLtYQC74N5cySqdPTunTIUYhdgR3kCXrn+sW31" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:sPSp3PW+sVoqhgAwzPy5cDZRe3SHZr/o2hlpT7zm" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -85,7 +91,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:A8VImRpGBpxOxhiXNPVNLR356921cbkrHF4BlZc0" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:DeW5MgxiX+arz0SNoJOHJlL9ewsyj3reWaz5fcfl" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
@@ -114,7 +120,7 @@
     <routinesParameter id="_lx3DAK_vEfCJeviag_DAVQ" name="TalendStringUtil"/>
     <routinesParameter id="_lxyKgK_vEfCJeviag_DAVQ" name="TalendString"/>
   </parameters>
-  <node componentName="tPostgresqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="160">
+  <node componentName="tPostgresqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="160" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_1" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
@@ -125,7 +131,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.postgres_DB_input_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.postgres_DB_input_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.postgres_DB_input_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:2hqa2rad72DX2YP+K9HHOdP7Oy93TifALUuUXnwtoaHpirYIH/sV+czjKhn2yFH6R8mDUGR2K1DX3Voc6Ns="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:iN9SAkxkRcHwxCwwQMo9X52QBLJFsUM+VAVm45Sp+v8iXU0a8zlG4Z+zugwOYdFZMId15yVQj70/zfmzaho="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;Patient&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>

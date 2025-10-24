@@ -3,7 +3,7 @@
   <context confirmationNeeded="false" name="Default">
     <contextParameter comment="" name="postgres_DB_input_Port" prompt="postgres_DB_input_Port?" promptNeeded="false" repositoryContextId="_iWMxMLCvEfCTVbmB-UJ4Jw" type="id_String" value="5432"/>
     <contextParameter comment="" name="postgres_DB_input_Schema" prompt="postgres_DB_input_Schema?" promptNeeded="false" repositoryContextId="_iWMxMLCvEfCTVbmB-UJ4Jw" type="id_String" value="public"/>
-    <contextParameter comment="" name="postgres_DB_input_Password" prompt="postgres_DB_input_Password?" promptNeeded="false" repositoryContextId="_iWMxMLCvEfCTVbmB-UJ4Jw" type="id_Password" value="enc:system.encryption.key.v1:g8RwuT5JA4nnKNugjAdW+zATcBvfYu/cE64A/eP/pHw="/>
+    <contextParameter comment="" name="postgres_DB_input_Password" prompt="postgres_DB_input_Password?" promptNeeded="false" repositoryContextId="_iWMxMLCvEfCTVbmB-UJ4Jw" type="id_Password" value="enc:system.encryption.key.v1:+C1Yz7V/aUe5SvqldkcdM+tQBEQnld0VqgWLKUorB+M="/>
     <contextParameter comment="" name="postgres_DB_input_Database" prompt="postgres_DB_input_Database?" promptNeeded="false" repositoryContextId="_iWMxMLCvEfCTVbmB-UJ4Jw" type="id_String" value="postgres"/>
     <contextParameter comment="" name="postgres_DB_input_Login" prompt="postgres_DB_input_Login?" promptNeeded="false" repositoryContextId="_iWMxMLCvEfCTVbmB-UJ4Jw" type="id_String" value="postgres"/>
     <contextParameter comment="" name="postgres_DB_input_Server" prompt="postgres_DB_input_Server?" promptNeeded="false" repositoryContextId="_iWMxMLCvEfCTVbmB-UJ4Jw" type="id_String" value=""/>
@@ -50,7 +50,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:YHKd+XGOSTavM0dUoG53ZJ/iysfUIKrxNA/NKw3c" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:okKmfR/Z+WzWTdaYOsQf5AyCIk//TEiVQdA9Z2rY" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -85,7 +85,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:yjYXlAuu9sv2NAt3D+Yo8NOCcDQN4PVFtbSiVXvr" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:C7Sn3HkFfOn+KwlujF4l20RNATJu2m6BgFjJ2GLQ" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
@@ -114,7 +114,7 @@
     <routinesParameter id="_lx3DAK_vEfCJeviag_DAVQ" name="TalendStringUtil"/>
     <routinesParameter id="_lxyKgK_vEfCJeviag_DAVQ" name="TalendString"/>
   </parameters>
-  <node componentName="tPostgresqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="192" posY="160">
+  <node componentName="tPostgresqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="160" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_1" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_VQsI8LCuEfCTVbmB-UJ4Jw" show="false"/>
@@ -127,7 +127,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.postgres_DB_input_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.postgres_DB_input_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.postgres_DB_input_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:+kvvy0VFvA6c2X9xfgUC1vMyWVTFUanKGVuYZ64pLh96FD1E//L4To6bdMcwFRcP/q452MEBSB7QFruo2is="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:jrCBcbO/lmQ5ORBZXsKsnw4izTkTzyzaTGSUDXU1hY6xRP/v+hpvpQW1QBc28czhahOs57fyzW+eU9nqjgI="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;Diagnostic&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -157,63 +157,6 @@
       <column comment="" key="false" length="2147483647" name="Diagnostic" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="160">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAggregateRow_1" show="false"/>
-    <elementParameter field="TABLE" name="GROUPBYS">
-      <elementValue elementRef="OUTPUT_COLUMN" value="Diagnostic"/>
-      <elementValue elementRef="INPUT_COLUMN" value="Diagnostic"/>
-    </elementParameter>
-    <elementParameter field="TABLE" name="OPERATIONS">
-      <elementValue elementRef="OUTPUT_COLUMN" value="Diagnostic"/>
-      <elementValue elementRef="FUNCTION" value="count"/>
-      <elementValue elementRef="INPUT_COLUMN" value="Diagnostic"/>
-      <elementValue elementRef="IGNORE_NULL" value="false"/>
-    </elementParameter>
-    <elementParameter field="TEXT" name="LIST_DELIMITER" value="&quot;,&quot;"/>
-    <elementParameter field="CHECK" name="USE_FINANCIAL_PRECISION" value="true"/>
-    <elementParameter field="CHECK" name="CHECK_TYPE_OVERFLOW" value="false"/>
-    <elementParameter field="CHECK" name="CHECK_ULP" value="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tAggregateRow_1">
-      <column comment="" key="false" length="2147483647" name="Code_diag" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="2147483647" name="Diagnostic" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="608" posY="160">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tLogRow_1" show="false"/>
-    <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
-    <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
-    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE" value="true" show="false"/>
-    <elementParameter field="RADIO" name="PRINT_LABEL" value="false" show="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" value="false" show="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;"/>
-    <elementParameter field="CHECK" name="PRINT_HEADER" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false"/>
-    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false"/>
-    <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="Code_diag"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Diagnostic"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tLogRow_1">
-      <column comment="" key="false" length="2147483647" name="Code_diag" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="2147483647" name="Diagnostic" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tAggregateRow_1">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row1" show="false"/>
-  </connection>
-  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tAggregateRow_1" offsetLabelX="0" offsetLabelY="0" source="tAggregateRow_1" target="tLogRow_1">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row2" show="false"/>
-  </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
