@@ -25,6 +25,7 @@
     <module>jobs/process/Jobs_pure/loaddiagnostics_job_0.1</module>
     <module>jobs/process/Jobs_pure/loadhealthcareprofessionnals_job_0.1</module>
     <module>jobs/process/Jobs_pure/loadetablissements_job_0.1</module>
+    <module>jobs/process/Jobs_pure/hospitalisations_0.1</module>
   </modules>
   <properties>
     <talend.project.name>ETL_PROJECT</talend.project.name>

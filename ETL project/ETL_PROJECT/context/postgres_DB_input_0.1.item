@@ -2,7 +2,7 @@
 <talendfile:ContextType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmi:id="_iWsgcLCvEfCTVbmB-UJ4Jw" confirmationNeeded="false" name="Default">
   <contextParameter xmi:id="_iWsgcbCvEfCTVbmB-UJ4Jw" comment="" name="postgres_DB_input_Port" prompt="postgres_DB_input_Port?" promptNeeded="false" type="id_String" value="5432"/>
   <contextParameter xmi:id="_iWsgcrCvEfCTVbmB-UJ4Jw" comment="" name="postgres_DB_input_Schema" prompt="postgres_DB_input_Schema?" promptNeeded="false" type="id_String" value="public"/>
-  <contextParameter xmi:id="_iWsgc7CvEfCTVbmB-UJ4Jw" comment="" name="postgres_DB_input_Password" prompt="postgres_DB_input_Password?" promptNeeded="false" type="id_Password" value="enc:system.encryption.key.v1:0GInYL/F2fF9YjLOGq8Cc6X3hABM/J3ITXoEUuqWwCw="/>
+  <contextParameter xmi:id="_iWsgc7CvEfCTVbmB-UJ4Jw" comment="" name="postgres_DB_input_Password" prompt="postgres_DB_input_Password?" promptNeeded="false" type="id_Password" value="enc:system.encryption.key.v1:PfYSArtt9tajD8EqOndUlRJa7jRpIjRLKVe9Sbp7IA8="/>
   <contextParameter xmi:id="_iWsgdLCvEfCTVbmB-UJ4Jw" comment="" name="postgres_DB_input_Database" prompt="postgres_DB_input_Database?" promptNeeded="false" type="id_String" value="postgres"/>
   <contextParameter xmi:id="_iWsgdbCvEfCTVbmB-UJ4Jw" comment="" name="postgres_DB_input_Login" prompt="postgres_DB_input_Login?" promptNeeded="false" type="id_String" value="postgres"/>
   <contextParameter xmi:id="_iWsgdrCvEfCTVbmB-UJ4Jw" comment="" name="postgres_DB_input_Server" prompt="postgres_DB_input_Server?" promptNeeded="false" type="id_String" value=""/>

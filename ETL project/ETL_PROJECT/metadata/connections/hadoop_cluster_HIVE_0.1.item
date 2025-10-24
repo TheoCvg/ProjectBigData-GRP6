@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TalendMetadata:DatabaseConnection xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmi:id="_AZ8ikLC5EfCTVbmB-UJ4Jw" DatabaseType="Hive" URL="jdbc:hive2://quickstart.cloudera:10000/default" Port="10000" Username="cloudera" ServerName="quickstart.cloudera" SID="default" DbmsId="hive_id" ProductId="HIVE">
+<TalendMetadata:DatabaseConnection xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmi:id="_AZ8ikLC5EfCTVbmB-UJ4Jw" name="hadoop_cluster_HIVE" DatabaseType="Hive" URL="jdbc:hive2://quickstart.cloudera:10000/default" Port="10000" Username="cloudera" ServerName="quickstart.cloudera" SID="default" DbmsId="hive_id" ProductId="HIVE">
   <parameters xmi:id="_AZ8ikbC5EfCTVbmB-UJ4Jw" key="CONN_PARA_KEY_USE_YARN" value="true"/>
   <parameters xmi:id="_AZ8ikrC5EfCTVbmB-UJ4Jw" key="CONN_PARA_KEY_RESOURCEMANAGER_SCHEDULER_ADDRESS" value="context.hadoop_cluster_ResourceManagerScheduler"/>
   <parameters xmi:id="_AZ8ik7C5EfCTVbmB-UJ4Jw" key="CONN_PARA_KEY_USE_CUSTOM_CONFS" value="true"/>
