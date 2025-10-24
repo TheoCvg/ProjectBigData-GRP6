@@ -11,13 +11,20 @@
   <modules>
     <module>code/routines</module>
     <module>jobs/process/test_job_0.1</module>
-    <module>jobs/process/diagnostic_job_0.1</module>
-    <module>jobs/process/patient_job_0.1</module>
-    <module>jobs/process/etablissement_0.1</module>
-    <module>jobs/process/healthcare_professionnal_0.1</module>
-    <module>jobs/process/aggregatedates_job_0.1</module>
-    <module>jobs/process/aggregateregions_job_0.1</module>
-    <module>jobs/process/aggregatepatients_job_0.1</module>
+    <module>jobs/process/Jobs_pure/aggregatepatients_job_0.1</module>
+    <module>jobs/process/Jobs_pure/aggregateregions_job_0.1</module>
+    <module>jobs/process/Jobs_pure/diagnostic_job_0.1</module>
+    <module>jobs/process/Jobs_pure/patient_job_0.1</module>
+    <module>jobs/process/Jobs_pure/aggregatedates_job_0.1</module>
+    <module>jobs/process/Jobs_pure/deces_0.1</module>
+    <module>jobs/process/Jobs_pure/satisfaction_2017_0.1</module>
+    <module>jobs/process/Jobs_pure/satisfaction_2019_0.1</module>
+    <module>jobs/process/Jobs_pure/satisfaction_2020_0.1</module>
+    <module>jobs/process/Jobs_dimensions/dim_date_load_0.1</module>
+    <module>jobs/process/Jobs_dimensions/dim_load_all_0.1</module>
+    <module>jobs/process/Jobs_pure/loaddiagnostics_job_0.1</module>
+    <module>jobs/process/Jobs_pure/loadhealthcareprofessionnals_job_0.1</module>
+    <module>jobs/process/Jobs_pure/loadetablissements_job_0.1</module>
   </modules>
   <properties>
     <talend.project.name>ETL_PROJECT</talend.project.name>
