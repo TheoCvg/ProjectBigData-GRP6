@@ -15,6 +15,9 @@
     <module>jobs/process/patient_job_0.1</module>
     <module>jobs/process/etablissement_0.1</module>
     <module>jobs/process/healthcare_professionnal_0.1</module>
+    <module>jobs/process/aggregatedates_job_0.1</module>
+    <module>jobs/process/aggregateregions_job_0.1</module>
+    <module>jobs/process/aggregatepatients_job_0.1</module>
   </modules>
   <properties>
     <talend.project.name>ETL_PROJECT</talend.project.name>
