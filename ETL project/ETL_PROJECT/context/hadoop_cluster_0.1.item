@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ContextType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmi:id="_AI85MLC5EfCTVbmB-UJ4Jw" confirmationNeeded="false" name="Default">
+  <contextParameter xmi:id="_AI85MbC5EfCTVbmB-UJ4Jw" comment="" name="hadoop_cluster_NameNodeUri" prompt="hadoop_cluster_NameNodeUri?" promptNeeded="false" type="id_String" value="hdfs://quickstart.cloudera:8020"/>
+  <contextParameter xmi:id="_AI85MrC5EfCTVbmB-UJ4Jw" comment="" name="hadoop_cluster_StagingDirectory" prompt="hadoop_cluster_StagingDirectory?" promptNeeded="false" type="id_String" value="/user"/>
+  <contextParameter xmi:id="_AI85M7C5EfCTVbmB-UJ4Jw" comment="" name="hadoop_cluster_User" prompt="hadoop_cluster_User?" promptNeeded="false" type="id_String" value="cloudera"/>
+  <contextParameter xmi:id="_AI85NLC5EfCTVbmB-UJ4Jw" comment="" name="hadoop_cluster_hadoopConfSpecificJar" prompt="hadoop_cluster_hadoopConfSpecificJar?" promptNeeded="false" type="id_String" value=""/>
+  <contextParameter xmi:id="_AI85NbC5EfCTVbmB-UJ4Jw" comment="" name="hadoop_cluster_JobHistory" prompt="hadoop_cluster_JobHistory?" promptNeeded="false" type="id_String" value="quickstart.cloudera:10020"/>
+  <contextParameter xmi:id="_AI85NrC5EfCTVbmB-UJ4Jw" comment="" name="hadoop_cluster_ResourceManagerScheduler" prompt="hadoop_cluster_ResourceManagerScheduler?" promptNeeded="false" type="id_String" value="quickstart.cloudera:8030"/>
+  <contextParameter xmi:id="_AI85N7C5EfCTVbmB-UJ4Jw" comment="" name="hadoop_cluster_ResourceManager" prompt="hadoop_cluster_ResourceManager?" promptNeeded="false" type="id_String" value="quickstart.cloudera:8032"/>
+</talendfile:ContextType>
