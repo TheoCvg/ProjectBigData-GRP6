@@ -16,7 +16,6 @@
     <module>jobs/process/Jobs_pure/deces_0.1</module>
     <module>jobs/process/Jobs_pure/satisfaction_2017_0.1</module>
     <module>jobs/process/Jobs_pure/satisfaction_2019_0.1</module>
-    <module>jobs/process/Jobs_pure/satisfaction_2020_0.1</module>
     <module>jobs/process/Jobs_pure/loaddiagnostics_job_0.1</module>
     <module>jobs/process/Jobs_pure/loadhealthcareprofessionnals_job_0.1</module>
     <module>jobs/process/Jobs_pure/loadetablissements_job_0.1</module>
@@ -32,6 +31,10 @@
     <module>jobs/process/dim_jobs/dim_diagnostics_0.1</module>
     <module>jobs/process/dim_jobs/dim_etablissements_0.1</module>
     <module>jobs/process/dim_jobs/dim_healthcare_professionals_0.1</module>
+    <module>jobs/process/facts_jobs/fact_hospitalisations_0.1</module>
+    <module>jobs/process/facts_jobs/fact_satisfactions_0.1</module>
+    <module>jobs/process/facts_jobs/fact_consultations_0.1</module>
+    <module>jobs/process/facts_jobs/fact_deceases_0.1</module>
   </modules>
   <properties>
     <talend.project.name>ETL_PROJECT</talend.project.name>
