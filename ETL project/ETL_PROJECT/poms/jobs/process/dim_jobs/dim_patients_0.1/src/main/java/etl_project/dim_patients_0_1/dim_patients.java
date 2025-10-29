@@ -1250,10 +1250,10 @@ public class dim_patients implements TalendJob {
 
 		public String loopKey;
 
-		public int id_patient;
+		public int Id_patient;
 
 		public int getId_patient() {
-			return this.id_patient;
+			return this.Id_patient;
 		}
 
 		public String Sex;
@@ -1292,7 +1292,7 @@ public class dim_patients implements TalendJob {
 				final int prime = PRIME;
 				int result = DEFAULT_HASHCODE;
 
-				result = prime * result + (int) this.id_patient;
+				result = prime * result + (int) this.Id_patient;
 
 				this.hashCode = result;
 				this.hashCodeDirty = false;
@@ -1310,7 +1310,7 @@ public class dim_patients implements TalendJob {
 				return false;
 			final d_patients_outputStruct other = (d_patients_outputStruct) obj;
 
-			if (this.id_patient != other.id_patient)
+			if (this.Id_patient != other.Id_patient)
 				return false;
 
 			return true;
@@ -1318,7 +1318,7 @@ public class dim_patients implements TalendJob {
 
 		public void copyDataTo(d_patients_outputStruct other) {
 
-			other.id_patient = this.id_patient;
+			other.Id_patient = this.Id_patient;
 			other.Sex = this.Sex;
 			other.Age = this.Age;
 			other.Weight = this.Weight;
@@ -1329,7 +1329,7 @@ public class dim_patients implements TalendJob {
 
 		public void copyKeysDataTo(d_patients_outputStruct other) {
 
-			other.id_patient = this.id_patient;
+			other.Id_patient = this.Id_patient;
 
 		}
 
@@ -1371,7 +1371,7 @@ public class dim_patients implements TalendJob {
 
 					int length = 0;
 
-					this.id_patient = dis.readInt();
+					this.Id_patient = dis.readInt();
 
 					this.Sex = readString(dis);
 
@@ -1397,7 +1397,7 @@ public class dim_patients implements TalendJob {
 
 				// int
 
-				dos.writeInt(this.id_patient);
+				dos.writeInt(this.Id_patient);
 
 				// String
 
@@ -1430,7 +1430,7 @@ public class dim_patients implements TalendJob {
 			StringBuilder sb = new StringBuilder();
 			sb.append(super.toString());
 			sb.append("[");
-			sb.append("id_patient=" + String.valueOf(id_patient));
+			sb.append("Id_patient=" + String.valueOf(Id_patient));
 			sb.append(",Sex=" + Sex);
 			sb.append(",Age=" + String.valueOf(Age));
 			sb.append(",Weight=" + String.valueOf(Weight));
@@ -1448,7 +1448,7 @@ public class dim_patients implements TalendJob {
 
 			int returnValue = -1;
 
-			returnValue = checkNullsAndCompare(this.id_patient, other.id_patient);
+			returnValue = checkNullsAndCompare(this.Id_patient, other.Id_patient);
 			if (returnValue != 0) {
 				return returnValue;
 			}
@@ -1482,6 +1482,12 @@ public class dim_patients implements TalendJob {
 	public static class row2Struct implements routines.system.IPersistableRow<row2Struct> {
 		final static byte[] commonByteArrayLock_ETL_PROJECT_dim_patients = new byte[0];
 		static byte[] commonByteArray_ETL_PROJECT_dim_patients = new byte[0];
+
+		public int Id_patient;
+
+		public int getId_patient() {
+			return this.Id_patient;
+		}
 
 		public String Nom;
 
@@ -1563,6 +1569,8 @@ public class dim_patients implements TalendJob {
 
 					int length = 0;
 
+					this.Id_patient = dis.readInt();
+
 					this.Nom = readString(dis);
 
 					this.Prenom = readString(dis);
@@ -1588,6 +1596,10 @@ public class dim_patients implements TalendJob {
 
 		public void writeData(ObjectOutputStream dos) {
 			try {
+
+				// int
+
+				dos.writeInt(this.Id_patient);
 
 				// String
 
@@ -1628,7 +1640,8 @@ public class dim_patients implements TalendJob {
 			StringBuilder sb = new StringBuilder();
 			sb.append(super.toString());
 			sb.append("[");
-			sb.append("Nom=" + Nom);
+			sb.append("Id_patient=" + String.valueOf(Id_patient));
+			sb.append(",Nom=" + Nom);
 			sb.append(",Prenom=" + Prenom);
 			sb.append(",Sex=" + Sex);
 			sb.append(",Age=" + String.valueOf(Age));
@@ -1676,6 +1689,18 @@ public class dim_patients implements TalendJob {
 	public static class d_patient_outputStruct implements routines.system.IPersistableRow<d_patient_outputStruct> {
 		final static byte[] commonByteArrayLock_ETL_PROJECT_dim_patients = new byte[0];
 		static byte[] commonByteArray_ETL_PROJECT_dim_patients = new byte[0];
+		protected static final int DEFAULT_HASHCODE = 1;
+		protected static final int PRIME = 31;
+		protected int hashCode = DEFAULT_HASHCODE;
+		public boolean hashCodeDirty = true;
+
+		public String loopKey;
+
+		public int Id_patient;
+
+		public int getId_patient() {
+			return this.Id_patient;
+		}
 
 		public String Nom;
 
@@ -1719,6 +1744,55 @@ public class dim_patients implements TalendJob {
 			return this.Email;
 		}
 
+		@Override
+		public int hashCode() {
+			if (this.hashCodeDirty) {
+				final int prime = PRIME;
+				int result = DEFAULT_HASHCODE;
+
+				result = prime * result + (int) this.Id_patient;
+
+				this.hashCode = result;
+				this.hashCodeDirty = false;
+			}
+			return this.hashCode;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			final d_patient_outputStruct other = (d_patient_outputStruct) obj;
+
+			if (this.Id_patient != other.Id_patient)
+				return false;
+
+			return true;
+		}
+
+		public void copyDataTo(d_patient_outputStruct other) {
+
+			other.Id_patient = this.Id_patient;
+			other.Nom = this.Nom;
+			other.Prenom = this.Prenom;
+			other.Sex = this.Sex;
+			other.Age = this.Age;
+			other.Weight = this.Weight;
+			other.Size = this.Size;
+			other.Email = this.Email;
+
+		}
+
+		public void copyKeysDataTo(d_patient_outputStruct other) {
+
+			other.Id_patient = this.Id_patient;
+
+		}
+
 		private String readString(ObjectInputStream dis) throws IOException {
 			String strReturn = null;
 			int length = 0;
@@ -1757,6 +1831,8 @@ public class dim_patients implements TalendJob {
 
 					int length = 0;
 
+					this.Id_patient = dis.readInt();
+
 					this.Nom = readString(dis);
 
 					this.Prenom = readString(dis);
@@ -1782,6 +1858,10 @@ public class dim_patients implements TalendJob {
 
 		public void writeData(ObjectOutputStream dos) {
 			try {
+
+				// int
+
+				dos.writeInt(this.Id_patient);
 
 				// String
 
@@ -1822,7 +1902,8 @@ public class dim_patients implements TalendJob {
 			StringBuilder sb = new StringBuilder();
 			sb.append(super.toString());
 			sb.append("[");
-			sb.append("Nom=" + Nom);
+			sb.append("Id_patient=" + String.valueOf(Id_patient));
+			sb.append(",Nom=" + Nom);
 			sb.append(",Prenom=" + Prenom);
 			sb.append(",Sex=" + Sex);
 			sb.append(",Age=" + String.valueOf(Age));
@@ -1840,6 +1921,11 @@ public class dim_patients implements TalendJob {
 		public int compareTo(d_patient_outputStruct other) {
 
 			int returnValue = -1;
+
+			returnValue = checkNullsAndCompare(this.Id_patient, other.Id_patient);
+			if (returnValue != 0) {
+				return returnValue;
+			}
 
 			return returnValue;
 		}
@@ -2630,6 +2716,7 @@ public class dim_patients implements TalendJob {
 							d_patient_output = null;
 
 // # Output table : 'd_patient_output'
+							d_patient_output_tmp.Id_patient = row1.Id_patient;
 							d_patient_output_tmp.Nom = row1.Nom;
 							d_patient_output_tmp.Prenom = row1.Prenom;
 							d_patient_output_tmp.Sex = row1.Sexe;
@@ -2705,6 +2792,7 @@ public class dim_patients implements TalendJob {
 
 									row2 = new row2Struct();
 								}
+								row2.Id_patient = d_patient_output.Id_patient;
 								row2.Nom = d_patient_output.Nom;
 								row2.Prenom = d_patient_output.Prenom;
 								row2.Sex = d_patient_output.Sex;
@@ -2765,7 +2853,7 @@ public class dim_patients implements TalendJob {
 									d_patients_output = null;
 
 // # Output table : 'd_patients_output'
-									d_patients_output_tmp.id_patient = Numeric.sequence("id_seq", 1, 1);
+									d_patients_output_tmp.Id_patient = row2.Id_patient;
 									d_patients_output_tmp.Sex = row2.Sex;
 									d_patients_output_tmp.Age = row2.Age;
 									d_patients_output_tmp.Weight = row2.Weight;
@@ -2810,7 +2898,7 @@ public class dim_patients implements TalendJob {
 
 									sb_tHDFSOutput_1.append(
 
-											d_patients_output.id_patient
+											d_patients_output.Id_patient
 
 									);
 
@@ -3190,7 +3278,7 @@ public class dim_patients implements TalendJob {
 				String dbUser_tHiveCreateTable_1 = "cloudera";
 
 				final String decryptedPassword_tHiveCreateTable_1 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:yWz0tXeeYx7i/f1gXVTC6iILDFN4zFkzgU1VFg==");
+						.decryptPassword("enc:routine.encryption.key.v1:uNzFDawLAdZX0eZt2vpvwcZ8fBUj64C18ZPHbA==");
 
 				String dbPwd_tHiveCreateTable_1 = decryptedPassword_tHiveCreateTable_1;
 
@@ -3227,7 +3315,7 @@ public class dim_patients implements TalendJob {
 				String tableName_tHiveCreateTable_1 = "d_patients";
 				String fieldChar_tHiveCreateTable_1 = ";";
 				String location_tHiveCreateTable_1 = "/user/talend/warehouse/d_patients/";
-				String querySQL_tHiveCreateTable_1 = "CREATE  TABLE  " + tableName_tHiveCreateTable_1
+				String querySQL_tHiveCreateTable_1 = "CREATE  TABLE IF NOT EXISTS " + tableName_tHiveCreateTable_1
 						+ "(id_patient INT,Sex STRING,Age INT,Weight FLOAT,Size INT,Email STRING) ROW FORMAT DELIMITED  FIELDS TERMINATED BY '"
 						+ fieldChar_tHiveCreateTable_1 + "' STORED AS TEXTFILE LOCATION '" + location_tHiveCreateTable_1
 						+ "'";
@@ -4215,6 +4303,6 @@ public class dim_patients implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 130284 characters generated by Talend Open Studio for Big Data on the 29
- * octobre 2025 09:12:21 CET
+ * 132505 characters generated by Talend Open Studio for Big Data on the 29
+ * octobre 2025 09:21:53 CET
  ************************************************************************************************/

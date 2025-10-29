@@ -516,6 +516,16 @@ public class fact_hospitalisations implements TalendJob {
 		tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
+	public void tHiveInput_4_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
 	public void tAdvancedHash_row2_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
@@ -537,6 +547,16 @@ public class fact_hospitalisations implements TalendJob {
 	}
 
 	public void tAdvancedHash_row4_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tAdvancedHash_row5_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -584,6 +604,16 @@ public class fact_hospitalisations implements TalendJob {
 		status = "failure";
 
 		tHadoopConfManager_tHiveInput_3_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tHadoopConfManager_tHiveInput_4_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tHadoopConfManager_tHiveInput_4_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void Implicit_Context_Regex_onSubJobError(Exception exception, String errorComponent,
@@ -635,6 +665,14 @@ public class fact_hospitalisations implements TalendJob {
 	}
 
 	public void tHadoopConfManager_tHiveInput_3_onSubJobError(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
+				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public void tHadoopConfManager_tHiveInput_4_onSubJobError(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
@@ -1351,6 +1389,12 @@ public class fact_hospitalisations implements TalendJob {
 			return this.Id_suite_diagnostic_consultation;
 		}
 
+		public int id_patient;
+
+		public int getId_patient() {
+			return this.id_patient;
+		}
+
 		@Override
 		public int hashCode() {
 			if (this.hashCodeDirty) {
@@ -1388,6 +1432,7 @@ public class fact_hospitalisations implements TalendJob {
 			other.id_date = this.id_date;
 			other.Id_code_diagnostic = this.Id_code_diagnostic;
 			other.Id_suite_diagnostic_consultation = this.Id_suite_diagnostic_consultation;
+			other.id_patient = this.id_patient;
 
 		}
 
@@ -1466,6 +1511,8 @@ public class fact_hospitalisations implements TalendJob {
 
 					this.Id_suite_diagnostic_consultation = readString(dis);
 
+					this.id_patient = dis.readInt();
+
 				} catch (IOException e) {
 					throw new RuntimeException(e);
 
@@ -1498,6 +1545,10 @@ public class fact_hospitalisations implements TalendJob {
 
 				writeString(this.Id_suite_diagnostic_consultation, dos);
 
+				// int
+
+				dos.writeInt(this.id_patient);
+
 			} catch (IOException e) {
 				throw new RuntimeException(e);
 			}
@@ -1514,6 +1565,7 @@ public class fact_hospitalisations implements TalendJob {
 			sb.append(",id_date=" + String.valueOf(id_date));
 			sb.append(",Id_code_diagnostic=" + Id_code_diagnostic);
 			sb.append(",Id_suite_diagnostic_consultation=" + Id_suite_diagnostic_consultation);
+			sb.append(",id_patient=" + String.valueOf(id_patient));
 			sb.append("]");
 
 			return sb.toString();
@@ -2011,6 +2063,7 @@ public class fact_hospitalisations implements TalendJob {
 				tHiveInput_1Process(globalMap);
 				tHiveInput_2Process(globalMap);
 				tHiveInput_3Process(globalMap);
+				tHiveInput_4Process(globalMap);
 
 				row1Struct row1 = new row1Struct();
 				f_hospitalisations_outStruct f_hospitalisations_out = new f_hospitalisations_outStruct();
@@ -2100,6 +2153,12 @@ public class fact_hospitalisations implements TalendJob {
 
 				row4Struct row4HashKey = new row4Struct();
 				row4Struct row4Default = new row4Struct();
+
+				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct> tHash_Lookup_row5 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct>) ((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct>) globalMap
+						.get("tHash_Lookup_row5"));
+
+				row5Struct row5HashKey = new row5Struct();
+				row5Struct row5Default = new row5Struct();
 // ###############################        
 
 // ###############################
@@ -2690,6 +2749,54 @@ public class fact_hospitalisations implements TalendJob {
 								row4 = fromLookup_row4;
 							}
 
+							///////////////////////////////////////////////
+							// Starting Lookup Table "row5"
+							///////////////////////////////////////////////
+
+							boolean forceLooprow5 = false;
+
+							row5Struct row5ObjectFromLookup = null;
+
+							if (!rejectedInnerJoin_tMap_1) { // G_TM_M_020
+
+								hasCasePrimitiveKeyWithNull_tMap_1 = false;
+
+								row5HashKey.id_patient = row1.Id_patient;
+
+								row5HashKey.hashCodeDirty = true;
+
+								tHash_Lookup_row5.lookup(row5HashKey);
+
+								if (!tHash_Lookup_row5.hasNext()) { // G_TM_M_090
+
+									rejectedInnerJoin_tMap_1 = true;
+
+								} // G_TM_M_090
+
+							} // G_TM_M_020
+
+							if (tHash_Lookup_row5 != null && tHash_Lookup_row5.getCount(row5HashKey) > 1) { // G 071
+
+								// System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'row5'
+								// and it contains more one result from keys : row5.id_patient = '" +
+								// row5HashKey.id_patient + "'");
+							} // G 071
+
+							row5Struct row5 = null;
+
+							row5Struct fromLookup_row5 = null;
+							row5 = row5Default;
+
+							if (tHash_Lookup_row5 != null && tHash_Lookup_row5.hasNext()) { // G 099
+
+								fromLookup_row5 = tHash_Lookup_row5.next();
+
+							} // G 099
+
+							if (fromLookup_row5 != null) {
+								row5 = fromLookup_row5;
+							}
+
 							// ###############################
 							{ // start of Var scope
 
@@ -2710,6 +2817,7 @@ public class fact_hospitalisations implements TalendJob {
 									f_hospitalisations_out_tmp.id_date = row2.id_date;
 									f_hospitalisations_out_tmp.Id_code_diagnostic = row3.code_diag;
 									f_hospitalisations_out_tmp.Id_suite_diagnostic_consultation = row4.code_diag;
+									f_hospitalisations_out_tmp.id_patient = row5.id_patient;
 									f_hospitalisations_out = f_hospitalisations_out_tmp;
 								} // closing inner join bracket (2)
 // ###############################
@@ -2797,6 +2905,14 @@ public class fact_hospitalisations implements TalendJob {
 									);
 
 								}
+
+								sb_tHDFSOutput_1.append(";");
+
+								sb_tHDFSOutput_1.append(
+
+										f_hospitalisations_out.id_patient
+
+								);
 
 								sb_tHDFSOutput_1.append("\n");
 
@@ -2905,6 +3021,11 @@ public class fact_hospitalisations implements TalendJob {
 				}
 				globalMap.remove("tHash_Lookup_row4");
 
+				if (tHash_Lookup_row5 != null) {
+					tHash_Lookup_row5.endGet();
+				}
+				globalMap.remove("tHash_Lookup_row5");
+
 // ###############################      
 
 				if (execStat) {
@@ -2966,6 +3087,9 @@ public class fact_hospitalisations implements TalendJob {
 
 			// free memory for "tMap_1"
 			globalMap.remove("tHash_Lookup_row4");
+
+			// free memory for "tMap_1"
+			globalMap.remove("tHash_Lookup_row5");
 
 			try {
 
@@ -3057,7 +3181,7 @@ public class fact_hospitalisations implements TalendJob {
 				String dbUser_tHiveCreateTable_1 = "cloudera";
 
 				final String decryptedPassword_tHiveCreateTable_1 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:lnOghBMo7YHMNrflVPJOOy3cQz7zsGoiO7RcDg==");
+						.decryptPassword("enc:routine.encryption.key.v1:XWHSB1jxH3o7AWzOT1ftiXIRW2FypsYCX+iS5g==");
 
 				String dbPwd_tHiveCreateTable_1 = decryptedPassword_tHiveCreateTable_1;
 
@@ -3095,7 +3219,7 @@ public class fact_hospitalisations implements TalendJob {
 				String fieldChar_tHiveCreateTable_1 = ";";
 				String location_tHiveCreateTable_1 = "/user/talend/warehouse/f_hospitalisations/";
 				String querySQL_tHiveCreateTable_1 = "CREATE  TABLE IF NOT EXISTS " + tableName_tHiveCreateTable_1
-						+ "(Id_hos INT,Hospitalisation_days INT,id_date INT,Id_code_diagnostic STRING,Id_suite_diagnostic_consultation STRING) ROW FORMAT DELIMITED  FIELDS TERMINATED BY '"
+						+ "(Id_hos INT,Hospitalisation_days INT,id_date INT,Id_code_diagnostic STRING,Id_suite_diagnostic_consultation STRING,id_patient INT) ROW FORMAT DELIMITED  FIELDS TERMINATED BY '"
 						+ fieldChar_tHiveCreateTable_1 + "' STORED AS TEXTFILE LOCATION '" + location_tHiveCreateTable_1
 						+ "'";
 				try {
@@ -3491,7 +3615,7 @@ public class fact_hospitalisations implements TalendJob {
 				// source node:tHiveInput_1 - inputs:(after_tFileInputDelimited_1)
 				// outputs:(row2,row2) | target node:tAdvancedHash_row2 - inputs:(row2)
 				// outputs:()
-				// linked node: tMap_1 - inputs:(row1,row2,row3,row4)
+				// linked node: tMap_1 - inputs:(row1,row2,row3,row4,row5)
 				// outputs:(f_hospitalisations_out)
 
 				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row2 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
@@ -3527,7 +3651,7 @@ public class fact_hospitalisations implements TalendJob {
 				String dbUser_tHiveInput_1 = "cloudera";
 
 				final String decryptedPassword_tHiveInput_1 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:DO03KH8DLTDeTNsvRUmh5OroOS7Aaub6vLXYig==");
+						.decryptPassword("enc:routine.encryption.key.v1:3wi9sAg8FWvpJKSmM0U8++V5mRfygc1m3E7g1A==");
 
 				String dbPwd_tHiveInput_1 = decryptedPassword_tHiveInput_1;
 
@@ -4084,7 +4208,7 @@ public class fact_hospitalisations implements TalendJob {
 				// source node:tHiveInput_2 - inputs:(after_tFileInputDelimited_1)
 				// outputs:(row3,row3) | target node:tAdvancedHash_row3 - inputs:(row3)
 				// outputs:()
-				// linked node: tMap_1 - inputs:(row1,row2,row3,row4)
+				// linked node: tMap_1 - inputs:(row1,row2,row3,row4,row5)
 				// outputs:(f_hospitalisations_out)
 
 				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row3 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
@@ -4120,7 +4244,7 @@ public class fact_hospitalisations implements TalendJob {
 				String dbUser_tHiveInput_2 = "cloudera";
 
 				final String decryptedPassword_tHiveInput_2 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:LUpYPyIW/fDdz/dttM4UZO9EBr4ZoqoDEMpkEg==");
+						.decryptPassword("enc:routine.encryption.key.v1:qhw7j0sC/VZX3wM2d5QcwLr4X6pRWoiG8x5w+Q==");
 
 				String dbPwd_tHiveInput_2 = decryptedPassword_tHiveInput_2;
 
@@ -4663,7 +4787,7 @@ public class fact_hospitalisations implements TalendJob {
 				// source node:tHiveInput_3 - inputs:(after_tFileInputDelimited_1)
 				// outputs:(row4,row4) | target node:tAdvancedHash_row4 - inputs:(row4)
 				// outputs:()
-				// linked node: tMap_1 - inputs:(row1,row2,row3,row4)
+				// linked node: tMap_1 - inputs:(row1,row2,row3,row4,row5)
 				// outputs:(f_hospitalisations_out)
 
 				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row4 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
@@ -4699,7 +4823,7 @@ public class fact_hospitalisations implements TalendJob {
 				String dbUser_tHiveInput_3 = "cloudera";
 
 				final String decryptedPassword_tHiveInput_3 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:F9Jo6HkxxG7B+IszifAbgzpHvsNgijhoVJ73gg==");
+						.decryptPassword("enc:routine.encryption.key.v1:j+nviapWpWiB4tnDgLQAYf77yfI+D7CMX/vcBQ==");
 
 				String dbPwd_tHiveInput_3 = decryptedPassword_tHiveInput_3;
 
@@ -4962,6 +5086,700 @@ public class fact_hospitalisations implements TalendJob {
 		}
 
 		globalMap.put("tHiveInput_3_SUBPROCESS_STATE", 1);
+	}
+
+	public static class row5Struct implements routines.system.IPersistableComparableLookupRow<row5Struct> {
+		final static byte[] commonByteArrayLock_ETL_PROJECT_fact_hospitalisations = new byte[0];
+		static byte[] commonByteArray_ETL_PROJECT_fact_hospitalisations = new byte[0];
+		protected static final int DEFAULT_HASHCODE = 1;
+		protected static final int PRIME = 31;
+		protected int hashCode = DEFAULT_HASHCODE;
+		public boolean hashCodeDirty = true;
+
+		public String loopKey;
+
+		public Integer id_patient;
+
+		public Integer getId_patient() {
+			return this.id_patient;
+		}
+
+		public String sex;
+
+		public String getSex() {
+			return this.sex;
+		}
+
+		public Integer age;
+
+		public Integer getAge() {
+			return this.age;
+		}
+
+		public Float weight;
+
+		public Float getWeight() {
+			return this.weight;
+		}
+
+		public Integer size;
+
+		public Integer getSize() {
+			return this.size;
+		}
+
+		public String email;
+
+		public String getEmail() {
+			return this.email;
+		}
+
+		@Override
+		public int hashCode() {
+			if (this.hashCodeDirty) {
+				final int prime = PRIME;
+				int result = DEFAULT_HASHCODE;
+
+				result = prime * result + ((this.id_patient == null) ? 0 : this.id_patient.hashCode());
+
+				this.hashCode = result;
+				this.hashCodeDirty = false;
+			}
+			return this.hashCode;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			final row5Struct other = (row5Struct) obj;
+
+			if (this.id_patient == null) {
+				if (other.id_patient != null)
+					return false;
+
+			} else if (!this.id_patient.equals(other.id_patient))
+
+				return false;
+
+			return true;
+		}
+
+		public void copyDataTo(row5Struct other) {
+
+			other.id_patient = this.id_patient;
+			other.sex = this.sex;
+			other.age = this.age;
+			other.weight = this.weight;
+			other.size = this.size;
+			other.email = this.email;
+
+		}
+
+		public void copyKeysDataTo(row5Struct other) {
+
+			other.id_patient = this.id_patient;
+
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		private String readString(DataInputStream dis, ObjectInputStream ois) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				byte[] byteArray = new byte[length];
+				dis.read(byteArray);
+				strReturn = new String(byteArray, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, DataOutputStream dos, ObjectOutputStream oos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private Integer readInteger(DataInputStream dis, ObjectInputStream ois) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, DataOutputStream dos, ObjectOutputStream oos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		public void readKeysData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_ETL_PROJECT_fact_hospitalisations) {
+
+				try {
+
+					int length = 0;
+
+					this.id_patient = readInteger(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeKeysData(ObjectOutputStream dos) {
+			try {
+
+				// Integer
+
+				writeInteger(this.id_patient, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		/**
+		 * Fill Values data by reading ObjectInputStream.
+		 */
+		public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
+			try {
+
+				int length = 0;
+
+				this.sex = readString(dis, ois);
+
+				this.age = readInteger(dis, ois);
+
+				length = dis.readByte();
+				if (length == -1) {
+					this.weight = null;
+				} else {
+					this.weight = dis.readFloat();
+				}
+
+				this.size = readInteger(dis, ois);
+
+				this.email = readString(dis, ois);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+
+			}
+
+		}
+
+		/**
+		 * Return a byte array which represents Values data.
+		 */
+		public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
+			try {
+
+				writeString(this.sex, dos, oos);
+
+				writeInteger(this.age, dos, oos);
+
+				if (this.weight == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeFloat(this.weight);
+				}
+
+				writeInteger(this.size, dos, oos);
+
+				writeString(this.email, dos, oos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("id_patient=" + String.valueOf(id_patient));
+			sb.append(",sex=" + sex);
+			sb.append(",age=" + String.valueOf(age));
+			sb.append(",weight=" + String.valueOf(weight));
+			sb.append(",size=" + String.valueOf(size));
+			sb.append(",email=" + email);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row5Struct other) {
+
+			int returnValue = -1;
+
+			returnValue = checkNullsAndCompare(this.id_patient, other.id_patient);
+			if (returnValue != 0) {
+				return returnValue;
+			}
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public void tHiveInput_4Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tHiveInput_4_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
+
+		String iterateId = "";
+
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { // start the resume
+				globalResumeTicket = true;
+
+				row5Struct row5 = new row5Struct();
+
+				/**
+				 * [tAdvancedHash_row5 begin ] start
+				 */
+
+				ok_Hash.put("tAdvancedHash_row5", false);
+				start_Hash.put("tAdvancedHash_row5", System.currentTimeMillis());
+
+				currentComponent = "tAdvancedHash_row5";
+
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row5");
+				}
+
+				int tos_count_tAdvancedHash_row5 = 0;
+
+				// connection name:row5
+				// source node:tHiveInput_4 - inputs:(after_tFileInputDelimited_1)
+				// outputs:(row5,row5) | target node:tAdvancedHash_row5 - inputs:(row5)
+				// outputs:()
+				// linked node: tMap_1 - inputs:(row1,row2,row3,row4,row5)
+				// outputs:(f_hospitalisations_out)
+
+				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row5 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
+
+				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct> tHash_Lookup_row5 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
+						.<row5Struct>getLookup(matchingModeEnum_row5);
+
+				globalMap.put("tHash_Lookup_row5", tHash_Lookup_row5);
+
+				/**
+				 * [tAdvancedHash_row5 begin ] stop
+				 */
+
+				/**
+				 * [tHiveInput_4 begin ] start
+				 */
+
+				ok_Hash.put("tHiveInput_4", false);
+				start_Hash.put("tHiveInput_4", System.currentTimeMillis());
+
+				currentComponent = "tHiveInput_4";
+
+				int tos_count_tHiveInput_4 = 0;
+
+				System.setProperty("org.apache.commons.logging.Log", "org.apache.commons.logging.impl.NoOpLog");
+				globalMap.put("current_client_path_separator", System.getProperty("path.separator"));
+				System.setProperty("path.separator", ":");
+
+				int nb_line_tHiveInput_4 = 0;
+				java.sql.Connection conn_tHiveInput_4 = null;
+				String driverClass_tHiveInput_4 = "org.apache.hive.jdbc.HiveDriver";
+				java.lang.Class jdbcclazz_tHiveInput_4 = java.lang.Class.forName(driverClass_tHiveInput_4);
+				String dbUser_tHiveInput_4 = "cloudera";
+
+				final String decryptedPassword_tHiveInput_4 = routines.system.PasswordEncryptUtil
+						.decryptPassword("enc:routine.encryption.key.v1:PuNI7zfkV2NEbOqd9XAXEjfyFBFxFnZlTllEgQ==");
+
+				String dbPwd_tHiveInput_4 = decryptedPassword_tHiveInput_4;
+
+				globalMap.put("HADOOP_USER_NAME_tHiveInput_4", System.getProperty("HADOOP_USER_NAME"));
+				String url_tHiveInput_4 = "jdbc:hive2://" + "quickstart.cloudera" + ":" + "10000" + "/" + "chu";
+				String additionalJdbcSettings_tHiveInput_4 = "";
+				if (!"".equals(additionalJdbcSettings_tHiveInput_4.trim())) {
+					if (!additionalJdbcSettings_tHiveInput_4.startsWith(";")) {
+						additionalJdbcSettings_tHiveInput_4 = ";" + additionalJdbcSettings_tHiveInput_4;
+					}
+					url_tHiveInput_4 += additionalJdbcSettings_tHiveInput_4;
+				}
+
+				conn_tHiveInput_4 = java.sql.DriverManager.getConnection(url_tHiveInput_4, dbUser_tHiveInput_4,
+						dbPwd_tHiveInput_4);
+
+				java.sql.Statement init_tHiveInput_4 = conn_tHiveInput_4.createStatement();
+				init_tHiveInput_4.execute("SET dfs.client.use.datanode.hostname=true");
+				init_tHiveInput_4.execute("SET dfs.datanode.use.datanode.hostname=true");
+
+				init_tHiveInput_4.close();
+
+				String dbname_tHiveInput_4 = "chu";
+				if (dbname_tHiveInput_4 != null && !"".equals(dbname_tHiveInput_4.trim())
+						&& !"default".equals(dbname_tHiveInput_4.trim())) {
+					java.sql.Statement goToDatabase_tHiveInput_4 = conn_tHiveInput_4.createStatement();
+					goToDatabase_tHiveInput_4.execute("use " + dbname_tHiveInput_4);
+					goToDatabase_tHiveInput_4.close();
+				}
+
+				java.sql.Statement stmt_tHiveInput_4 = conn_tHiveInput_4.createStatement();
+				try {
+
+					java.text.DateFormat dateStrFormat_tHiveInput_4 = new java.text.SimpleDateFormat("yyyyMMddHHmmss");
+					final String queryIdentifier_tHiveInput_4 = projectName + "_" + jobName + "_"
+							+ jobVersion.replace(".", "_") + "_tHiveInput_4_"
+							+ dateStrFormat_tHiveInput_4.format(new Date(startTime));
+// For MapReduce Mode
+					stmt_tHiveInput_4.execute("set mapred.job.name=" + queryIdentifier_tHiveInput_4);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+
+				String dbquery_tHiveInput_4 = "SELECT \n  d_patients.id_patient, \n  d_patients.sex, \n  d_patients.age, \n  d_patients.weight, \n  d_patients.size, \n  d_p"
+						+ "atients.email\nFROM chu.d_patients";
+
+				globalMap.put("tHiveInput_4_QUERY", dbquery_tHiveInput_4);
+				java.sql.ResultSet rs_tHiveInput_4 = null;
+
+				try {
+					rs_tHiveInput_4 = stmt_tHiveInput_4.executeQuery(dbquery_tHiveInput_4);
+					java.sql.ResultSetMetaData rsmd_tHiveInput_4 = rs_tHiveInput_4.getMetaData();
+					int colQtyInRs_tHiveInput_4 = rsmd_tHiveInput_4.getColumnCount();
+
+					String tmpContent_tHiveInput_4 = null;
+
+					while (rs_tHiveInput_4.next()) {
+						nb_line_tHiveInput_4++;
+
+						if (colQtyInRs_tHiveInput_4 < 1) {
+							row5.id_patient = null;
+						} else {
+
+							row5.id_patient = rs_tHiveInput_4.getInt(1);
+							if (rs_tHiveInput_4.wasNull()) {
+								row5.id_patient = null;
+							}
+						}
+						if (colQtyInRs_tHiveInput_4 < 2) {
+							row5.sex = null;
+						} else {
+
+							row5.sex = routines.system.JDBCUtil.getString(rs_tHiveInput_4, 2, false);
+						}
+						if (colQtyInRs_tHiveInput_4 < 3) {
+							row5.age = null;
+						} else {
+
+							row5.age = rs_tHiveInput_4.getInt(3);
+							if (rs_tHiveInput_4.wasNull()) {
+								row5.age = null;
+							}
+						}
+						if (colQtyInRs_tHiveInput_4 < 4) {
+							row5.weight = null;
+						} else {
+
+							row5.weight = rs_tHiveInput_4.getFloat(4);
+							if (rs_tHiveInput_4.wasNull()) {
+								row5.weight = null;
+							}
+						}
+						if (colQtyInRs_tHiveInput_4 < 5) {
+							row5.size = null;
+						} else {
+
+							row5.size = rs_tHiveInput_4.getInt(5);
+							if (rs_tHiveInput_4.wasNull()) {
+								row5.size = null;
+							}
+						}
+						if (colQtyInRs_tHiveInput_4 < 6) {
+							row5.email = null;
+						} else {
+
+							row5.email = routines.system.JDBCUtil.getString(rs_tHiveInput_4, 6, false);
+						}
+
+						/**
+						 * [tHiveInput_4 begin ] stop
+						 */
+
+						/**
+						 * [tHiveInput_4 main ] start
+						 */
+
+						currentComponent = "tHiveInput_4";
+
+						tos_count_tHiveInput_4++;
+
+						/**
+						 * [tHiveInput_4 main ] stop
+						 */
+
+						/**
+						 * [tHiveInput_4 process_data_begin ] start
+						 */
+
+						currentComponent = "tHiveInput_4";
+
+						/**
+						 * [tHiveInput_4 process_data_begin ] stop
+						 */
+// Start of branch "row5"
+						if (row5 != null) {
+
+							/**
+							 * [tAdvancedHash_row5 main ] start
+							 */
+
+							currentComponent = "tAdvancedHash_row5";
+
+							if (execStat) {
+								runStat.updateStatOnConnection(iterateId, 1, 1, "row5");
+							}
+
+							row5Struct row5_HashRow = new row5Struct();
+
+							row5_HashRow.id_patient = row5.id_patient;
+
+							row5_HashRow.sex = row5.sex;
+
+							row5_HashRow.age = row5.age;
+
+							row5_HashRow.weight = row5.weight;
+
+							row5_HashRow.size = row5.size;
+
+							row5_HashRow.email = row5.email;
+
+							tHash_Lookup_row5.put(row5_HashRow);
+
+							tos_count_tAdvancedHash_row5++;
+
+							/**
+							 * [tAdvancedHash_row5 main ] stop
+							 */
+
+							/**
+							 * [tAdvancedHash_row5 process_data_begin ] start
+							 */
+
+							currentComponent = "tAdvancedHash_row5";
+
+							/**
+							 * [tAdvancedHash_row5 process_data_begin ] stop
+							 */
+
+							/**
+							 * [tAdvancedHash_row5 process_data_end ] start
+							 */
+
+							currentComponent = "tAdvancedHash_row5";
+
+							/**
+							 * [tAdvancedHash_row5 process_data_end ] stop
+							 */
+
+						} // End of branch "row5"
+
+						/**
+						 * [tHiveInput_4 process_data_end ] start
+						 */
+
+						currentComponent = "tHiveInput_4";
+
+						/**
+						 * [tHiveInput_4 process_data_end ] stop
+						 */
+
+						/**
+						 * [tHiveInput_4 end ] start
+						 */
+
+						currentComponent = "tHiveInput_4";
+
+					}
+				} finally {
+					stmt_tHiveInput_4.close();
+
+					conn_tHiveInput_4.close();
+
+				}
+				globalMap.put("tHiveInput_4_NB_LINE", nb_line_tHiveInput_4);
+
+				String currentClientPathSeparator_tHiveInput_4 = (String) globalMap
+						.get("current_client_path_separator");
+				if (currentClientPathSeparator_tHiveInput_4 != null) {
+					System.setProperty("path.separator", currentClientPathSeparator_tHiveInput_4);
+					globalMap.put("current_client_path_separator", null);
+				}
+
+				String currentClientUsername_tHiveInput_4 = (String) globalMap.get("current_client_user_name");
+				if (currentClientUsername_tHiveInput_4 != null) {
+					System.setProperty("user.name", currentClientUsername_tHiveInput_4);
+					globalMap.put("current_client_user_name", null);
+				}
+
+				String originalHadoopUsername_tHiveInput_4 = (String) globalMap.get("HADOOP_USER_NAME_tHiveInput_4");
+				if (originalHadoopUsername_tHiveInput_4 != null) {
+					System.setProperty("HADOOP_USER_NAME", originalHadoopUsername_tHiveInput_4);
+					globalMap.put("HADOOP_USER_NAME_tHiveInput_4", null);
+				} else {
+					System.clearProperty("HADOOP_USER_NAME");
+				}
+
+				ok_Hash.put("tHiveInput_4", true);
+				end_Hash.put("tHiveInput_4", System.currentTimeMillis());
+
+				/**
+				 * [tHiveInput_4 end ] stop
+				 */
+
+				/**
+				 * [tAdvancedHash_row5 end ] start
+				 */
+
+				currentComponent = "tAdvancedHash_row5";
+
+				tHash_Lookup_row5.endPut();
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row5");
+				}
+
+				ok_Hash.put("tAdvancedHash_row5", true);
+				end_Hash.put("tAdvancedHash_row5", System.currentTimeMillis());
+
+				/**
+				 * [tAdvancedHash_row5 end ] stop
+				 */
+
+			} // end the resume
+
+		} catch (java.lang.Exception e) {
+
+			TalendException te = new TalendException(e, currentComponent, globalMap);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			runStat.stopThreadStat();
+
+			throw error;
+		} finally {
+
+			try {
+
+				/**
+				 * [tHiveInput_4 finally ] start
+				 */
+
+				currentComponent = "tHiveInput_4";
+
+				/**
+				 * [tHiveInput_4 finally ] stop
+				 */
+
+				/**
+				 * [tAdvancedHash_row5 finally ] start
+				 */
+
+				currentComponent = "tAdvancedHash_row5";
+
+				/**
+				 * [tAdvancedHash_row5 finally ] stop
+				 */
+
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
+			}
+			resourceMap = null;
+		}
+
+		globalMap.put("tHiveInput_4_SUBPROCESS_STATE", 1);
 	}
 
 	public void tHadoopConfManager_tHDFSOutput_1Process(final java.util.Map<String, Object> globalMap)
@@ -5744,6 +6562,201 @@ public class fact_hospitalisations implements TalendJob {
 		globalMap.put("tHadoopConfManager_tHiveInput_3_SUBPROCESS_STATE", 1);
 	}
 
+	public void tHadoopConfManager_tHiveInput_4Process(final java.util.Map<String, Object> globalMap)
+			throws TalendException {
+		globalMap.put("tHadoopConfManager_tHiveInput_4_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
+
+		String iterateId = "";
+
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { // start the resume
+				globalResumeTicket = true;
+
+				/**
+				 * [tHadoopConfManager_tHiveInput_4 begin ] start
+				 */
+
+				ok_Hash.put("tHadoopConfManager_tHiveInput_4", false);
+				start_Hash.put("tHadoopConfManager_tHiveInput_4", System.currentTimeMillis());
+
+				currentComponent = "tHadoopConfManager_tHiveInput_4";
+
+				int tos_count_tHadoopConfManager_tHiveInput_4 = 0;
+
+				String libPath_tHadoopConfManager_tHiveInput_4 = "";
+
+				class DealJobLibrary_tHadoopConfManager_tHiveInput_4 {
+
+					public String getConfJarName(String confLib, String extraId) {
+						String confJarName = confLib;
+						if (extraId != null && extraId.length() > 0) {
+							String jarName = confLib.substring(0, confLib.lastIndexOf("."));
+							String jarExt = confLib.substring(confLib.lastIndexOf("."));
+							confJarName = jarName + "_" + extraId + jarExt;
+						}
+						return confJarName;
+					}
+
+					public String replaceJarPathsFromCrcMap(String originalClassPathLine) throws java.lang.Exception {
+						String classPathLine = "";
+						String crcMapPath = new java.io.File("../crcMap").getCanonicalPath();
+						if (isNeedAddLibsPath(crcMapPath)) {
+							java.util.Map<String, String> crcMap = null;
+							java.io.ObjectInputStream ois = new java.io.ObjectInputStream(
+									new java.io.FileInputStream(crcMapPath));
+							crcMap = (java.util.Map<String, String>) ois.readObject();
+							ois.close();
+							classPathLine = addLibsPath(originalClassPathLine, crcMap);
+						} else {
+							classPathLine = originalClassPathLine;
+						}
+						return classPathLine;
+					}
+
+					private boolean isNeedAddLibsPath(String crcMapPath) {
+						if (!(new java.io.File(crcMapPath).exists())) {// when not use cache
+							return false;
+						}
+						return true;
+					}
+
+					private String addLibsPath(String line, java.util.Map<String, String> crcMap) {
+						for (java.util.Map.Entry<String, String> entry : crcMap.entrySet()) {
+							line = adaptLibPaths(line, entry);
+						}
+						return line;
+					}
+
+					private String adaptLibPaths(String line, java.util.Map.Entry<String, String> entry) {
+						String jarName = entry.getValue();
+						String crc = entry.getKey();
+						String libStringFinder = "../lib/" + jarName;
+						if (line.contains(libStringFinder)) {
+							line = line.replace(libStringFinder, "../../../cache/lib/" + crc + "/" + jarName);
+						} else if (line.contains(":$ROOT_PATH/" + jarName + ":")) {
+							line = line.replace(":$ROOT_PATH/" + jarName + ":",
+									":$ROOT_PATH/../../../cache/lib/" + crc + "/" + jarName + ":");
+						} else if (line.contains(";" + jarName + ";")) {
+							line = line.replace(";" + jarName + ";",
+									";../../../cache/lib/" + crc + "/" + jarName + ";");
+						}
+						return line;
+					}
+
+				}
+
+				DealJobLibrary_tHadoopConfManager_tHiveInput_4 dealJobLibrary = new DealJobLibrary_tHadoopConfManager_tHiveInput_4();
+				String confJarName = dealJobLibrary.getConfJarName("hadoop-conf-ClusterHadopp.jar", this.contextStr);
+
+				libPath_tHadoopConfManager_tHiveInput_4 = new java.io.File(
+						"C:/Users/theoc/Desktop/notion/A4/Blocs/BigData/Projet/ProjectBigData-GRP6/ETL project/ETL_PROJECT/temp/lib/"
+								+ confJarName).getAbsolutePath();
+				libPath_tHadoopConfManager_tHiveInput_4 = dealJobLibrary
+						.replaceJarPathsFromCrcMap(libPath_tHadoopConfManager_tHiveInput_4);
+
+				java.net.URLClassLoader currentLoadertHadoopConfManager_tHiveInput_4 = (java.net.URLClassLoader) Thread
+						.currentThread().getContextClassLoader();
+				java.lang.reflect.Method method_tHadoopConfManager_tHiveInput_4 = java.net.URLClassLoader.class
+						.getDeclaredMethod("addURL", new Class[] { java.net.URL.class });
+				method_tHadoopConfManager_tHiveInput_4.setAccessible(true);
+				method_tHadoopConfManager_tHiveInput_4.invoke(currentLoadertHadoopConfManager_tHiveInput_4,
+						new Object[] { new java.io.File(libPath_tHadoopConfManager_tHiveInput_4).toURL() });
+
+				/**
+				 * [tHadoopConfManager_tHiveInput_4 begin ] stop
+				 */
+
+				/**
+				 * [tHadoopConfManager_tHiveInput_4 main ] start
+				 */
+
+				currentComponent = "tHadoopConfManager_tHiveInput_4";
+
+				tos_count_tHadoopConfManager_tHiveInput_4++;
+
+				/**
+				 * [tHadoopConfManager_tHiveInput_4 main ] stop
+				 */
+
+				/**
+				 * [tHadoopConfManager_tHiveInput_4 process_data_begin ] start
+				 */
+
+				currentComponent = "tHadoopConfManager_tHiveInput_4";
+
+				/**
+				 * [tHadoopConfManager_tHiveInput_4 process_data_begin ] stop
+				 */
+
+				/**
+				 * [tHadoopConfManager_tHiveInput_4 process_data_end ] start
+				 */
+
+				currentComponent = "tHadoopConfManager_tHiveInput_4";
+
+				/**
+				 * [tHadoopConfManager_tHiveInput_4 process_data_end ] stop
+				 */
+
+				/**
+				 * [tHadoopConfManager_tHiveInput_4 end ] start
+				 */
+
+				currentComponent = "tHadoopConfManager_tHiveInput_4";
+
+				ok_Hash.put("tHadoopConfManager_tHiveInput_4", true);
+				end_Hash.put("tHadoopConfManager_tHiveInput_4", System.currentTimeMillis());
+
+				/**
+				 * [tHadoopConfManager_tHiveInput_4 end ] stop
+				 */
+			} // end the resume
+
+		} catch (java.lang.Exception e) {
+
+			TalendException te = new TalendException(e, currentComponent, globalMap);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			runStat.stopThreadStat();
+
+			throw error;
+		} finally {
+
+			try {
+
+				/**
+				 * [tHadoopConfManager_tHiveInput_4 finally ] start
+				 */
+
+				currentComponent = "tHadoopConfManager_tHiveInput_4";
+
+				/**
+				 * [tHadoopConfManager_tHiveInput_4 finally ] stop
+				 */
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
+			}
+			resourceMap = null;
+		}
+
+		globalMap.put("tHadoopConfManager_tHiveInput_4_SUBPROCESS_STATE", 1);
+	}
+
 	public String resuming_logs_dir_path = null;
 	public String resuming_checkpoint_path = null;
 	public String parent_part_launcher = null;
@@ -6207,6 +7220,6 @@ public class fact_hospitalisations implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 201777 characters generated by Talend Open Studio for Big Data on the 29
- * octobre 2025 00:39:17 CET
+ * 233156 characters generated by Talend Open Studio for Big Data on the 29
+ * octobre 2025 10:35:56 CET
  ************************************************************************************************/
