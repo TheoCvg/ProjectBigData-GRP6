@@ -27,7 +27,6 @@
     <module>jobs/process/dim_jobs/dim_dates_0.1</module>
     <module>jobs/process/dim_jobs/dim_patients_0.1</module>
     <module>jobs/process/dim_jobs/dim_regions_0.1</module>
-    <module>jobs/process/dim_jobs/load_all_dims_0.1</module>
     <module>jobs/process/dim_jobs/dim_diagnostics_0.1</module>
     <module>jobs/process/dim_jobs/dim_etablissements_0.1</module>
     <module>jobs/process/dim_jobs/dim_healthcare_professionals_0.1</module>
