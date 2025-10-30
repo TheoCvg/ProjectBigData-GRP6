@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default" jobType="Standard">
-  <context confirmationNeeded="false" name="Default"/>
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter comment="" name="ClusterHadopp_User" prompt="ClusterHadopp_User?" promptNeeded="false" repositoryContextId="_Zk4G4LDuEfCIXtwJwnuy1w" type="id_String" value="cloudera"/>
+    <contextParameter comment="" name="ClusterHadopp_hadoopConfSpecificJar" prompt="ClusterHadopp_hadoopConfSpecificJar?" promptNeeded="false" repositoryContextId="_Zk4G4LDuEfCIXtwJwnuy1w" type="id_String" value=""/>
+    <contextParameter comment="" name="ClusterHadopp_NameNodeUri" prompt="ClusterHadopp_NameNodeUri?" promptNeeded="false" repositoryContextId="_Zk4G4LDuEfCIXtwJwnuy1w" type="id_String" value="hdfs://quickstart.cloudera:8020"/>
+    <contextParameter comment="" name="ClusterHadopp_JobHistory" prompt="ClusterHadopp_JobHistory?" promptNeeded="false" repositoryContextId="_Zk4G4LDuEfCIXtwJwnuy1w" type="id_String" value="quickstart.cloudera:10020"/>
+    <contextParameter comment="" name="ClusterHadopp_ResourceManager" prompt="ClusterHadopp_ResourceManager?" promptNeeded="false" repositoryContextId="_Zk4G4LDuEfCIXtwJwnuy1w" type="id_String" value="quickstart.cloudera:8032"/>
+    <contextParameter comment="" name="ClusterHadopp_ResourceManagerScheduler" prompt="ClusterHadopp_ResourceManagerScheduler?" promptNeeded="false" repositoryContextId="_Zk4G4LDuEfCIXtwJwnuy1w" type="id_String" value="quickstart.cloudera:8030"/>
+  </context>
   <parameters>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="0" show="false"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" value="0" show="false"/>
@@ -42,7 +49,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:UYPddMCDFMNssvF9Jt/mLpt4gHya6R3xFtLZLPAI" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:83Rn4HaAERJcXavERdSw6Q7lTHe7RJajSv5ykzCb" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -77,7 +84,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Q5vn1jUv8xhzjVrZrkEQh2MxUm1SpLnwLEovCkJC" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:WEgcjpb/lggDRDvGyqFFUIS64ajBKQataqzyMSZB" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
@@ -122,9 +129,9 @@
     <elementParameter field="TEXT" name="HOST" value="&quot;quickstart.cloudera&quot;"/>
     <elementParameter field="TEXT" name="TYPE" value="HIVE" show="false"/>
     <elementParameter field="TEXT" name="PORT" value="&quot;10000&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;default&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;chu&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;cloudera&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:N+0prbjy9xYyZQCrTOvSwYZAHKKzyPniUA0lHAP6"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:GCjK/x24l9ve37VNKH7sOJZtLgMb/YvhPshbfLEs"/>
     <elementParameter field="TEXT" name="HIVE_ADDITIONAL_JDBC" value="&quot;&quot;"/>
     <elementParameter field="CHECK" name="CONFIGURATIONS_FROM_CLASSPATH" value="false"/>
     <elementParameter field="CHECK" name="USE_KRB" value="false"/>
@@ -137,18 +144,18 @@
     <elementParameter field="TEXT" name="METASTORE_JDBC_URL" value="&quot;thrift://quickstart.cloudera:9083&quot;" show="false"/>
     <elementParameter field="TEXT" name="METASTORE_CLASSNAME" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="METASTORE_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="METASTORE_PASSWORD" value="enc:system.encryption.key.v1:mUier41wS0ZU9IDbb3yxl7vMjTeHy5taMMsah74e" show="false"/>
+    <elementParameter field="PASSWORD" name="METASTORE_PASSWORD" value="enc:system.encryption.key.v1:zMDG6PiPS+7XucI+RR1zDIgWyKFMTxViOOI/BQij" show="false"/>
     <elementParameter field="CHECK" name="USE_KEYTAB" value="false" show="false"/>
     <elementParameter field="TEXT" name="PRINCIPAL" value="&quot;&quot;" show="false"/>
     <elementParameter field="FILE" name="KEYTAB_PATH" value="&quot;&quot;" show="false"/>
     <elementParameter field="CHECK" name="USE_MAPRTICKET" value="false" show="false"/>
     <elementParameter field="TEXT" name="MAPRTICKET_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" value="enc:system.encryption.key.v1:8wUVQPiHCtouQ+JnXlZhPptiSLbKnzq99k0muWZD" show="false"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" value="enc:system.encryption.key.v1:Ls9sH9cGwNHW+GTAyYZJakPsVgEMrbZ/LVzN7VuT" show="false"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" value="&quot;demo.mapr.com&quot;" show="false"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" value="86400L" show="false"/>
     <elementParameter field="CHECK" name="USE_SSL" value="false"/>
     <elementParameter field="FILE" name="SSL_TRUST_STORE" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="SSL_TRUST_STORE_PASSWORD" value="enc:system.encryption.key.v1:laXlVbCmCmdglEsFDOsY9txSi3/hIdFRMqtt/0m8" show="false"/>
+    <elementParameter field="PASSWORD" name="SSL_TRUST_STORE_PASSWORD" value="enc:system.encryption.key.v1:s5Osy6SBL5pDRoetswlV6o+WLPEIvHKurfd9HjFW" show="false"/>
     <elementParameter field="CHECK" name="SET_MAPRED_JT" value="false" show="false"/>
     <elementParameter field="TEXT" name="MAPRED_JT" value="context.ClusterHadopp_ResourceManager" show="false"/>
     <elementParameter field="CHECK" name="SET_RESOURCE_MANAGER" value="false"/>
@@ -167,11 +174,11 @@
     <elementParameter field="TEXT" name="WEBHCAT_USERNAME" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="STATUSDIR" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="HDINSIGHT_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="HDINSIGHT_PASSWORD" value="enc:system.encryption.key.v1:P1ufYKqL2msKHjxqjlcRt9IEKGyFoT8FutBJRVno" show="false"/>
+    <elementParameter field="PASSWORD" name="HDINSIGHT_PASSWORD" value="enc:system.encryption.key.v1:qMw/sjgZYR+R1e+oefDLKcOabEF4GpLZcUfQHs5D" show="false"/>
     <elementParameter field="TEXT" name="WASB_HOST" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="WASB_CONTAINER" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="WASB_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="WASB_PASSWORD" value="enc:system.encryption.key.v1:lFxJL+O//WQMtKkZ6QsbCzhuk8NxYGQTk/RKzkU7" show="false"/>
+    <elementParameter field="PASSWORD" name="WASB_PASSWORD" value="enc:system.encryption.key.v1:XMvREQfaxcE+uZ1PJiF5cEEIvd8XT6JdbrqGLNqI" show="false"/>
     <elementParameter field="TEXT" name="REMOTE_FOLDER" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="GOOGLE_PROJECT_ID" value="&quot;my-google-project&quot;" show="false"/>
     <elementParameter field="TEXT" name="GOOGLE_CLUSTER_ID" value="&quot;my-cluster-id&quot;" show="false"/>
@@ -192,7 +199,7 @@
     <elementParameter field="CHECK" name="DEFINE_REGISTER_JAR" value="false" show="false"/>
     <elementParameter field="LABEL" name="REGISTER_JAR_NOTE" value="When filling in the Jar path information below, make sure that the JAR files are available on the server." show="false"/>
     <elementParameter field="TABLE" name="REGISTER_JAR" show="false"/>
-    <elementParameter field="PASSWORD" name="QUBOLE_API_TOKEN" value="enc:system.encryption.key.v1:31Wsu+KTUCWzZH1Z+Mse+DsquqriPLeNzb/ubi7i" show="false"/>
+    <elementParameter field="PASSWORD" name="QUBOLE_API_TOKEN" value="enc:system.encryption.key.v1:nLy5ojz1fpfFuyUqrO/KhREBMprVV5lGwbxZd550" show="false"/>
     <elementParameter field="CHECK" name="QUBOLE_CLUSTER" value="false" show="false"/>
     <elementParameter field="TEXT" name="QUBOLE_CLUSTER_LABEL" value="&quot;&quot;" show="false"/>
     <elementParameter field="CHECK" name="QUBOLE_ENDPOINT" value="false" show="false"/>
@@ -235,10 +242,10 @@
     <elementParameter field="CLOSED_LIST" name="HIVE_SERVER" value="HIVE2"/>
     <elementParameter field="TEXT" name="HOST" value="&quot;quickstart.cloudera&quot;"/>
     <elementParameter field="TEXT" name="PORT" value="&quot;10000&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;default&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;chu&quot;"/>
     <elementParameter field="TEXT" name="TYPE" value="HIVE" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;cloudera&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ahs1fl2TLpIRtI9JfgiCxbPGxJ8HwKIlDGmFuTCm"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:IiE2/jK2l2MZ02SRCohxNOdEkgwluMHgwl65WrBp"/>
     <elementParameter field="TEXT" name="HIVE_ADDITIONAL_JDBC" value="&quot;&quot;"/>
     <elementParameter field="CHECK" name="USE_KRB" value="false"/>
     <elementParameter field="TEXT" name="HIVE_PRINCIPAL" value="&quot;&quot;" show="false"/>
@@ -250,18 +257,18 @@
     <elementParameter field="TEXT" name="METASTORE_JDBC_URL" value="&quot;thrift://quickstart.cloudera:9083&quot;" show="false"/>
     <elementParameter field="TEXT" name="METASTORE_CLASSNAME" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="METASTORE_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="METASTORE_PASSWORD" value="enc:system.encryption.key.v1:yV5mb0Hd5M/AKPszNOvjFh8ZGLQY5Pd663QVWXzO" show="false"/>
+    <elementParameter field="PASSWORD" name="METASTORE_PASSWORD" value="enc:system.encryption.key.v1:Z/Upi6445kYsPZwcQhjJYwL1fMHRR9R+bXf8PBeS" show="false"/>
     <elementParameter field="CHECK" name="USE_KEYTAB" value="false" show="false"/>
     <elementParameter field="TEXT" name="PRINCIPAL" value="&quot;&quot;" show="false"/>
     <elementParameter field="FILE" name="KEYTAB_PATH" value="&quot;&quot;" show="false"/>
     <elementParameter field="CHECK" name="USE_MAPRTICKET" value="false" show="false"/>
     <elementParameter field="TEXT" name="MAPRTICKET_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" value="enc:system.encryption.key.v1:9vFAKkwjAvNegLRjKRn5Wo0/50Tbu11lhAQ2lo9A" show="false"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" value="enc:system.encryption.key.v1:WvTSLl2k8WHWfDov/ijuQZCbQNMRlH+o0EJSVg5I" show="false"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" value="&quot;demo.mapr.com&quot;" show="false"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" value="86400L" show="false"/>
     <elementParameter field="CHECK" name="USE_SSL" value="false"/>
     <elementParameter field="FILE" name="SSL_TRUST_STORE" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="SSL_TRUST_STORE_PASSWORD" value="enc:system.encryption.key.v1:cclzw6wRN6b1dxvZxGpTybPh1PC4qXnSsJGO+/5n" show="false"/>
+    <elementParameter field="PASSWORD" name="SSL_TRUST_STORE_PASSWORD" value="enc:system.encryption.key.v1:igxl3T1YB5JcxWmD0+eBLrGWqzjqUqB07hufV2gg" show="false"/>
     <elementParameter field="CHECK" name="SET_MAPRED_JT" value="false" show="false"/>
     <elementParameter field="TEXT" name="MAPRED_JT" value="context.ClusterHadopp_ResourceManager" show="false"/>
     <elementParameter field="CHECK" name="SET_RESOURCE_MANAGER" value="false"/>
@@ -281,11 +288,11 @@
     <elementParameter field="TEXT" name="WEBHCAT_USERNAME" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="STATUSDIR" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="HDINSIGHT_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="HDINSIGHT_PASSWORD" value="enc:system.encryption.key.v1:raWSpGCLtBedAqIo7U05QUzlfTm5wbd72xHpj2Ee" show="false"/>
+    <elementParameter field="PASSWORD" name="HDINSIGHT_PASSWORD" value="enc:system.encryption.key.v1:Dty41vK3Az6MIRCUTjTBNLarPAqHvVhnJOch+ZnA" show="false"/>
     <elementParameter field="TEXT" name="WASB_HOST" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="WASB_CONTAINER" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="WASB_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="WASB_PASSWORD" value="enc:system.encryption.key.v1:DMAWLot4O3B8CzpMaFMk58U5D0j86aCZStL7ZAWL" show="false"/>
+    <elementParameter field="PASSWORD" name="WASB_PASSWORD" value="enc:system.encryption.key.v1:FYd+uYe+4WcAahb+gEvaMZbpotfRa9riN5sXF5IA" show="false"/>
     <elementParameter field="TEXT" name="REMOTE_FOLDER" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="GOOGLE_PROJECT_ID" value="&quot;my-google-project&quot;" show="false"/>
     <elementParameter field="TEXT" name="GOOGLE_CLUSTER_ID" value="&quot;my-cluster-id&quot;" show="false"/>
@@ -293,7 +300,7 @@
     <elementParameter field="TEXT" name="GOOGLE_JARS_BUCKET" value="&quot;gs://my-bucket/talend/jars&quot;" show="false"/>
     <elementParameter field="CHECK" name="DEFINE_PATH_TO_GOOGLE_CREDENTIALS" value="false" show="false"/>
     <elementParameter field="TEXT" name="PATH_TO_GOOGLE_CREDENTIALS" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="QUBOLE_API_TOKEN" value="enc:system.encryption.key.v1:ybK4V4qhJFoLb/rHY1xW6hzQSbq1jISzDPRrt0RO" show="false"/>
+    <elementParameter field="PASSWORD" name="QUBOLE_API_TOKEN" value="enc:system.encryption.key.v1:oGYPTzGimiVjZSoevcE6KeVgLzUr4cQo24FhaRef" show="false"/>
     <elementParameter field="CHECK" name="QUBOLE_CLUSTER" value="false" show="false"/>
     <elementParameter field="TEXT" name="QUBOLE_CLUSTER_LABEL" value="&quot;&quot;" show="false"/>
     <elementParameter field="CHECK" name="QUBOLE_ENDPOINT" value="false" show="false"/>

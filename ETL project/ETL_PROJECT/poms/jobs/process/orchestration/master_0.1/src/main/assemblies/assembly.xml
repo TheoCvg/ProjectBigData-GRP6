@@ -237,10 +237,13 @@
                 <include>org.talend.libraries:hadoop-conf-ClusterHadopp_Default:jar:6.0.0-SNAPSHOT</include>
                 <include>org.talend.libraries:crypto-utils:jar:6.0.0-SNAPSHOT</include>
                 <include>org.talend.libraries:talend_file_enhanced_20070724:jar:6.0.0</include>
+                <include>org.talend.libraries:advancedPersistentLookupLib-1.2:jar:6.0.0</include>
                 <include>org.example.etl_project.code:routines:jar:7.3.1</include>
                 <include>org.talend.libraries:talendcsv:jar:6.0.0</include>
                 <include>org.talend.libraries:httpcore-4.4.3:jar:6.3.0</include>
                 <include>org.talend.libraries:httpclient-4.5.2:jar:6.0.0</include>
+                <include>org.talend.libraries:jboss-serialization:jar:6.0.0</include>
+                <include>org.talend.libraries:trove:jar:6.0.0</include>
             </includes>
             <outputFileNameMapping>${artifact.artifactId}.${artifact.extension}</outputFileNameMapping>
             <useProjectArtifact>false</useProjectArtifact>
@@ -418,7 +421,9 @@
             <outputDirectory>${talend.job.name}</outputDirectory>
             <includes>
                 <include>org.example.etl_project.job:dim_healthcare_professionals:jar:0.1.0</include>
+                <include>org.example.etl_project.job:dim_patients:jar:0.1.0</include>
                 <include>org.example.etl_project.job:master:jar:0.1.0</include>
+                <include>org.example.etl_project.job:dim_regions:jar:0.1.0</include>
                 <include>org.example.etl_project.job:load_facts:jar:0.1.0</include>
                 <include>org.example.etl_project.job:load_dims:jar:0.1.0</include>
                 <include>org.example.etl_project.job:dim_etablissements:jar:0.1.0</include>

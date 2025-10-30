@@ -84,7 +84,17 @@
     </dependency>
     <dependency>
       <groupId>org.example.etl_project.job</groupId>
+      <artifactId>dim_regions</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.etl_project.job</groupId>
       <artifactId>dim_healthcare_professionals</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.etl_project.job</groupId>
+      <artifactId>dim_patients</artifactId>
       <version>0.1.0</version>
     </dependency>
     <dependency>

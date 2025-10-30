@@ -118,8 +118,80 @@ public class master implements TalendJob {
 
 		public void synchronizeContext() {
 
+			if (ClusterHadopp_User != null) {
+
+				this.setProperty("ClusterHadopp_User", ClusterHadopp_User.toString());
+
+			}
+
+			if (ClusterHadopp_hadoopConfSpecificJar != null) {
+
+				this.setProperty("ClusterHadopp_hadoopConfSpecificJar", ClusterHadopp_hadoopConfSpecificJar.toString());
+
+			}
+
+			if (ClusterHadopp_NameNodeUri != null) {
+
+				this.setProperty("ClusterHadopp_NameNodeUri", ClusterHadopp_NameNodeUri.toString());
+
+			}
+
+			if (ClusterHadopp_JobHistory != null) {
+
+				this.setProperty("ClusterHadopp_JobHistory", ClusterHadopp_JobHistory.toString());
+
+			}
+
+			if (ClusterHadopp_ResourceManager != null) {
+
+				this.setProperty("ClusterHadopp_ResourceManager", ClusterHadopp_ResourceManager.toString());
+
+			}
+
+			if (ClusterHadopp_ResourceManagerScheduler != null) {
+
+				this.setProperty("ClusterHadopp_ResourceManagerScheduler",
+						ClusterHadopp_ResourceManagerScheduler.toString());
+
+			}
+
 		}
 
+		public String ClusterHadopp_User;
+
+		public String getClusterHadopp_User() {
+			return this.ClusterHadopp_User;
+		}
+
+		public String ClusterHadopp_hadoopConfSpecificJar;
+
+		public String getClusterHadopp_hadoopConfSpecificJar() {
+			return this.ClusterHadopp_hadoopConfSpecificJar;
+		}
+
+		public String ClusterHadopp_NameNodeUri;
+
+		public String getClusterHadopp_NameNodeUri() {
+			return this.ClusterHadopp_NameNodeUri;
+		}
+
+		public String ClusterHadopp_JobHistory;
+
+		public String getClusterHadopp_JobHistory() {
+			return this.ClusterHadopp_JobHistory;
+		}
+
+		public String ClusterHadopp_ResourceManager;
+
+		public String getClusterHadopp_ResourceManager() {
+			return this.ClusterHadopp_ResourceManager;
+		}
+
+		public String ClusterHadopp_ResourceManagerScheduler;
+
+		public String getClusterHadopp_ResourceManagerScheduler() {
+			return this.ClusterHadopp_ResourceManagerScheduler;
+		}
 	}
 
 	protected ContextProperties context = new ContextProperties(); // will be instanciated by MS.
@@ -796,6 +868,35 @@ public class master implements TalendJob {
 
 						if (tmp_key_Implicit_Context_Context != null) {
 							try {
+								if (key_Implicit_Context_Context != null
+										&& "ClusterHadopp_User".equals(key_Implicit_Context_Context)) {
+									context.ClusterHadopp_User = value_Implicit_Context_Context;
+								}
+
+								if (key_Implicit_Context_Context != null
+										&& "ClusterHadopp_hadoopConfSpecificJar".equals(key_Implicit_Context_Context)) {
+									context.ClusterHadopp_hadoopConfSpecificJar = value_Implicit_Context_Context;
+								}
+
+								if (key_Implicit_Context_Context != null
+										&& "ClusterHadopp_NameNodeUri".equals(key_Implicit_Context_Context)) {
+									context.ClusterHadopp_NameNodeUri = value_Implicit_Context_Context;
+								}
+
+								if (key_Implicit_Context_Context != null
+										&& "ClusterHadopp_JobHistory".equals(key_Implicit_Context_Context)) {
+									context.ClusterHadopp_JobHistory = value_Implicit_Context_Context;
+								}
+
+								if (key_Implicit_Context_Context != null
+										&& "ClusterHadopp_ResourceManager".equals(key_Implicit_Context_Context)) {
+									context.ClusterHadopp_ResourceManager = value_Implicit_Context_Context;
+								}
+
+								if (key_Implicit_Context_Context != null && "ClusterHadopp_ResourceManagerScheduler"
+										.equals(key_Implicit_Context_Context)) {
+									context.ClusterHadopp_ResourceManagerScheduler = value_Implicit_Context_Context;
+								}
 
 								if (context.getProperty(key_Implicit_Context_Context) != null) {
 									assignList_Implicit_Context_Context.add(key_Implicit_Context_Context);
@@ -1025,8 +1126,7 @@ public class master implements TalendJob {
 
 				globalMap.put("HADOOP_USER_NAME_tHiveConnection_1", System.getProperty("HADOOP_USER_NAME"));
 
-				String url_tHiveConnection_1 = "jdbc:hive2://" + "quickstart.cloudera" + ":" + "10000" + "/"
-						+ "default";
+				String url_tHiveConnection_1 = "jdbc:hive2://" + "quickstart.cloudera" + ":" + "10000" + "/" + "chu";
 				String additionalJdbcSettings_tHiveConnection_1 = "";
 				if (!"".equals(additionalJdbcSettings_tHiveConnection_1.trim())) {
 					if (!additionalJdbcSettings_tHiveConnection_1.startsWith(";")) {
@@ -1037,7 +1137,7 @@ public class master implements TalendJob {
 				String dbUser_tHiveConnection_1 = "cloudera";
 
 				final String decryptedPassword_tHiveConnection_1 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:R3k+EMSB7D+fYPJKZizQrbEZhR18WLK93TMxPg==");
+						.decryptPassword("enc:routine.encryption.key.v1:glZB4+g1PCghPb3y/vT2PctLwHTcmWt6wDYLkg==");
 				String dbPwd_tHiveConnection_1 = decryptedPassword_tHiveConnection_1;
 
 				java.sql.Connection conn_tHiveConnection_1 = null;
@@ -1064,7 +1164,7 @@ public class master implements TalendJob {
 
 				globalMap.put("conn_tHiveConnection_1", conn_tHiveConnection_1);
 
-				globalMap.put("db_tHiveConnection_1", "default");
+				globalMap.put("db_tHiveConnection_1", "chu");
 
 				String currentClientPathSeparator_tHiveConnection_1 = (String) globalMap
 						.get("current_client_path_separator");
@@ -1220,12 +1320,12 @@ public class master implements TalendJob {
 				String dbUser_tHiveRow_1 = "cloudera";
 
 				final String decryptedPassword_tHiveRow_1 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:dzYKHuiLZuON/hOADxjD6oikHyJ/I+65V/OeQg==");
+						.decryptPassword("enc:routine.encryption.key.v1:6CwGnLc8lLDxAiNVoef+nnXozjL+kNnTTVeccw==");
 
 				String dbPwd_tHiveRow_1 = decryptedPassword_tHiveRow_1;
 
 				globalMap.put("HADOOP_USER_NAME_tHiveRow_1", System.getProperty("HADOOP_USER_NAME"));
-				String url_tHiveRow_1 = "jdbc:hive2://" + "quickstart.cloudera" + ":" + "10000" + "/" + "default";
+				String url_tHiveRow_1 = "jdbc:hive2://" + "quickstart.cloudera" + ":" + "10000" + "/" + "chu";
 				String additionalJdbcSettings_tHiveRow_1 = "";
 				if (!"".equals(additionalJdbcSettings_tHiveRow_1.trim())) {
 					if (!additionalJdbcSettings_tHiveRow_1.startsWith(";")) {
@@ -1244,7 +1344,7 @@ public class master implements TalendJob {
 
 				init_tHiveRow_1.close();
 
-				String dbname_tHiveRow_1 = "default";
+				String dbname_tHiveRow_1 = "chu";
 				if (dbname_tHiveRow_1 != null && !"".equals(dbname_tHiveRow_1.trim())
 						&& !"default".equals(dbname_tHiveRow_1.trim())) {
 					java.sql.Statement goToDatabase_tHiveRow_1 = conn_tHiveRow_1.createStatement();
@@ -2317,6 +2417,21 @@ public class master implements TalendJob {
 			}
 			class ContextProcessing {
 				private void processContext_0() {
+					context.setContextType("ClusterHadopp_User", "id_String");
+					context.ClusterHadopp_User = (String) context.getProperty("ClusterHadopp_User");
+					context.setContextType("ClusterHadopp_hadoopConfSpecificJar", "id_String");
+					context.ClusterHadopp_hadoopConfSpecificJar = (String) context
+							.getProperty("ClusterHadopp_hadoopConfSpecificJar");
+					context.setContextType("ClusterHadopp_NameNodeUri", "id_String");
+					context.ClusterHadopp_NameNodeUri = (String) context.getProperty("ClusterHadopp_NameNodeUri");
+					context.setContextType("ClusterHadopp_JobHistory", "id_String");
+					context.ClusterHadopp_JobHistory = (String) context.getProperty("ClusterHadopp_JobHistory");
+					context.setContextType("ClusterHadopp_ResourceManager", "id_String");
+					context.ClusterHadopp_ResourceManager = (String) context
+							.getProperty("ClusterHadopp_ResourceManager");
+					context.setContextType("ClusterHadopp_ResourceManagerScheduler", "id_String");
+					context.ClusterHadopp_ResourceManagerScheduler = (String) context
+							.getProperty("ClusterHadopp_ResourceManagerScheduler");
 				}
 
 				public void processAllContext() {
@@ -2332,6 +2447,26 @@ public class master implements TalendJob {
 
 		// get context value from parent directly
 		if (parentContextMap != null && !parentContextMap.isEmpty()) {
+			if (parentContextMap.containsKey("ClusterHadopp_User")) {
+				context.ClusterHadopp_User = (String) parentContextMap.get("ClusterHadopp_User");
+			}
+			if (parentContextMap.containsKey("ClusterHadopp_hadoopConfSpecificJar")) {
+				context.ClusterHadopp_hadoopConfSpecificJar = (String) parentContextMap
+						.get("ClusterHadopp_hadoopConfSpecificJar");
+			}
+			if (parentContextMap.containsKey("ClusterHadopp_NameNodeUri")) {
+				context.ClusterHadopp_NameNodeUri = (String) parentContextMap.get("ClusterHadopp_NameNodeUri");
+			}
+			if (parentContextMap.containsKey("ClusterHadopp_JobHistory")) {
+				context.ClusterHadopp_JobHistory = (String) parentContextMap.get("ClusterHadopp_JobHistory");
+			}
+			if (parentContextMap.containsKey("ClusterHadopp_ResourceManager")) {
+				context.ClusterHadopp_ResourceManager = (String) parentContextMap.get("ClusterHadopp_ResourceManager");
+			}
+			if (parentContextMap.containsKey("ClusterHadopp_ResourceManagerScheduler")) {
+				context.ClusterHadopp_ResourceManagerScheduler = (String) parentContextMap
+						.get("ClusterHadopp_ResourceManagerScheduler");
+			}
 		}
 
 		// Resume: init the resumeUtil
@@ -2570,6 +2705,6 @@ public class master implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 86705 characters generated by Talend Open Studio for Big Data on the 28
- * octobre 2025 22:41:56 CET
+ * 92433 characters generated by Talend Open Studio for Big Data on the 30
+ * octobre 2025 11:06:16 CET
  ************************************************************************************************/

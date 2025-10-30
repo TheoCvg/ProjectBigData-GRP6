@@ -31,9 +31,9 @@
     <module>jobs/process/dim_jobs/dim_etablissements_0.1</module>
     <module>jobs/process/dim_jobs/dim_healthcare_professionals_0.1</module>
     <module>jobs/process/facts_jobs/fact_hospitalisations_0.1</module>
-    <module>jobs/process/facts_jobs/fact_satisfactions_0.1</module>
     <module>jobs/process/facts_jobs/fact_consultations_0.1</module>
     <module>jobs/process/facts_jobs/fact_deceases_0.1</module>
+    <module>jobs/process/facts_jobs/fact_satisfactions_0.1</module>
   </modules>
   <properties>
     <talend.project.name>ETL_PROJECT</talend.project.name>

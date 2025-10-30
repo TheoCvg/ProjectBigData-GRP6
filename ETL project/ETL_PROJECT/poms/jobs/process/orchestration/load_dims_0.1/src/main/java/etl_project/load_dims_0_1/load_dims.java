@@ -352,7 +352,7 @@ private class TalendException extends Exception {
 				
 				status = "failure";
 				
-					tRunJob_2_onSubJobError(exception, errorComponent, globalMap);
+					tRunJob_1_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
 			public void tRunJob_3_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
@@ -361,7 +361,7 @@ private class TalendException extends Exception {
 				
 				status = "failure";
 				
-					tRunJob_3_onSubJobError(exception, errorComponent, globalMap);
+					tRunJob_1_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
 			public void tRunJob_4_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
@@ -370,7 +370,25 @@ private class TalendException extends Exception {
 				
 				status = "failure";
 				
-					tRunJob_4_onSubJobError(exception, errorComponent, globalMap);
+					tRunJob_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tRunJob_5_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tRunJob_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tRunJob_6_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tRunJob_1_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
 			public void Implicit_Context_Regex_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
@@ -379,21 +397,6 @@ resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThrea
 
 			}
 			public void tRunJob_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-
-resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
-
-			}
-			public void tRunJob_2_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-
-resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
-
-			}
-			public void tRunJob_3_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-
-resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
-
-			}
-			public void tRunJob_4_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 
 resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
 
@@ -1166,6 +1169,441 @@ end_Hash.put("Implicit_Context_Context", System.currentTimeMillis());
 	}
 	
 
+
+public static class row5Struct implements routines.system.IPersistableRow<row5Struct> {
+    final static byte[] commonByteArrayLock_ETL_PROJECT_load_dims = new byte[0];
+    static byte[] commonByteArray_ETL_PROJECT_load_dims = new byte[0];
+
+	
+
+
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_ETL_PROJECT_load_dims) {
+
+        	try {
+
+        		int length = 0;
+		
+
+		
+
+        }
+
+		
+			finally {}
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+        }
+
+			finally {}
+		
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row5Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class row4Struct implements routines.system.IPersistableRow<row4Struct> {
+    final static byte[] commonByteArrayLock_ETL_PROJECT_load_dims = new byte[0];
+    static byte[] commonByteArray_ETL_PROJECT_load_dims = new byte[0];
+
+	
+
+
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_ETL_PROJECT_load_dims) {
+
+        	try {
+
+        		int length = 0;
+		
+
+		
+
+        }
+
+		
+			finally {}
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+        }
+
+			finally {}
+		
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row4Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class row3Struct implements routines.system.IPersistableRow<row3Struct> {
+    final static byte[] commonByteArrayLock_ETL_PROJECT_load_dims = new byte[0];
+    static byte[] commonByteArray_ETL_PROJECT_load_dims = new byte[0];
+
+	
+
+
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_ETL_PROJECT_load_dims) {
+
+        	try {
+
+        		int length = 0;
+		
+
+		
+
+        }
+
+		
+			finally {}
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+        }
+
+			finally {}
+		
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row3Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class row2Struct implements routines.system.IPersistableRow<row2Struct> {
+    final static byte[] commonByteArrayLock_ETL_PROJECT_load_dims = new byte[0];
+    static byte[] commonByteArray_ETL_PROJECT_load_dims = new byte[0];
+
+	
+
+
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_ETL_PROJECT_load_dims) {
+
+        	try {
+
+        		int length = 0;
+		
+
+		
+
+        }
+
+		
+			finally {}
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+        }
+
+			finally {}
+		
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row2Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class row1Struct implements routines.system.IPersistableRow<row1Struct> {
+    final static byte[] commonByteArrayLock_ETL_PROJECT_load_dims = new byte[0];
+    static byte[] commonByteArray_ETL_PROJECT_load_dims = new byte[0];
+
+	
+
+
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_ETL_PROJECT_load_dims) {
+
+        	try {
+
+        		int length = 0;
+		
+
+		
+
+        }
+
+		
+			finally {}
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+        }
+
+			finally {}
+		
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row1Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
 public void tRunJob_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
 	globalMap.put("tRunJob_1_SUBPROCESS_STATE", 0);
 
@@ -1188,6 +1626,187 @@ public void tRunJob_1Process(final java.util.Map<String, Object> globalMap) thro
 				globalResumeTicket = true;
 
 
+
+		row1Struct row1 = new row1Struct();
+row2Struct row2 = new row2Struct();
+row3Struct row3 = new row3Struct();
+row4Struct row4 = new row4Struct();
+row5Struct row5 = new row5Struct();
+
+
+
+
+
+
+
+
+	
+	/**
+	 * [tRunJob_6 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tRunJob_6", false);
+		start_Hash.put("tRunJob_6", System.currentTimeMillis());
+		
+	
+	currentComponent="tRunJob_6";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row5");
+					}
+				
+		int tos_count_tRunJob_6 = 0;
+		
+
+
+ 
+
+
+
+/**
+ * [tRunJob_6 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tRunJob_5 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tRunJob_5", false);
+		start_Hash.put("tRunJob_5", System.currentTimeMillis());
+		
+	
+	currentComponent="tRunJob_5";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row4");
+					}
+				
+		int tos_count_tRunJob_5 = 0;
+		
+
+
+ 
+
+
+
+/**
+ * [tRunJob_5 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tRunJob_4 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tRunJob_4", false);
+		start_Hash.put("tRunJob_4", System.currentTimeMillis());
+		
+	
+	currentComponent="tRunJob_4";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row3");
+					}
+				
+		int tos_count_tRunJob_4 = 0;
+		
+
+
+ 
+
+
+
+/**
+ * [tRunJob_4 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tRunJob_3 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tRunJob_3", false);
+		start_Hash.put("tRunJob_3", System.currentTimeMillis());
+		
+	
+	currentComponent="tRunJob_3";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row2");
+					}
+				
+		int tos_count_tRunJob_3 = 0;
+		
+
+
+ 
+
+
+
+/**
+ * [tRunJob_3 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tRunJob_2 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tRunJob_2", false);
+		start_Hash.put("tRunJob_2", System.currentTimeMillis());
+		
+	
+	currentComponent="tRunJob_2";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row1");
+					}
+				
+		int tos_count_tRunJob_2 = 0;
+		
+
+
+ 
+
+
+
+/**
+ * [tRunJob_2 begin ] stop
+ */
 
 
 
@@ -1299,6 +1918,11 @@ public void tRunJob_1Process(final java.util.Map<String, Object> globalMap) thro
                     java.lang.Exception ce_tRunJob_1 = childJob_tRunJob_1.getException();
                     throw new RuntimeException("Child job running failed.\n" + ((ce_tRunJob_1!=null) ? (ce_tRunJob_1.getClass().getName() + ": " + ce_tRunJob_1.getMessage()) : ""));
                 }
+			for (String[] item_tRunJob_1 : childReturn_tRunJob_1) { 
+				if(childJob_tRunJob_1.hastBufferOutputComponent() || true){
+			    	
+				}
+		
 
  
 
@@ -1328,156 +1952,7 @@ public void tRunJob_1Process(final java.util.Map<String, Object> globalMap) thro
 /**
  * [tRunJob_1 process_data_begin ] stop
  */
-	
-	/**
-	 * [tRunJob_1 process_data_end ] start
-	 */
 
-	
-
-	
-	
-	currentComponent="tRunJob_1";
-
-	
-
- 
-
-
-
-/**
- * [tRunJob_1 process_data_end ] stop
- */
-	
-	/**
-	 * [tRunJob_1 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tRunJob_1";
-
-	
-
- 
-
-ok_Hash.put("tRunJob_1", true);
-end_Hash.put("tRunJob_1", System.currentTimeMillis());
-
-
-
-
-/**
- * [tRunJob_1 end ] stop
- */
-				}//end the resume
-
-				
-
-
-
-	
-			}catch(java.lang.Exception e){	
-				
-				TalendException te = new TalendException(e, currentComponent, globalMap);
-				
-				throw te;
-			}catch(java.lang.Error error){	
-				
-					runStat.stopThreadStat();
-				
-				throw error;
-			}finally{
-				
-				try{
-					
-	
-	/**
-	 * [tRunJob_1 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tRunJob_1";
-
-	
-
- 
-
-
-
-/**
- * [tRunJob_1 finally ] stop
- */
-				}catch(java.lang.Exception e){	
-					//ignore
-				}catch(java.lang.Error error){
-					//ignore
-				}
-				resourceMap = null;
-			}
-		
-
-		globalMap.put("tRunJob_1_SUBPROCESS_STATE", 1);
-	}
-	
-
-public void tRunJob_2Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-	globalMap.put("tRunJob_2_SUBPROCESS_STATE", 0);
-
- final boolean execStat = this.execStat;
-	
-		String iterateId = "";
-	
-	
-	String currentComponent = "";
-	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-	try {
-			// TDI-39566 avoid throwing an useless Exception
-			boolean resumeIt = true;
-			if (globalResumeTicket == false && resumeEntryMethodName != null) {
-				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
-				resumeIt = resumeEntryMethodName.equals(currentMethodName);
-			}
-			if (resumeIt || globalResumeTicket) { //start the resume
-				globalResumeTicket = true;
-
-
-
-
-
-	
-	/**
-	 * [tRunJob_2 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tRunJob_2", false);
-		start_Hash.put("tRunJob_2", System.currentTimeMillis());
-		
-	
-	currentComponent="tRunJob_2";
-
-	
-		int tos_count_tRunJob_2 = 0;
-		
-
-
- 
-
-
-
-/**
- * [tRunJob_2 begin ] stop
- */
 	
 	/**
 	 * [tRunJob_2 main ] start
@@ -1490,6 +1965,10 @@ public void tRunJob_2Process(final java.util.Map<String, Object> globalMap) thro
 	currentComponent="tRunJob_2";
 
 	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row1");
+					}
+					
 	java.util.List<String> paraList_tRunJob_2 = new java.util.ArrayList<String>();
 	
 	        			paraList_tRunJob_2.add("--father_pid="+pid);
@@ -1588,156 +2067,7 @@ public void tRunJob_2Process(final java.util.Map<String, Object> globalMap) thro
 /**
  * [tRunJob_2 process_data_begin ] stop
  */
-	
-	/**
-	 * [tRunJob_2 process_data_end ] start
-	 */
 
-	
-
-	
-	
-	currentComponent="tRunJob_2";
-
-	
-
- 
-
-
-
-/**
- * [tRunJob_2 process_data_end ] stop
- */
-	
-	/**
-	 * [tRunJob_2 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tRunJob_2";
-
-	
-
- 
-
-ok_Hash.put("tRunJob_2", true);
-end_Hash.put("tRunJob_2", System.currentTimeMillis());
-
-
-
-
-/**
- * [tRunJob_2 end ] stop
- */
-				}//end the resume
-
-				
-
-
-
-	
-			}catch(java.lang.Exception e){	
-				
-				TalendException te = new TalendException(e, currentComponent, globalMap);
-				
-				throw te;
-			}catch(java.lang.Error error){	
-				
-					runStat.stopThreadStat();
-				
-				throw error;
-			}finally{
-				
-				try{
-					
-	
-	/**
-	 * [tRunJob_2 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tRunJob_2";
-
-	
-
- 
-
-
-
-/**
- * [tRunJob_2 finally ] stop
- */
-				}catch(java.lang.Exception e){	
-					//ignore
-				}catch(java.lang.Error error){
-					//ignore
-				}
-				resourceMap = null;
-			}
-		
-
-		globalMap.put("tRunJob_2_SUBPROCESS_STATE", 1);
-	}
-	
-
-public void tRunJob_3Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-	globalMap.put("tRunJob_3_SUBPROCESS_STATE", 0);
-
- final boolean execStat = this.execStat;
-	
-		String iterateId = "";
-	
-	
-	String currentComponent = "";
-	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-	try {
-			// TDI-39566 avoid throwing an useless Exception
-			boolean resumeIt = true;
-			if (globalResumeTicket == false && resumeEntryMethodName != null) {
-				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
-				resumeIt = resumeEntryMethodName.equals(currentMethodName);
-			}
-			if (resumeIt || globalResumeTicket) { //start the resume
-				globalResumeTicket = true;
-
-
-
-
-
-	
-	/**
-	 * [tRunJob_3 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tRunJob_3", false);
-		start_Hash.put("tRunJob_3", System.currentTimeMillis());
-		
-	
-	currentComponent="tRunJob_3";
-
-	
-		int tos_count_tRunJob_3 = 0;
-		
-
-
- 
-
-
-
-/**
- * [tRunJob_3 begin ] stop
- */
 	
 	/**
 	 * [tRunJob_3 main ] start
@@ -1750,6 +2080,10 @@ public void tRunJob_3Process(final java.util.Map<String, Object> globalMap) thro
 	currentComponent="tRunJob_3";
 
 	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row2");
+					}
+					
 	java.util.List<String> paraList_tRunJob_3 = new java.util.ArrayList<String>();
 	
 	        			paraList_tRunJob_3.add("--father_pid="+pid);
@@ -1848,156 +2182,7 @@ public void tRunJob_3Process(final java.util.Map<String, Object> globalMap) thro
 /**
  * [tRunJob_3 process_data_begin ] stop
  */
-	
-	/**
-	 * [tRunJob_3 process_data_end ] start
-	 */
 
-	
-
-	
-	
-	currentComponent="tRunJob_3";
-
-	
-
- 
-
-
-
-/**
- * [tRunJob_3 process_data_end ] stop
- */
-	
-	/**
-	 * [tRunJob_3 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tRunJob_3";
-
-	
-
- 
-
-ok_Hash.put("tRunJob_3", true);
-end_Hash.put("tRunJob_3", System.currentTimeMillis());
-
-
-
-
-/**
- * [tRunJob_3 end ] stop
- */
-				}//end the resume
-
-				
-
-
-
-	
-			}catch(java.lang.Exception e){	
-				
-				TalendException te = new TalendException(e, currentComponent, globalMap);
-				
-				throw te;
-			}catch(java.lang.Error error){	
-				
-					runStat.stopThreadStat();
-				
-				throw error;
-			}finally{
-				
-				try{
-					
-	
-	/**
-	 * [tRunJob_3 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tRunJob_3";
-
-	
-
- 
-
-
-
-/**
- * [tRunJob_3 finally ] stop
- */
-				}catch(java.lang.Exception e){	
-					//ignore
-				}catch(java.lang.Error error){
-					//ignore
-				}
-				resourceMap = null;
-			}
-		
-
-		globalMap.put("tRunJob_3_SUBPROCESS_STATE", 1);
-	}
-	
-
-public void tRunJob_4Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-	globalMap.put("tRunJob_4_SUBPROCESS_STATE", 0);
-
- final boolean execStat = this.execStat;
-	
-		String iterateId = "";
-	
-	
-	String currentComponent = "";
-	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-	try {
-			// TDI-39566 avoid throwing an useless Exception
-			boolean resumeIt = true;
-			if (globalResumeTicket == false && resumeEntryMethodName != null) {
-				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
-				resumeIt = resumeEntryMethodName.equals(currentMethodName);
-			}
-			if (resumeIt || globalResumeTicket) { //start the resume
-				globalResumeTicket = true;
-
-
-
-
-
-	
-	/**
-	 * [tRunJob_4 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tRunJob_4", false);
-		start_Hash.put("tRunJob_4", System.currentTimeMillis());
-		
-	
-	currentComponent="tRunJob_4";
-
-	
-		int tos_count_tRunJob_4 = 0;
-		
-
-
- 
-
-
-
-/**
- * [tRunJob_4 begin ] stop
- */
 	
 	/**
 	 * [tRunJob_4 main ] start
@@ -2010,6 +2195,10 @@ public void tRunJob_4Process(final java.util.Map<String, Object> globalMap) thro
 	currentComponent="tRunJob_4";
 
 	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row3");
+					}
+					
 	java.util.List<String> paraList_tRunJob_4 = new java.util.ArrayList<String>();
 	
 	        			paraList_tRunJob_4.add("--father_pid="+pid);
@@ -2108,6 +2297,282 @@ public void tRunJob_4Process(final java.util.Map<String, Object> globalMap) thro
 /**
  * [tRunJob_4 process_data_begin ] stop
  */
+
+	
+	/**
+	 * [tRunJob_5 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tRunJob_5";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row4");
+					}
+					
+	java.util.List<String> paraList_tRunJob_5 = new java.util.ArrayList<String>();
+	
+	        			paraList_tRunJob_5.add("--father_pid="+pid);
+	      			
+	        			paraList_tRunJob_5.add("--root_pid="+rootPid);
+	      			
+	        			paraList_tRunJob_5.add("--father_node=tRunJob_5");
+	      			
+	        			paraList_tRunJob_5.add("--context=Default");
+	      			
+		if(enableLogStash){
+			paraList_tRunJob_5.add("--monitoring="+enableLogStash);
+		}
+		
+	//for feature:10589
+	
+		paraList_tRunJob_5.add("--stat_port=" + portStats);
+	
+
+	if(resuming_logs_dir_path != null){
+		paraList_tRunJob_5.add("--resuming_logs_dir_path=" + resuming_logs_dir_path);
+	}
+	String childResumePath_tRunJob_5 = ResumeUtil.getChildJobCheckPointPath(resuming_checkpoint_path);
+	String tRunJobName_tRunJob_5 = ResumeUtil.getRighttRunJob(resuming_checkpoint_path);
+	if("tRunJob_5".equals(tRunJobName_tRunJob_5) && childResumePath_tRunJob_5 != null){
+		paraList_tRunJob_5.add("--resuming_checkpoint_path=" + ResumeUtil.getChildJobCheckPointPath(resuming_checkpoint_path));
+	}
+	paraList_tRunJob_5.add("--parent_part_launcher=JOB:" + jobName + "/NODE:tRunJob_5");
+	
+	java.util.Map<String, Object> parentContextMap_tRunJob_5 = new java.util.HashMap<String, Object>();
+
+	
+
+	Object obj_tRunJob_5 = null;
+
+	
+	
+		etl_project.dim_patients_0_1.dim_patients childJob_tRunJob_5 = new etl_project.dim_patients_0_1.dim_patients();
+	    // pass DataSources
+	    java.util.Map<String, routines.system.TalendDataSource> talendDataSources_tRunJob_5 = (java.util.Map<String, routines.system.TalendDataSource>) globalMap
+	            .get(KEY_DB_DATASOURCES);
+	    if (null != talendDataSources_tRunJob_5) {
+	        java.util.Map<String, javax.sql.DataSource> dataSources_tRunJob_5 = new java.util.HashMap<String, javax.sql.DataSource>();
+	        for (java.util.Map.Entry<String, routines.system.TalendDataSource> talendDataSourceEntry_tRunJob_5 : talendDataSources_tRunJob_5
+			        .entrySet()) {
+	            dataSources_tRunJob_5.put(talendDataSourceEntry_tRunJob_5.getKey(),
+	                    talendDataSourceEntry_tRunJob_5.getValue().getRawDataSource());
+	        }
+	        childJob_tRunJob_5.setDataSources(dataSources_tRunJob_5);
+	    }
+		  
+			childJob_tRunJob_5.parentContextMap = parentContextMap_tRunJob_5;
+		  
+		
+		String[][] childReturn_tRunJob_5 = childJob_tRunJob_5.runJob((String[]) paraList_tRunJob_5.toArray(new String[paraList_tRunJob_5.size()]));
+		
+            if(childJob_tRunJob_5.getErrorCode() == null){
+                globalMap.put("tRunJob_5_CHILD_RETURN_CODE", childJob_tRunJob_5.getStatus() != null && ("failure").equals(childJob_tRunJob_5.getStatus()) ? 1 : 0);
+            }else{
+                globalMap.put("tRunJob_5_CHILD_RETURN_CODE", childJob_tRunJob_5.getErrorCode());
+            }
+            if (childJob_tRunJob_5.getExceptionStackTrace() != null) {
+                globalMap.put("tRunJob_5_CHILD_EXCEPTION_STACKTRACE", childJob_tRunJob_5.getExceptionStackTrace());
+            }
+                    errorCode = childJob_tRunJob_5.getErrorCode();
+                if (childJob_tRunJob_5.getErrorCode() != null || ("failure").equals(childJob_tRunJob_5.getStatus())) {
+                    java.lang.Exception ce_tRunJob_5 = childJob_tRunJob_5.getException();
+                    throw new RuntimeException("Child job running failed.\n" + ((ce_tRunJob_5!=null) ? (ce_tRunJob_5.getClass().getName() + ": " + ce_tRunJob_5.getMessage()) : ""));
+                }
+
+ 
+
+
+	tos_count_tRunJob_5++;
+
+/**
+ * [tRunJob_5 main ] stop
+ */
+	
+	/**
+	 * [tRunJob_5 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tRunJob_5";
+
+	
+
+ 
+
+
+
+/**
+ * [tRunJob_5 process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tRunJob_6 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tRunJob_6";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row5");
+					}
+					
+	java.util.List<String> paraList_tRunJob_6 = new java.util.ArrayList<String>();
+	
+	        			paraList_tRunJob_6.add("--father_pid="+pid);
+	      			
+	        			paraList_tRunJob_6.add("--root_pid="+rootPid);
+	      			
+	        			paraList_tRunJob_6.add("--father_node=tRunJob_6");
+	      			
+	        			paraList_tRunJob_6.add("--context=Default");
+	      			
+		if(enableLogStash){
+			paraList_tRunJob_6.add("--monitoring="+enableLogStash);
+		}
+		
+	//for feature:10589
+	
+		paraList_tRunJob_6.add("--stat_port=" + portStats);
+	
+
+	if(resuming_logs_dir_path != null){
+		paraList_tRunJob_6.add("--resuming_logs_dir_path=" + resuming_logs_dir_path);
+	}
+	String childResumePath_tRunJob_6 = ResumeUtil.getChildJobCheckPointPath(resuming_checkpoint_path);
+	String tRunJobName_tRunJob_6 = ResumeUtil.getRighttRunJob(resuming_checkpoint_path);
+	if("tRunJob_6".equals(tRunJobName_tRunJob_6) && childResumePath_tRunJob_6 != null){
+		paraList_tRunJob_6.add("--resuming_checkpoint_path=" + ResumeUtil.getChildJobCheckPointPath(resuming_checkpoint_path));
+	}
+	paraList_tRunJob_6.add("--parent_part_launcher=JOB:" + jobName + "/NODE:tRunJob_6");
+	
+	java.util.Map<String, Object> parentContextMap_tRunJob_6 = new java.util.HashMap<String, Object>();
+
+	
+
+	Object obj_tRunJob_6 = null;
+
+	
+	
+		etl_project.dim_regions_0_1.dim_regions childJob_tRunJob_6 = new etl_project.dim_regions_0_1.dim_regions();
+	    // pass DataSources
+	    java.util.Map<String, routines.system.TalendDataSource> talendDataSources_tRunJob_6 = (java.util.Map<String, routines.system.TalendDataSource>) globalMap
+	            .get(KEY_DB_DATASOURCES);
+	    if (null != talendDataSources_tRunJob_6) {
+	        java.util.Map<String, javax.sql.DataSource> dataSources_tRunJob_6 = new java.util.HashMap<String, javax.sql.DataSource>();
+	        for (java.util.Map.Entry<String, routines.system.TalendDataSource> talendDataSourceEntry_tRunJob_6 : talendDataSources_tRunJob_6
+			        .entrySet()) {
+	            dataSources_tRunJob_6.put(talendDataSourceEntry_tRunJob_6.getKey(),
+	                    talendDataSourceEntry_tRunJob_6.getValue().getRawDataSource());
+	        }
+	        childJob_tRunJob_6.setDataSources(dataSources_tRunJob_6);
+	    }
+		  
+			childJob_tRunJob_6.parentContextMap = parentContextMap_tRunJob_6;
+		  
+		
+		String[][] childReturn_tRunJob_6 = childJob_tRunJob_6.runJob((String[]) paraList_tRunJob_6.toArray(new String[paraList_tRunJob_6.size()]));
+		
+            if(childJob_tRunJob_6.getErrorCode() == null){
+                globalMap.put("tRunJob_6_CHILD_RETURN_CODE", childJob_tRunJob_6.getStatus() != null && ("failure").equals(childJob_tRunJob_6.getStatus()) ? 1 : 0);
+            }else{
+                globalMap.put("tRunJob_6_CHILD_RETURN_CODE", childJob_tRunJob_6.getErrorCode());
+            }
+            if (childJob_tRunJob_6.getExceptionStackTrace() != null) {
+                globalMap.put("tRunJob_6_CHILD_EXCEPTION_STACKTRACE", childJob_tRunJob_6.getExceptionStackTrace());
+            }
+                    errorCode = childJob_tRunJob_6.getErrorCode();
+                if (childJob_tRunJob_6.getErrorCode() != null || ("failure").equals(childJob_tRunJob_6.getStatus())) {
+                    java.lang.Exception ce_tRunJob_6 = childJob_tRunJob_6.getException();
+                    throw new RuntimeException("Child job running failed.\n" + ((ce_tRunJob_6!=null) ? (ce_tRunJob_6.getClass().getName() + ": " + ce_tRunJob_6.getMessage()) : ""));
+                }
+
+ 
+
+
+	tos_count_tRunJob_6++;
+
+/**
+ * [tRunJob_6 main ] stop
+ */
+	
+	/**
+	 * [tRunJob_6 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tRunJob_6";
+
+	
+
+ 
+
+
+
+/**
+ * [tRunJob_6 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tRunJob_6 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tRunJob_6";
+
+	
+
+ 
+
+
+
+/**
+ * [tRunJob_6 process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tRunJob_5 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tRunJob_5";
+
+	
+
+ 
+
+
+
+/**
+ * [tRunJob_5 process_data_end ] stop
+ */
+
+
+
 	
 	/**
 	 * [tRunJob_4 process_data_end ] start
@@ -2128,6 +2593,160 @@ public void tRunJob_4Process(final java.util.Map<String, Object> globalMap) thro
 /**
  * [tRunJob_4 process_data_end ] stop
  */
+
+
+
+	
+	/**
+	 * [tRunJob_3 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tRunJob_3";
+
+	
+
+ 
+
+
+
+/**
+ * [tRunJob_3 process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tRunJob_2 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tRunJob_2";
+
+	
+
+ 
+
+
+
+/**
+ * [tRunJob_2 process_data_end ] stop
+ */
+
+
+	
+		} // C_01
+	
+	
+	/**
+	 * [tRunJob_1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tRunJob_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tRunJob_1 process_data_end ] stop
+ */
+	
+	/**
+	 * [tRunJob_1 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tRunJob_1";
+
+	
+
+ 
+
+ok_Hash.put("tRunJob_1", true);
+end_Hash.put("tRunJob_1", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tRunJob_1 end ] stop
+ */
+
+	
+	/**
+	 * [tRunJob_2 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tRunJob_2";
+
+	
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row1");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tRunJob_2", true);
+end_Hash.put("tRunJob_2", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tRunJob_2 end ] stop
+ */
+
+	
+	/**
+	 * [tRunJob_3 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tRunJob_3";
+
+	
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row2");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tRunJob_3", true);
+end_Hash.put("tRunJob_3", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tRunJob_3 end ] stop
+ */
+
 	
 	/**
 	 * [tRunJob_4 end ] start
@@ -2141,6 +2760,10 @@ public void tRunJob_4Process(final java.util.Map<String, Object> globalMap) thro
 
 	
 
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row3");
+			  	}
+			  	
  
 
 ok_Hash.put("tRunJob_4", true);
@@ -2152,6 +2775,79 @@ end_Hash.put("tRunJob_4", System.currentTimeMillis());
 /**
  * [tRunJob_4 end ] stop
  */
+
+	
+	/**
+	 * [tRunJob_5 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tRunJob_5";
+
+	
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row4");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tRunJob_5", true);
+end_Hash.put("tRunJob_5", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tRunJob_5 end ] stop
+ */
+
+	
+	/**
+	 * [tRunJob_6 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tRunJob_6";
+
+	
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row5");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tRunJob_6", true);
+end_Hash.put("tRunJob_6", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tRunJob_6 end ] stop
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 				}//end the resume
 
 				
@@ -2175,6 +2871,69 @@ end_Hash.put("tRunJob_4", System.currentTimeMillis());
 					
 	
 	/**
+	 * [tRunJob_1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tRunJob_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tRunJob_1 finally ] stop
+ */
+
+	
+	/**
+	 * [tRunJob_2 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tRunJob_2";
+
+	
+
+ 
+
+
+
+/**
+ * [tRunJob_2 finally ] stop
+ */
+
+	
+	/**
+	 * [tRunJob_3 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tRunJob_3";
+
+	
+
+ 
+
+
+
+/**
+ * [tRunJob_3 finally ] stop
+ */
+
+	
+	/**
 	 * [tRunJob_4 finally ] start
 	 */
 
@@ -2193,6 +2952,63 @@ end_Hash.put("tRunJob_4", System.currentTimeMillis());
 /**
  * [tRunJob_4 finally ] stop
  */
+
+	
+	/**
+	 * [tRunJob_5 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tRunJob_5";
+
+	
+
+ 
+
+
+
+/**
+ * [tRunJob_5 finally ] stop
+ */
+
+	
+	/**
+	 * [tRunJob_6 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tRunJob_6";
+
+	
+
+ 
+
+
+
+/**
+ * [tRunJob_6 finally ] stop
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 				}catch(java.lang.Exception e){	
 					//ignore
 				}catch(java.lang.Error error){
@@ -2202,7 +3018,7 @@ end_Hash.put("tRunJob_4", System.currentTimeMillis());
 			}
 		
 
-		globalMap.put("tRunJob_4_SUBPROCESS_STATE", 1);
+		globalMap.put("tRunJob_1_SUBPROCESS_STATE", 1);
 	}
 	
     public String resuming_logs_dir_path = null;
@@ -2450,33 +3266,6 @@ globalMap.put("tRunJob_1_SUBPROCESS_STATE", -1);
 e_tRunJob_1.printStackTrace();
 
 }
-try {
-errorCode = null;tRunJob_2Process(globalMap);
-if(!"failure".equals(status)) { status = "end"; }
-}catch (TalendException e_tRunJob_2) {
-globalMap.put("tRunJob_2_SUBPROCESS_STATE", -1);
-
-e_tRunJob_2.printStackTrace();
-
-}
-try {
-errorCode = null;tRunJob_3Process(globalMap);
-if(!"failure".equals(status)) { status = "end"; }
-}catch (TalendException e_tRunJob_3) {
-globalMap.put("tRunJob_3_SUBPROCESS_STATE", -1);
-
-e_tRunJob_3.printStackTrace();
-
-}
-try {
-errorCode = null;tRunJob_4Process(globalMap);
-if(!"failure".equals(status)) { status = "end"; }
-}catch (TalendException e_tRunJob_4) {
-globalMap.put("tRunJob_4_SUBPROCESS_STATE", -1);
-
-e_tRunJob_4.printStackTrace();
-
-}
 
 this.globalResumeTicket = true;//to run tPostJob
 
@@ -2651,6 +3440,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     76062 characters generated by Talend Open Studio for Big Data 
- *     on the 28 octobre 2025 22:41:56 CET
+ *     91179 characters generated by Talend Open Studio for Big Data 
+ *     on the 30 octobre 2025 11:06:12 CET
  ************************************************************************************************/
