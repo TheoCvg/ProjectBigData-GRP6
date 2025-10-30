@@ -3,7 +3,7 @@
   <context confirmationNeeded="false" name="Default">
     <contextParameter comment="" name="postgres_DB_input_Port" prompt="postgres_DB_input_Port?" promptNeeded="false" repositoryContextId="_iWMxMLCvEfCTVbmB-UJ4Jw" type="id_String" value="5432"/>
     <contextParameter comment="" name="postgres_DB_input_Schema" prompt="postgres_DB_input_Schema?" promptNeeded="false" repositoryContextId="_iWMxMLCvEfCTVbmB-UJ4Jw" type="id_String" value="public"/>
-    <contextParameter comment="" name="postgres_DB_input_Password" prompt="postgres_DB_input_Password?" promptNeeded="false" repositoryContextId="_iWMxMLCvEfCTVbmB-UJ4Jw" type="id_Password" value="enc:system.encryption.key.v1:C8NfLB/zXKHWKk1zjV9VXGf/01JJR8a/GThjmghVmxQ="/>
+    <contextParameter comment="" name="postgres_DB_input_Password" prompt="postgres_DB_input_Password?" promptNeeded="false" repositoryContextId="_iWMxMLCvEfCTVbmB-UJ4Jw" type="id_Password" value="enc:system.encryption.key.v1:21faH8t/SNkU1dWiR1QZv0mKuaxO3EpDoUMPIIeJLqc="/>
     <contextParameter comment="" name="postgres_DB_input_Database" prompt="postgres_DB_input_Database?" promptNeeded="false" repositoryContextId="_iWMxMLCvEfCTVbmB-UJ4Jw" type="id_String" value="postgres"/>
     <contextParameter comment="" name="postgres_DB_input_Login" prompt="postgres_DB_input_Login?" promptNeeded="false" repositoryContextId="_iWMxMLCvEfCTVbmB-UJ4Jw" type="id_String" value="postgres"/>
     <contextParameter comment="" name="postgres_DB_input_Server" prompt="postgres_DB_input_Server?" promptNeeded="false" repositoryContextId="_iWMxMLCvEfCTVbmB-UJ4Jw" type="id_String" value=""/>
@@ -57,7 +57,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:75pcWToc+4hMh4H9DVWZFC0FAN09fsDZhSuRpJTA" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:1IcHR12Z957q97AuvfQEFAHWf7VigxaYz7hvFhZ5" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -92,7 +92,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:+vY33XZRAUmVnJI1PP02x0GIaMVBbKCZDKC/rtfT" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:L3ZZf2bKzqFCzgWmCNWuOj9V7w3+dd6h2fyzrv30" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
@@ -121,7 +121,7 @@
     <routinesParameter id="_lx3DAK_vEfCJeviag_DAVQ" name="TalendStringUtil"/>
     <routinesParameter id="_lxyKgK_vEfCJeviag_DAVQ" name="TalendString"/>
   </parameters>
-  <node componentName="tPostgresqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="224">
+  <node componentName="tPostgresqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_2" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
@@ -132,7 +132,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.postgres_DB_input_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.postgres_DB_input_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.postgres_DB_input_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:tuFAICl/q0fYTMyy4I8bmVM4WTwV4ysCScL0Er11OO3zttvzgLCYINctLbqAczu8BRObCHnhFzvGl8b/v3A="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:xQvNz2CObbrO4nj+EeYIR3DhIHxVNuArbCwjAMLzr99py5vkhYKgC73zUBfgXvAUK5Szq3BLmw0z5W3j0ZI="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;Patient&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -229,7 +229,7 @@
       <column comment="" key="false" length="255" name="Email" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="255" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="d_patient_output">
         <mapperTableEntries name="Id_patient" expression="row1.Id_patient " type="id_Integer"/>
@@ -349,7 +349,7 @@
       <column comment="" key="false" length="255" name="Email" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="255" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="d_patients_output">
         <mapperTableEntries name="Id_patient" expression="row2.Id_patient " type="id_Integer"/>
@@ -388,8 +388,8 @@
     <elementParameter field="TEXT" name="FS_DEFAULT_NAME" value="context.ClusterHadopp_NameNodeUri"/>
     <elementParameter field="TEXT" name="ADLS_FS_DEFAULT_NAME" value="&quot;adl://account.azuredatalakestore.net&quot;" show="false"/>
     <elementParameter field="TEXT" name="ADLS_CLIENT_ID" value="&quot;XXXX&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" value="enc:system.encryption.key.v1:fVj3ID51XBc+DAFwf8bLMMFcCCjHnD/+E/T9NXHJOT9bmqojlDNYNpuheso/K3tnURY9I5GF+N+5/1tkCk7k3cm8hCOVrGUl9aIStJEPte8=" show="false"/>
-    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" value="enc:system.encryption.key.v1:pqHi4utrZeftXHJLbFcl9SEBIQnJNgT67H0fe50Kuq9EkA==" show="false"/>
+    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" value="enc:system.encryption.key.v1:kXqSqjja8sqAdaQbSX7D81oW3dsGOnSnqovR7Pm/8Fb++FzHpm3vw+hpyTxDTt4x7bGm5DpdhUX9KEPguK8HKhysMgLBaZTYlshQE48Zpjo=" show="false"/>
+    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" value="enc:system.encryption.key.v1:Lb/r3zG8bwUP1M113SjNL7r2hKGDBhPWY3FzybzuAGhmeA==" show="false"/>
     <elementParameter field="CHECK" name="USE_DATANODE_HOSTNAME" value="true"/>
     <elementParameter field="CHECK" name="USE_KRB" value="false"/>
     <elementParameter field="TEXT" name="NAMENODE_PRINCIPAL" value="&quot;hdfs/_HOST@EXAMPLE.COM&quot;" show="false"/>
@@ -399,7 +399,7 @@
     <elementParameter field="CHECK" name="USE_MAPRTICKET" value="false" show="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="&quot;cloudera&quot;"/>
     <elementParameter field="TEXT" name="GROUP" value="&quot;supergroup&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" value="enc:system.encryption.key.v1:84ND5REx2HGOATd7S8onws5tenq+TqLWf6KsLmWO" show="false"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" value="enc:system.encryption.key.v1:PmTWC9swG8/54F+Yeod31ws4C+pPO2JxST7TLOHS" show="false"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" value="&quot;demo.mapr.com&quot;" show="false"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" value="" show="false"/>
     <elementParameter field="BOTH_HADOOP" name="FILENAME" value="&quot;/user/talend/warehouse/d_patients/d_patients.txt&quot;"/>
@@ -454,7 +454,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="&quot;chu&quot;"/>
     <elementParameter field="TEXT" name="TYPE" value="HIVE" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;cloudera&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:83agw2UqBm22T4g2aYlVLoeO+//6YpPJpfbcijIa"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:yexaGW3eqrcBD7WlOPLgLp6vUfwGafKCDXCIdcrt"/>
     <elementParameter field="TEXT" name="HIVE_ADDITIONAL_JDBC" value="&quot;&quot;"/>
     <elementParameter field="CHECK" name="USE_KRB" value="false"/>
     <elementParameter field="TEXT" name="HIVE_PRINCIPAL" value="&quot;&quot;" show="false"/>
@@ -466,18 +466,18 @@
     <elementParameter field="TEXT" name="METASTORE_JDBC_URL" value="&quot;thrift://quickstart.cloudera:9083&quot;" show="false"/>
     <elementParameter field="TEXT" name="METASTORE_CLASSNAME" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="METASTORE_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="METASTORE_PASSWORD" value="enc:system.encryption.key.v1:jAQ93hLH7DP0EYpJNMs4Dky8LGV30SY3MtsjrHVh" show="false"/>
+    <elementParameter field="PASSWORD" name="METASTORE_PASSWORD" value="enc:system.encryption.key.v1:tr+vACTc7OYEQx3Yg9Gut0MAamgs8u2iu5hLfONS" show="false"/>
     <elementParameter field="CHECK" name="USE_KEYTAB" value="false" show="false"/>
     <elementParameter field="TEXT" name="PRINCIPAL" value="&quot;&quot;" show="false"/>
     <elementParameter field="FILE" name="KEYTAB_PATH" value="&quot;&quot;" show="false"/>
     <elementParameter field="CHECK" name="USE_MAPRTICKET" value="false" show="false"/>
     <elementParameter field="TEXT" name="MAPRTICKET_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" value="enc:system.encryption.key.v1:R6oTDNXhSZVNVlqXQHVIU03COGDH5B5IZCCamSu9" show="false"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" value="enc:system.encryption.key.v1:EBQGDe8eQNNmsxZFM+yGiN3i/QbxHv6DYyOkTXha" show="false"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" value="&quot;demo.mapr.com&quot;" show="false"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" value="86400L" show="false"/>
     <elementParameter field="CHECK" name="USE_SSL" value="false"/>
     <elementParameter field="FILE" name="SSL_TRUST_STORE" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="SSL_TRUST_STORE_PASSWORD" value="enc:system.encryption.key.v1:mPeBwC8NxLCC/4OdpdBhSMpfPRaQIncOPoMdls48" show="false"/>
+    <elementParameter field="PASSWORD" name="SSL_TRUST_STORE_PASSWORD" value="enc:system.encryption.key.v1:FLuE8I8uCXK31ILAa0CP8Pwpey3pmNEoGRbMvvFx" show="false"/>
     <elementParameter field="CHECK" name="SET_MAPRED_JT" value="false" show="false"/>
     <elementParameter field="TEXT" name="MAPRED_JT" value="context.ClusterHadopp_ResourceManager" show="false"/>
     <elementParameter field="CHECK" name="SET_RESOURCE_MANAGER" value="false"/>
@@ -496,11 +496,11 @@
     <elementParameter field="TEXT" name="WEBHCAT_USERNAME" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="STATUSDIR" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="HDINSIGHT_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="HDINSIGHT_PASSWORD" value="enc:system.encryption.key.v1:ZFvkc5X6OEPoJgRJK6UUba7BG5/UzthTG62tXely" show="false"/>
+    <elementParameter field="PASSWORD" name="HDINSIGHT_PASSWORD" value="enc:system.encryption.key.v1:hk56qIXRldGPRAERYwczJWppqvDM8gLGIP3koQlq" show="false"/>
     <elementParameter field="TEXT" name="WASB_HOST" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="WASB_CONTAINER" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="WASB_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="WASB_PASSWORD" value="enc:system.encryption.key.v1:PN+1/0w8P9VggvxuDHj4+JTA7m9hmFrFcwjMkaX+" show="false"/>
+    <elementParameter field="PASSWORD" name="WASB_PASSWORD" value="enc:system.encryption.key.v1:392J+lT0WiQeBv3fUMLGNwFUkV7vHCuhCNCPHt7B" show="false"/>
     <elementParameter field="TEXT" name="REMOTE_FOLDER" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="GOOGLE_PROJECT_ID" value="&quot;my-google-project&quot;" show="false"/>
     <elementParameter field="TEXT" name="GOOGLE_CLUSTER_ID" value="&quot;my-cluster-id&quot;" show="false"/>
@@ -508,7 +508,7 @@
     <elementParameter field="TEXT" name="GOOGLE_JARS_BUCKET" value="&quot;gs://my-bucket/talend/jars&quot;" show="false"/>
     <elementParameter field="CHECK" name="DEFINE_PATH_TO_GOOGLE_CREDENTIALS" value="false" show="false"/>
     <elementParameter field="TEXT" name="PATH_TO_GOOGLE_CREDENTIALS" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="QUBOLE_API_TOKEN" value="enc:system.encryption.key.v1:1ULCyAy2if/8EsAoXGTJeDOIMoWgFwoKRH1njhr6" show="false"/>
+    <elementParameter field="PASSWORD" name="QUBOLE_API_TOKEN" value="enc:system.encryption.key.v1:t+slAUBA4GKJoamJxS8trsXdK/3vvW9dhME1r0lC" show="false"/>
     <elementParameter field="CHECK" name="QUBOLE_CLUSTER" value="false" show="false"/>
     <elementParameter field="TEXT" name="QUBOLE_CLUSTER_LABEL" value="&quot;&quot;" show="false"/>
     <elementParameter field="CHECK" name="QUBOLE_ENDPOINT" value="false" show="false"/>
@@ -527,7 +527,7 @@
     <elementParameter field="TEXT" name="FILE_LOCATION" value="&quot;/user/talend/warehouse/d_patients/&quot;"/>
     <elementParameter field="TEXT" name="S3_BUCKET" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="S3_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="S3_PASSWORD" value="enc:system.encryption.key.v1:A4PRs+AsbOipmoumsqxi/sTIwXmxfYe7rgRVoO2t" show="false"/>
+    <elementParameter field="PASSWORD" name="S3_PASSWORD" value="enc:system.encryption.key.v1:hz/6MNxHwajut/f6LLJ0k//JH9+XzAMf9NW6iCQ4" show="false"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="hive_id" show="false"/>
     <elementParameter field="CHECK" name="SET_ROW_FORMAT" value="true"/>
     <elementParameter field="CHECK" name="SET_FIELD_TERMINATED_BY" value="true"/>

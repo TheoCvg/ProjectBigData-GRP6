@@ -33,7 +33,7 @@
     <elementParameter field="CHECK" name="IMPLICIT_TCONTEXTLOAD" value="true"/>
     <elementParameter field="RADIO" name="FROM_FILE_FLAG_IMPLICIT_CONTEXT" value="true"/>
     <elementParameter field="RADIO" name="FROM_DATABASE_FLAG_IMPLICIT_CONTEXT" value="false"/>
-    <elementParameter field="FILE" name="IMPLICIT_TCONTEXTLOAD_FILE" value="&quot;C:/Users/theoc/Desktop/notion/A4/Blocs/BigData/Projet/ProjectBigData-GRP6/ETL project/ETL_PROJECT/resources/config/config.properties&quot;"/>
+    <elementParameter field="FILE" name="IMPLICIT_TCONTEXTLOAD_FILE" value="&quot;C:/Users/delpe/ProjectBigData-GRP6/ETL project/ETL_PROJECT/resources/config/config.properties&quot;"/>
     <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;=&quot;"/>
     <elementParameter field="CHECK" name="OVERRIDE_ENCODING_FLAG" value="true"/>
     <elementParameter field="ENCODING_TYPE" name="OVERRIDE_ENCODING_IN_EXTRA" value="&quot;UTF-8&quot;"/>
@@ -50,7 +50,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:Yr60GFC2NYtTqaijCq9iYv/Kq8FOuj4QFvnsXfit" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:U7Lhgn3VNQnaJh57nEphP4SiRgVgEzab24Fa/Alw" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -65,7 +65,7 @@
     <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="false"/>
     <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" value="false" show="false"/>
     <elementParameter field="CHECK" name="ON_FILES_FLAG" value="false" show="false"/>
-    <elementParameter field="DIRECTORY" name="FILE_PATH" value="&quot;C:/Users/theoc/Desktop/notion/A4/Blocs/BigData/Projet/ProjectBigData-GRP6/ETL project/.metadata&quot;" show="false"/>
+    <elementParameter field="DIRECTORY" name="FILE_PATH" value="&quot;C:/Users/delpe/ProjectBigData-GRP6/ETL project/.metadata&quot;" show="false"/>
     <elementParameter field="TEXT" name="FILENAME_STATS" value="&quot;stats_file.txt&quot;" show="false"/>
     <elementParameter field="TEXT" name="FILENAME_LOGS" value="&quot;logs_file.txt&quot;" show="false"/>
     <elementParameter field="TEXT" name="FILENAME_METTER" value="&quot;meter_file.txt&quot;" show="false"/>
@@ -85,7 +85,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Fn8cnBAFnhOi6PLZRFuFUJZkBWcV4YEV4BmnwLVv" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:hTl8kFZUt84lE3HmEjTWHEEaKltlOJRDmnu4kRJb" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
@@ -265,23 +265,25 @@
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="region">
-      <column comment="" key="true" length="-1" name="Id_reg" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="true" length="-1" name="Id_reg" nullable="false" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="6" name="country" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="5" name="Postcode" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="24" name="town" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="21" name="region" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="3" name="departement" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="INSEEcode" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="region">
-        <mapperTableEntries name="Id_reg" expression="Numeric.sequence(&quot;Id_reg&quot;, 1, 1)" type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="Id_reg" expression="Numeric.sequence(&quot;Id_reg&quot;, 1, 1)" type="id_Integer"/>
         <mapperTableEntries name="country" expression="&quot;France&quot;" type="id_String" nullable="true"/>
         <mapperTableEntries name="Postcode" expression="row1.code_postal " type="id_String" nullable="true"/>
         <mapperTableEntries name="town" expression="row1.nom_commune " type="id_String" nullable="true"/>
         <mapperTableEntries name="region" expression="row1.nom_region " type="id_String" nullable="true"/>
         <mapperTableEntries name="departement" expression="row1.nom_departement " type="id_String" nullable="true"/>
+        <mapperTableEntries name="INSEEcode" expression="row1.code_commune_INSEE " type="id_String" nullable="true"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="row1" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="code_commune_INSEE" type="id_String" nullable="true"/>
@@ -319,8 +321,8 @@
     <elementParameter field="TEXT" name="FS_DEFAULT_NAME" value="context.ClusterHadopp_NameNodeUri"/>
     <elementParameter field="TEXT" name="ADLS_FS_DEFAULT_NAME" value="&quot;adl://account.azuredatalakestore.net&quot;" show="false"/>
     <elementParameter field="TEXT" name="ADLS_CLIENT_ID" value="&quot;XXXX&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" value="enc:system.encryption.key.v1:50U3lluzoASmEl7bgAOEKL3WiCdHAelbDY6cqK6aUb2dT6LcoU55OjVrRy90FZoYIJE10ojcjwYu/ctGxSt3ipCadE3kYpZiZ6LhA7yS/m8=" show="false"/>
-    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" value="enc:system.encryption.key.v1:LGshvlYsKVBlbSlF96KAqjC2atzCs8rjsX/pDQjins3gxA==" show="false"/>
+    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" value="enc:system.encryption.key.v1:l8lxfYtPByxJklMyngYXMrANE4D4GZ5ehTNq7jN869OkJVYqD6Nyhn6tSXpUHE29eUkKPSILw9UVjHQJu2uIp2bECPP9JevKPNI1OBcZAwI=" show="false"/>
+    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" value="enc:system.encryption.key.v1:kTM5IzGg+EPkZh85OG6lv84+Ho13rvHY80FbNP26nrJQLA==" show="false"/>
     <elementParameter field="CHECK" name="USE_DATANODE_HOSTNAME" value="true"/>
     <elementParameter field="CHECK" name="USE_KRB" value="false"/>
     <elementParameter field="TEXT" name="NAMENODE_PRINCIPAL" value="&quot;hdfs/_HOST@EXAMPLE.COM&quot;" show="false"/>
@@ -330,7 +332,7 @@
     <elementParameter field="CHECK" name="USE_MAPRTICKET" value="false" show="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="&quot;cloudera&quot;"/>
     <elementParameter field="TEXT" name="GROUP" value="&quot;supergroup&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" value="enc:system.encryption.key.v1:3maLJh6AYSf5ODiH68ga+ljuX9LNJM5fKzI+FPoO" show="false"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" value="enc:system.encryption.key.v1:kz1yVFPfsw/iBIOpI+QJ64NBTd9Fwc5OcgtoLfaA" show="false"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" value="&quot;demo.mapr.com&quot;" show="false"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" value="" show="false"/>
     <elementParameter field="BOTH_HADOOP" name="FILENAME" value="&quot;/user/talend/warehouse/d_regions/d_regions.txt&quot;"/>
@@ -357,12 +359,13 @@
     <elementParameter field="TEXT" name="LABEL" value="ClusterHadopp_HDFS"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tHDFSOutput_1">
-      <column comment="" key="true" length="-1" name="Id_reg" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="true" length="-1" name="Id_reg" nullable="false" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="6" name="country" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="5" name="Postcode" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="24" name="town" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="21" name="region" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="3" name="departement" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="INSEEcode" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tHiveCreateTable" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="768" posY="192">
@@ -385,7 +388,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="&quot;chu&quot;"/>
     <elementParameter field="TEXT" name="TYPE" value="HIVE" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;cloudera&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:0SUdy95G7rIRAK08sFUBSs07CBPJmuJUxgceuCiO"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:o9zcSu/28NBi/uUeVBMdHVmAYWmzncwevZ8BPBwD"/>
     <elementParameter field="TEXT" name="HIVE_ADDITIONAL_JDBC" value="&quot;&quot;"/>
     <elementParameter field="CHECK" name="USE_KRB" value="false"/>
     <elementParameter field="TEXT" name="HIVE_PRINCIPAL" value="&quot;&quot;" show="false"/>
@@ -397,18 +400,18 @@
     <elementParameter field="TEXT" name="METASTORE_JDBC_URL" value="&quot;thrift://quickstart.cloudera:9083&quot;" show="false"/>
     <elementParameter field="TEXT" name="METASTORE_CLASSNAME" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="METASTORE_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="METASTORE_PASSWORD" value="enc:system.encryption.key.v1:wqZkHj98TiSulkq2a2h7by3Fzdwy1WHL0Tv9fWjK" show="false"/>
+    <elementParameter field="PASSWORD" name="METASTORE_PASSWORD" value="enc:system.encryption.key.v1:VPzQ8bDM6oFpJ7BN5MF7Z/pc4kpcRXLY6DpPt6qu" show="false"/>
     <elementParameter field="CHECK" name="USE_KEYTAB" value="false" show="false"/>
     <elementParameter field="TEXT" name="PRINCIPAL" value="&quot;&quot;" show="false"/>
     <elementParameter field="FILE" name="KEYTAB_PATH" value="&quot;&quot;" show="false"/>
     <elementParameter field="CHECK" name="USE_MAPRTICKET" value="false" show="false"/>
     <elementParameter field="TEXT" name="MAPRTICKET_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" value="enc:system.encryption.key.v1:yc7WQUV1QCH7X0TURVjrsCvhN/9ZuXg7XtV++5Ij" show="false"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" value="enc:system.encryption.key.v1:eS3Sh+U1jzLeMPv5Sj3NTbp7tE+lwhkNJauxr0Yp" show="false"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" value="&quot;demo.mapr.com&quot;" show="false"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" value="86400L" show="false"/>
     <elementParameter field="CHECK" name="USE_SSL" value="false"/>
     <elementParameter field="FILE" name="SSL_TRUST_STORE" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="SSL_TRUST_STORE_PASSWORD" value="enc:system.encryption.key.v1:Ykqjj51phfXI0CVZAU/Bvt8coA3xJiP2T54aCMpE" show="false"/>
+    <elementParameter field="PASSWORD" name="SSL_TRUST_STORE_PASSWORD" value="enc:system.encryption.key.v1:kRWIWwfccD+QZSuRyBGe07Magg5Fdr+e0RU0mRBY" show="false"/>
     <elementParameter field="CHECK" name="SET_MAPRED_JT" value="false" show="false"/>
     <elementParameter field="TEXT" name="MAPRED_JT" value="context.ClusterHadopp_ResourceManager" show="false"/>
     <elementParameter field="CHECK" name="SET_RESOURCE_MANAGER" value="false"/>
@@ -427,11 +430,11 @@
     <elementParameter field="TEXT" name="WEBHCAT_USERNAME" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="STATUSDIR" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="HDINSIGHT_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="HDINSIGHT_PASSWORD" value="enc:system.encryption.key.v1:OeO5dlgakBYE2XDMr4xxbw5djdYayv3oEHOZZFR/" show="false"/>
+    <elementParameter field="PASSWORD" name="HDINSIGHT_PASSWORD" value="enc:system.encryption.key.v1:1LqxxwMphhPuNyCmzy5Kpyout0oZS2Ru7239Xhfa" show="false"/>
     <elementParameter field="TEXT" name="WASB_HOST" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="WASB_CONTAINER" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="WASB_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="WASB_PASSWORD" value="enc:system.encryption.key.v1:LuCC7QAwE5HL8xG0I5KSNBCn/qndsERrBu1ngcRp" show="false"/>
+    <elementParameter field="PASSWORD" name="WASB_PASSWORD" value="enc:system.encryption.key.v1:yr4IbpfihIBwiQqvvcGEERLlaK5Cc31EgMM6Kfx0" show="false"/>
     <elementParameter field="TEXT" name="REMOTE_FOLDER" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="GOOGLE_PROJECT_ID" value="&quot;my-google-project&quot;" show="false"/>
     <elementParameter field="TEXT" name="GOOGLE_CLUSTER_ID" value="&quot;my-cluster-id&quot;" show="false"/>
@@ -439,7 +442,7 @@
     <elementParameter field="TEXT" name="GOOGLE_JARS_BUCKET" value="&quot;gs://my-bucket/talend/jars&quot;" show="false"/>
     <elementParameter field="CHECK" name="DEFINE_PATH_TO_GOOGLE_CREDENTIALS" value="false" show="false"/>
     <elementParameter field="TEXT" name="PATH_TO_GOOGLE_CREDENTIALS" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="QUBOLE_API_TOKEN" value="enc:system.encryption.key.v1:QpgkSNt5vPQdIvOzt8ZOHqIFHgGGGtG1EyXIhaMu" show="false"/>
+    <elementParameter field="PASSWORD" name="QUBOLE_API_TOKEN" value="enc:system.encryption.key.v1:yWUs2ngx+hvrCrv+dPBInTZ++fqFMw5RKjDNuzyH" show="false"/>
     <elementParameter field="CHECK" name="QUBOLE_CLUSTER" value="false" show="false"/>
     <elementParameter field="TEXT" name="QUBOLE_CLUSTER_LABEL" value="&quot;&quot;" show="false"/>
     <elementParameter field="CHECK" name="QUBOLE_ENDPOINT" value="false" show="false"/>
@@ -458,7 +461,7 @@
     <elementParameter field="TEXT" name="FILE_LOCATION" value="&quot;/user/talend/warehouse/d_regions/&quot;"/>
     <elementParameter field="TEXT" name="S3_BUCKET" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="S3_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="S3_PASSWORD" value="enc:system.encryption.key.v1:FXt+mi2fnRB39DCHGSOB+lxPRifnfF4Bxx22jHCk" show="false"/>
+    <elementParameter field="PASSWORD" name="S3_PASSWORD" value="enc:system.encryption.key.v1:r4TgWqU+dUVthvKOOk7uKhPY/waEGhqO75voe82V" show="false"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="hive_id" show="false"/>
     <elementParameter field="CHECK" name="SET_ROW_FORMAT" value="true"/>
     <elementParameter field="CHECK" name="SET_FIELD_TERMINATED_BY" value="true"/>
@@ -503,12 +506,13 @@
     <elementParameter field="TEXT" name="LABEL" value="ClusterHadopp_HIVE"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tHiveCreateTable_1">
-      <column comment="" key="true" length="-1" name="Id_reg" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="6" name="country" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="Postcode" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="24" name="town" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="21" name="region" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="3" name="departement" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="true" length="-1" name="Id_reg" nullable="false" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="6" name="country1" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="Postcode1" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="24" name="town1" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="21" name="region1" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="departement1" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="INSEEcode" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="PARTITION" name="PARTITION"/>
   </node>
@@ -517,6 +521,11 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row1" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="region" lineStyle="0" metaname="region" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tHDFSOutput_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="INSEEcode"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="region" show="false"/>
   </connection>
